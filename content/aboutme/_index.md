@@ -29,8 +29,11 @@
 ## **爱好相关**
 
 电脑爱好：做点3d模型相关的研究。目前在研究Houdini的程序化建模和VFX，也感慨Houdini的强大，属于是TA必修课。
+
 喜欢拍照，拍摄风景和建筑，有拍人像的经历（玩过灯阵）。用的是尼康Z5+35/85/40/24-200.
+
 音乐爱好：音乐大杂烩，尤其是电子音乐的多曲风、J-Pop和游戏原声，番剧原声
+
 游戏经历：主推 合作pve游戏/模拟经营类游戏/高水平美术游戏（大概这么划分吧）/可能是泛二（玩游不混圈）
 
 目前在玩： Helldivers2、City Skyline1/2、VR chat、Beat Saber、Starfield、Cyberpunk2077、Overwatch2、Inzoi、Minecraft+Forge/Fabric、偶尔上线尘白禁区/碧蓝航线。
