@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>杂谈 on 某人的小博客</title>
+    <title>杂谈 on Axon的逼仄之梦</title>
     <link>http://localhost:1313/categories/%E6%9D%82%E8%B0%88/</link>
-    <description>Recent content in 杂谈 on 某人的小博客</description>
+    <description>Recent content in 杂谈 on Axon的逼仄之梦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
-    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
+    <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
     <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
       <title>重生之我在OBS写Shader——OBS ShaderFilter插件</title>
       <link>http://localhost:1313/posts/%E9%87%8D%E7%94%9F%E4%B9%8B%E6%88%91%E5%9C%A8obs%E5%86%99shaderobs-shaderfilter%E6%8F%92%E4%BB%B6/</link>
       <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E9%87%8D%E7%94%9F%E4%B9%8B%E6%88%91%E5%9C%A8obs%E5%86%99shaderobs-shaderfilter%E6%8F%92%E4%BB%B6/</guid>
       <description>OBS自定义Shader效果</description>
       
@@ -25,7 +25,7 @@
       <title>Unity的Scene界面鼠标滚轮慢到拖不动的问题</title>
       <link>http://localhost:1313/posts/unity%E7%9A%84scene%E7%95%8C%E9%9D%A2%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E6%85%A2%E5%88%B0%E6%8B%96%E4%B8%8D%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity%E7%9A%84scene%E7%95%8C%E9%9D%A2%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E6%85%A2%E5%88%B0%E6%8B%96%E4%B8%8D%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>问题解决方案</description>
       
@@ -35,7 +35,7 @@
       <title>Unity的旋转、缩放、移动矩阵</title>
       <link>http://localhost:1313/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/</link>
       <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/</guid>
       <description>算法原理解析</description>
       
@@ -45,7 +45,7 @@
       <title>Unity Bones Retargeting系统</title>
       <link>http://localhost:1313/posts/unity-bones-retargeting%E7%B3%BB%E7%BB%9F-1/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity-bones-retargeting%E7%B3%BB%E7%BB%9F-1/</guid>
       <description>骨骼动画指北</description>
       
@@ -55,7 +55,7 @@
       <title>关于blender选中物体不显示高亮描边的问题</title>
       <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eblender%E9%80%89%E4%B8%AD%E7%89%A9%E4%BD%93%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%AB%98%E4%BA%AE%E6%8F%8F%E8%BE%B9%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eblender%E9%80%89%E4%B8%AD%E7%89%A9%E4%BD%93%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%AB%98%E4%BA%AE%E6%8F%8F%E8%BE%B9%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>问题解决方案</description>
       
@@ -65,7 +65,7 @@
       <title>利用Stencil Buffer进行描边</title>
       <link>http://localhost:1313/posts/%E5%88%A9%E7%94%A8stencil-buffer%E8%BF%9B%E8%A1%8C%E6%8F%8F%E8%BE%B9/</link>
       <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%88%A9%E7%94%A8stencil-buffer%E8%BF%9B%E8%A1%8C%E6%8F%8F%E8%BE%B9/</guid>
       <description>技术分享</description>
       
@@ -75,7 +75,7 @@
       <title>TBDR&#43;Forward vs. IMR&#43;Deferred_ 两种设备的不同权衡</title>
       <link>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</link>
       <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</guid>
       <description>算法原理解析</description>
       
@@ -85,7 +85,7 @@
       <title>xyzw中的w：齐次坐标系的作用</title>
       <link>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
       <description>渲染技术解析</description>
       
@@ -95,7 +95,7 @@
       <title>常见的引擎物理算法</title>
       <link>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -105,7 +105,7 @@
       <title>Houdini中的Enforce Unique Name Attribute per instance</title>
       <link>http://localhost:1313/posts/houdini%E4%B8%AD%E7%9A%84enforce-unique-name-attribute-per-instance/</link>
       <pubDate>Sat, 10 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/houdini%E4%B8%AD%E7%9A%84enforce-unique-name-attribute-per-instance/</guid>
       <description>问题解决方案</description>
       
@@ -115,7 +115,7 @@
       <title>MikuMiku Rig &amp;&amp; Uuunya Tools</title>
       <link>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</link>
       <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -125,7 +125,7 @@
       <title>C#脚本和Shader中共享同步变量</title>
       <link>http://localhost:1313/posts/c%23%E8%84%9A%E6%9C%AC%E5%92%8Cshader%E4%B8%AD%E5%85%B1%E4%BA%AB%E5%90%8C%E6%AD%A5%E5%8F%98%E9%87%8F/</link>
       <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/c%23%E8%84%9A%E6%9C%AC%E5%92%8Cshader%E4%B8%AD%E5%85%B1%E4%BA%AB%E5%90%8C%E6%AD%A5%E5%8F%98%E9%87%8F/</guid>
       <description>问题解决方案</description>
       
@@ -135,7 +135,7 @@
       <title>Unity的Post-Processing标准（V1、V2、V3）</title>
       <link>http://localhost:1313/posts/unity%E7%9A%84post-processing%E6%A0%87%E5%87%86v1v2v3/</link>
       <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity%E7%9A%84post-processing%E6%A0%87%E5%87%86v1v2v3/</guid>
       <description>Git配置指南</description>
       
@@ -145,7 +145,7 @@
       <title>Yuque Exporter使用说明</title>
       <link>http://localhost:1313/posts/yuque-exporter%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</link>
       <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/yuque-exporter%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/</guid>
       <description>Git配置指南</description>
       
@@ -155,7 +155,7 @@
       <title>关于Da Vinci安装后无法启动的问题</title>
       <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eda-vinci%E5%AE%89%E8%A3%85%E5%90%8E%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eda-vinci%E5%AE%89%E8%A3%85%E5%90%8E%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>问题解决方案</description>
       
@@ -165,7 +165,7 @@
       <title>VEX：如何沿用上组变量</title>
       <link>http://localhost:1313/posts/vex%E5%A6%82%E4%BD%95%E6%B2%BF%E7%94%A8%E4%B8%8A%E7%BB%84%E5%8F%98%E9%87%8F-1/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/vex%E5%A6%82%E4%BD%95%E6%B2%BF%E7%94%A8%E4%B8%8A%E7%BB%84%E5%8F%98%E9%87%8F-1/</guid>
       <description>VEX编程技巧</description>
       
@@ -175,7 +175,7 @@
       <title>模糊算法</title>
       <link>http://localhost:1313/posts/%E6%A8%A1%E7%B3%8A%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E6%A8%A1%E7%B3%8A%E7%AE%97%E6%B3%95/</guid>
       <description>算法原理解析</description>
       
@@ -185,7 +185,7 @@
       <title>Unity区域光（Area Light） 没有反应</title>
       <link>http://localhost:1313/posts/unity%E5%8C%BA%E5%9F%9F%E5%85%89area-light-%E6%B2%A1%E6%9C%89%E5%8F%8D%E5%BA%94/</link>
       <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity%E5%8C%BA%E5%9F%9F%E5%85%89area-light-%E6%B2%A1%E6%9C%89%E5%8F%8D%E5%BA%94/</guid>
       <description>渲染技术解析</description>
       
@@ -195,7 +195,7 @@
       <title>Unity阴影实现</title>
       <link>http://localhost:1313/posts/unity%E9%98%B4%E5%BD%B1%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity%E9%98%B4%E5%BD%B1%E5%AE%9E%E7%8E%B0/</guid>
       <description>问题解决方案</description>
       
@@ -205,7 +205,7 @@
       <title>quixel导入blender的bl插件以及中文化适配&amp;bug修改</title>
       <link>http://localhost:1313/posts/quixel%E5%AF%BC%E5%85%A5blender%E7%9A%84bl%E6%8F%92%E4%BB%B6%E4%BB%A5%E5%8F%8A%E4%B8%AD%E6%96%87%E5%8C%96%E9%80%82%E9%85%8Dbug%E4%BF%AE%E6%94%B9/</link>
       <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/quixel%E5%AF%BC%E5%85%A5blender%E7%9A%84bl%E6%8F%92%E4%BB%B6%E4%BB%A5%E5%8F%8A%E4%B8%AD%E6%96%87%E5%8C%96%E9%80%82%E9%85%8Dbug%E4%BF%AE%E6%94%B9/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -215,7 +215,7 @@
       <title>菲涅尔计算式以及近似公式</title>
       <link>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</guid>
       <description>算法原理解析</description>
       
@@ -225,7 +225,7 @@
       <title>Houdini：从Mantra切换为Karma的材质工作流切换</title>
       <link>http://localhost:1313/posts/houdini%E4%BB%8Emantra%E5%88%87%E6%8D%A2%E4%B8%BAkarma%E7%9A%84%E6%9D%90%E8%B4%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%87%E6%8D%A2/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/houdini%E4%BB%8Emantra%E5%88%87%E6%8D%A2%E4%B8%BAkarma%E7%9A%84%E6%9D%90%E8%B4%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%87%E6%8D%A2/</guid>
       <description>VEX编程技巧</description>
       
@@ -235,7 +235,7 @@
       <title>什么是帧缓冲（Frame Buffer）？</title>
       <link>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</link>
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</guid>
       <description>渲染技术解析</description>
       
@@ -245,7 +245,7 @@
       <title>基本渲染管线</title>
       <link>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</link>
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</guid>
       <description>渲染技术解析</description>
       
@@ -255,7 +255,7 @@
       <title>Blender小技巧：用噪声消除重复纹理</title>
       <link>http://localhost:1313/posts/blender%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%94%A8%E5%99%AA%E5%A3%B0%E6%B6%88%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BA%B9%E7%90%86/</link>
       <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/blender%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%94%A8%E5%99%AA%E5%A3%B0%E6%B6%88%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BA%B9%E7%90%86/</guid>
       <description>问题解决方案</description>
       
@@ -265,7 +265,7 @@
       <title>Unity实现体积光（GodRay）的三种方案</title>
       <link>http://localhost:1313/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/</guid>
       <description>体积光实现方案</description>
       
@@ -275,7 +275,7 @@
       <title>色彩空间</title>
       <link>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</guid>
       <description>算法原理解析</description>
       
@@ -285,7 +285,7 @@
       <title>反射算法</title>
       <link>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</link>
       <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -295,7 +295,7 @@
       <title>无厚度_低厚度的zfighting问题</title>
       <link>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -305,7 +305,7 @@
       <title>Name.com配合CloudFlare实现极空间的ddns托管域名</title>
       <link>http://localhost:1313/posts/name.com%E9%85%8D%E5%90%88cloudflare%E5%AE%9E%E7%8E%B0%E6%9E%81%E7%A9%BA%E9%97%B4%E7%9A%84ddns%E6%89%98%E7%AE%A1%E5%9F%9F%E5%90%8D/</link>
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/name.com%E9%85%8D%E5%90%88cloudflare%E5%AE%9E%E7%8E%B0%E6%9E%81%E7%A9%BA%E9%97%B4%E7%9A%84ddns%E6%89%98%E7%AE%A1%E5%9F%9F%E5%90%8D/</guid>
       <description>Git配置指南</description>
       
@@ -315,7 +315,7 @@
       <title>Blender导入场景进入Unity</title>
       <link>http://localhost:1313/posts/blender%E5%AF%BC%E5%85%A5%E5%9C%BA%E6%99%AF%E8%BF%9B%E5%85%A5unity/</link>
       <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/blender%E5%AF%BC%E5%85%A5%E5%9C%BA%E6%99%AF%E8%BF%9B%E5%85%A5unity/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -325,7 +325,7 @@
       <title>自定义效果的大杀器——RenderFeature</title>
       <link>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</guid>
       <description>问题解决方案</description>
       
@@ -335,7 +335,7 @@
       <title>Gitignore配置</title>
       <link>http://localhost:1313/posts/gitignore%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 02 Dec 2024 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/gitignore%E9%85%8D%E7%BD%AE/</guid>
       <description>Git配置指南</description>
       

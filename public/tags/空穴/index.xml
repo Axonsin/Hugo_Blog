@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>空穴 on 某人的小博客</title>
+    <title>空穴 on Axon的逼仄之梦</title>
     <link>http://localhost:1313/tags/%E7%A9%BA%E7%A9%B4/</link>
-    <description>Recent content in 空穴 on 某人的小博客</description>
+    <description>Recent content in 空穴 on Axon的逼仄之梦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
-    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
+    <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
     <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%A9%BA%E7%A9%B4/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
       <title>电子和空穴浓度计算</title>
       <link>http://localhost:1313/posts/whatdoyouwant/</link>
       <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/whatdoyouwant/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/whatdoyouwant/featured.png" />

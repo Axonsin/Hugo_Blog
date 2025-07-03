@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>算法 on 某人的小博客</title>
+    <title>算法 on Axon的逼仄之梦</title>
     <link>http://localhost:1313/tags/%E7%AE%97%E6%B3%95/</link>
-    <description>Recent content in 算法 on 某人的小博客</description>
+    <description>Recent content in 算法 on Axon的逼仄之梦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
-    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
+    <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
     <lastBuildDate>Tue, 17 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
       <title>Unity的旋转、缩放、移动矩阵</title>
       <link>http://localhost:1313/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/</link>
       <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/</guid>
       <description>算法原理解析</description>
       
@@ -25,7 +25,7 @@
       <title>TBDR&#43;Forward vs. IMR&#43;Deferred_ 两种设备的不同权衡</title>
       <link>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</link>
       <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</guid>
       <description>算法原理解析</description>
       
@@ -35,7 +35,7 @@
       <title>常见的引擎物理算法</title>
       <link>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -45,7 +45,7 @@
       <title>模糊算法</title>
       <link>http://localhost:1313/posts/%E6%A8%A1%E7%B3%8A%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E6%A8%A1%E7%B3%8A%E7%AE%97%E6%B3%95/</guid>
       <description>算法原理解析</description>
       
@@ -55,7 +55,7 @@
       <title>菲涅尔计算式以及近似公式</title>
       <link>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</guid>
       <description>算法原理解析</description>
       
@@ -65,7 +65,7 @@
       <title>Unity实现体积光（GodRay）的三种方案</title>
       <link>http://localhost:1313/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/</guid>
       <description>体积光实现方案</description>
       
@@ -75,7 +75,7 @@
       <title>色彩空间</title>
       <link>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</guid>
       <description>算法原理解析</description>
       
@@ -85,7 +85,7 @@
       <title>反射算法</title>
       <link>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</link>
       <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</guid>
       <description>Blender导入Unity指南</description>
       

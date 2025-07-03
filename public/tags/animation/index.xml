@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Animation on 某人的小博客</title>
+    <title>Animation on Axon的逼仄之梦</title>
     <link>http://localhost:1313/tags/animation/</link>
-    <description>Recent content in Animation on 某人的小博客</description>
+    <description>Recent content in Animation on Axon的逼仄之梦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
-    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
+    <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
     <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/animation/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
       <title>重生之我在OBS写Shader——OBS ShaderFilter插件</title>
       <link>http://localhost:1313/posts/%E9%87%8D%E7%94%9F%E4%B9%8B%E6%88%91%E5%9C%A8obs%E5%86%99shaderobs-shaderfilter%E6%8F%92%E4%BB%B6/</link>
       <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E9%87%8D%E7%94%9F%E4%B9%8B%E6%88%91%E5%9C%A8obs%E5%86%99shaderobs-shaderfilter%E6%8F%92%E4%BB%B6/</guid>
       <description>OBS自定义Shader效果</description>
       
@@ -25,7 +25,7 @@
       <title>Unity Bones Retargeting系统</title>
       <link>http://localhost:1313/posts/unity-bones-retargeting%E7%B3%BB%E7%BB%9F-1/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity-bones-retargeting%E7%B3%BB%E7%BB%9F-1/</guid>
       <description>骨骼动画指北</description>
       
@@ -35,7 +35,7 @@
       <title>TBDR&#43;Forward vs. IMR&#43;Deferred_ 两种设备的不同权衡</title>
       <link>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</link>
       <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</guid>
       <description>算法原理解析</description>
       
@@ -45,7 +45,7 @@
       <title>常见的引擎物理算法</title>
       <link>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -55,7 +55,7 @@
       <title>MikuMiku Rig &amp;&amp; Uuunya Tools</title>
       <link>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</link>
       <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -65,7 +65,7 @@
       <title>Unity骨骼动画Retargeting</title>
       <link>http://localhost:1313/posts/vex%E5%8F%98%E9%87%8F/</link>
       <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/vex%E5%8F%98%E9%87%8F/</guid>
       <description>骨骼动画指北</description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/vex%E5%8F%98%E9%87%8F/featured.jpg" />
@@ -75,7 +75,7 @@
       <title>基本渲染管线</title>
       <link>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</link>
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</guid>
       <description>渲染技术解析</description>
       

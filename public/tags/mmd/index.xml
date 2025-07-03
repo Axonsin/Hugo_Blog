@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MMD on 某人的小博客</title>
+    <title>MMD on Axon的逼仄之梦</title>
     <link>http://localhost:1313/tags/mmd/</link>
-    <description>Recent content in MMD on 某人的小博客</description>
+    <description>Recent content in MMD on Axon的逼仄之梦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
-    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
+    <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
     <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/mmd/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
       <title>Unity Bones Retargeting系统</title>
       <link>http://localhost:1313/posts/unity-bones-retargeting%E7%B3%BB%E7%BB%9F-1/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/unity-bones-retargeting%E7%B3%BB%E7%BB%9F-1/</guid>
       <description>骨骼动画指北</description>
       
@@ -25,7 +25,7 @@
       <title>常见的引擎物理算法</title>
       <link>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -35,7 +35,7 @@
       <title>MikuMiku Rig &amp;&amp; Uuunya Tools</title>
       <link>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</link>
       <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</guid>
       <description>Blender导入Unity指南</description>
       

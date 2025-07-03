@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>物理 on 某人的小博客</title>
+    <title>物理 on Axon的逼仄之梦</title>
     <link>http://localhost:1313/tags/%E7%89%A9%E7%90%86/</link>
-    <description>Recent content in 物理 on 某人的小博客</description>
+    <description>Recent content in 物理 on Axon的逼仄之梦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
-    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
+    <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
     <lastBuildDate>Sun, 11 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%89%A9%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
       <title>常见的引擎物理算法</title>
       <link>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</link>
       <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/</guid>
       <description>Blender导入Unity指南</description>
       
@@ -25,7 +25,7 @@
       <title>菲涅尔计算式以及近似公式</title>
       <link>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</guid>
       <description>算法原理解析</description>
       
@@ -35,7 +35,7 @@
       <title>色彩空间</title>
       <link>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</link>
       <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</guid>
       <description>算法原理解析</description>
       
@@ -45,7 +45,7 @@
       <title>无厚度_低厚度的zfighting问题</title>
       <link>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
-      <author>youremail@example.com (AxonSin)</author>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</guid>
       <description>Blender导入Unity指南</description>
       
