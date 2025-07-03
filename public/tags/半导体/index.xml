@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>半导体 on 某人的小博客</title>
+    <link>http://localhost:1313/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/</link>
+    <description>Recent content in 半导体 on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>电子和空穴浓度计算</title>
+      <link>http://localhost:1313/posts/whatdoyouwant/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/whatdoyouwant/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/whatdoyouwant/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

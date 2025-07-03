@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VEX编程 on 某人的小博客</title>
+    <link>http://localhost:1313/categories/vex%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in VEX编程 on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/vex%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>VEX：如何沿用上组变量</title>
+      <link>http://localhost:1313/posts/vex%E5%A6%82%E4%BD%95%E6%B2%BF%E7%94%A8%E4%B8%8A%E7%BB%84%E5%8F%98%E9%87%8F-1/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/vex%E5%A6%82%E4%BD%95%E6%B2%BF%E7%94%A8%E4%B8%8A%E7%BB%84%E5%8F%98%E9%87%8F-1/</guid>
+      <description>VEX变量类型指定语法详解</description>
+      
+    </item>
+    
+  </channel>
+</rss>

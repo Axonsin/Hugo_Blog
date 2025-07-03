@@ -1,0 +1,2145 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Unity实现体积光（GodRay）的三种方案 &middot; 某人的小博客</title>
+  <meta name="title" content="Unity实现体积光（GodRay）的三种方案 &middot; 某人的小博客" />
+  
+  <meta name="description" content="体积光实现方案" />
+  <meta name="keywords" content="Unity, Shader, 渲染, 光照, 算法, " />
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.2755fda1868f0bfc1843df512e7b0b0bec55a259db5f8b13dc3c0f7894e519f617c2b66f5915ec207e2a1ffc8b6d1b53dbd8f3dff8892140cb5eacc50a6edfbb.css"
+    integrity="sha512-J1X9oYaPC/wYQ99RLnsLC&#43;xVolnbX4sT3DwPeJTlGfYXwrZvWRXsIH4qH/yLbRtT29jz3/iJIUDLXqzFCm7fuw==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.dc15078f1fe553ce354f85ec1bfce7ded8b4060d4124a49b19e31dd64345b8d8f03edbbb1b681748650181f9d81da9728ca10c2b9cb2ae7bf8983d4b669ba876.js"
+    integrity="sha512-3BUHjx/lU841T4XsG/zn3ti0Bg1BJKSbGeMd1kNFuNjwPtu7G2gXSGUBgfnYHalyjKEMK5yyrnv4mD1LZpuodg==" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/">
+  <meta property="og:site_name" content="某人的小博客">
+  <meta property="og:title" content="Unity实现体积光（GodRay）的三种方案">
+  <meta property="og:description" content="Unity中实现体积光效果的三种不同方案对比">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-24T00:00:00+00:00">
+    <meta property="article:tag" content="Unity">
+    <meta property="article:tag" content="Shader">
+    <meta property="article:tag" content="渲染">
+    <meta property="article:tag" content="光照">
+    <meta property="article:tag" content="算法">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unity实现体积光（GodRay）的三种方案">
+  <meta name="twitter:description" content="Unity中实现体积光效果的三种不同方案对比">
+
+    
+  
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "Unity实现体积光（GodRay）的三种方案",
+    "headline": "Unity实现体积光（GodRay）的三种方案",
+    "description": "Unity中实现体积光效果的三种不同方案对比",
+    "abstract": "体积光实现方案",
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/posts\/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88\/",
+    "author" : {
+      "@type": "Person",
+      "name": "AxonSin"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-01-24T00:00:00\u002b00:00",
+    "datePublished": "2025-01-24T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-01-24T00:00:00\u002b00:00",
+    
+    "keywords": ["Unity","Shader","渲染","光照","算法"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "103"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="AxonSin" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <link href="https://link-to-some-website.com/" rel="me" />
+  
+  
+  
+  
+  <link href="https://github.com/username" rel="me" />
+  
+  
+  
+  
+  <link href="https://steamcommunity.com/profiles/userid" rel="me" />
+  
+  
+  
+  
+  <link href="https://t.me/username" rel="me" />
+  
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+  
+  
+  
+  <meta name="theme-color"/>
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a
+      >
+    </div>
+    
+    
+      <div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
+    
+    
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">某人的小博客</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a
+  href="/posts/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    All Blog
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="/aboutme/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    关于我&hellip;
+  </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      All Blog
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/aboutme/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      关于我&hellip;
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+<script>
+    (function () {
+        var $mainmenu = $('.main-menu');
+        var path = window.location.pathname;
+        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+            $(e).children('p').addClass('active');
+        });
+    })();
+</script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+      
+      
+      
+      
+        
+ 
+  
+   
+  
+ 
+
+
+
+<div id="hero" class="h-[150px] md:h-[200px]"></div>
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/homepageIMAGE_hu_408646624986b124.PNG);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+
+
+<script type="text/javascript" src="/js/background-blur.min.4812321520cc2e4cd52bf9137015a55bb6c0b5e66a6b2c96b8654c0ec99be59e8e6425dd838a6fd9bac54000586f37f4a9680bbefaa2aee4601a69e188005cf6.js" integrity="sha512-SBIyFSDMLkzVK/kTcBWlW7bAteZqayyWuGVMDsmb5Z6OZCXdg4pv2brFQABYbzf0qWgLvvqiruRgGmnhiABc9g==" data-target-id="background-blur"></script>
+
+      
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Unity实现体积光（GodRay）的三种方案
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-24T00:00:00&#43;00:00">24 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>103 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E5%85%89%E7%85%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    光照
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%AE%97%E6%B3%95/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    算法
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div
+            class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky 
+              lg:top-10
+            
+            ">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#unity中实现体积光的三种方式"><strong>Unity中实现体积光的三种方式</strong></a></li>
+        <li><a href="#1-面片方法粒子特效方法"><strong>1. 面片方法/粒子特效方法</strong></a>
+          <ul>
+            <li><a href="#实现思路"><strong>实现思路：</strong></a></li>
+            <li><a href="#优点和缺点"><strong>优点和缺点</strong></a></li>
+            <li><a href="#适用场景"><strong>适用场景</strong></a></li>
+            <li><a href="#参考">参考</a></li>
+            <li><a href="#httpswwwyoutubecomwatchvkbsd6askicyt195s-using-particle-system"><a href="https://www.youtube.com/watch?v=kbsd6askiCY&amp;t=195s">https://www.youtube.com/watch?v=kbsd6askiCY&amp;t=195s</a> Using Particle System</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-屏幕空间方法光柱和场景的互动"><strong>2. 屏幕空间方法：光柱和场景的互动</strong></a>
+          <ul>
+            <li><a href="#实现思路-1"><strong>实现思路</strong></a></li>
+            <li><a href="#优点和缺点-1"><strong>优点和缺点</strong></a></li>
+            <li><a href="#适用场景-1"><strong>适用场景</strong></a></li>
+            <li><a href="#参考-1">参考</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-光线步进方法"><strong>3. 光线步进方法</strong></a>
+          <ul>
+            <li><a href="#实现思路-2"><strong>实现思路</strong></a></li>
+            <li><a href="#优点和缺点-2"><strong>优点和缺点</strong></a></li>
+            <li><a href="#适用场景-2"><strong>适用场景</strong></a></li>
+            <li><a href="#参考-2">参考</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#unity中实现体积光的三种方式"><strong>Unity中实现体积光的三种方式</strong></a></li>
+        <li><a href="#1-面片方法粒子特效方法"><strong>1. 面片方法/粒子特效方法</strong></a>
+          <ul>
+            <li><a href="#实现思路"><strong>实现思路：</strong></a></li>
+            <li><a href="#优点和缺点"><strong>优点和缺点</strong></a></li>
+            <li><a href="#适用场景"><strong>适用场景</strong></a></li>
+            <li><a href="#参考">参考</a></li>
+            <li><a href="#httpswwwyoutubecomwatchvkbsd6askicyt195s-using-particle-system"><a href="https://www.youtube.com/watch?v=kbsd6askiCY&amp;t=195s">https://www.youtube.com/watch?v=kbsd6askiCY&amp;t=195s</a> Using Particle System</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-屏幕空间方法光柱和场景的互动"><strong>2. 屏幕空间方法：光柱和场景的互动</strong></a>
+          <ul>
+            <li><a href="#实现思路-1"><strong>实现思路</strong></a></li>
+            <li><a href="#优点和缺点-1"><strong>优点和缺点</strong></a></li>
+            <li><a href="#适用场景-1"><strong>适用场景</strong></a></li>
+            <li><a href="#参考-1">参考</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-光线步进方法"><strong>3. 光线步进方法</strong></a>
+          <ul>
+            <li><a href="#实现思路-2"><strong>实现思路</strong></a></li>
+            <li><a href="#优点和缺点-2"><strong>优点和缺点</strong></a></li>
+            <li><a href="#适用场景-2"><strong>适用场景</strong></a></li>
+            <li><a href="#参考-2">参考</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h3 class="relative group"><strong>Unity中实现体积光的三种方式</strong> 
+    <div id="unity中实现体积光的三种方式" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#unity%e4%b8%ad%e5%ae%9e%e7%8e%b0%e4%bd%93%e7%a7%af%e5%85%89%e7%9a%84%e4%b8%89%e7%a7%8d%e6%96%b9%e5%bc%8f" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>体积光就是让光看起来“有体积”，像是穿过雾气的光柱，或者空气中漂浮着的尘埃被光线照亮的效果。它比普通的光照多了一种在空间中传播的感觉，让游戏画面更有氛围感。</p>
+<p>实现体积光的方式有很多，但总的来说可以分为三种：<strong>面片方法</strong>、<strong>屏幕空间方法</strong>和<strong>光线步进方法</strong>。这三种方法从简单到复杂各有优缺点。</p>
+<hr>
+
+<h3 class="relative group"><strong>1. 面片方法/粒子特效方法</strong> 
+    <div id="1-面片方法粒子特效方法" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e9%9d%a2%e7%89%87%e6%96%b9%e6%b3%95%e7%b2%92%e5%ad%90%e7%89%b9%e6%95%88%e6%96%b9%e6%b3%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>这里先讲面片的实现方法。面片方法很好理解，假设你拿着一根手电筒，手电筒打出了一束光柱。我们并不真的去模拟这些光线在空气中传播，而是直接在手电筒前面摆一个锥形的“透明罩子”，让它看上去像光柱一样。这个“罩子”就是一个模型（比如锥体或者圆柱体），通过材质的透明效果让它变得像一束光。</p>
+
+<h4 class="relative group"><strong>实现思路：</strong> 
+    <div id="实现思路" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9e%e7%8e%b0%e6%80%9d%e8%b7%af" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><strong>对于直接使用模型模拟的情况，可以创建一个几何体</strong>，比如锥体或者一个平面面片。把这个几何体放在光源位置，并让它的方向和光源的方向一致。给几何体加一个材质，材质可以通过渐变纹理让中央部分更亮，边缘更透明。为了更真实，可以再叠加一个噪声纹理，模拟空气中的尘埃。如果光源会动，比如手电筒或者舞台灯光，那么这个几何体也需要随着光源移动和旋转。</p>
+<p>还有一个方法比较Trick、就是利用<strong>Unity自带的粒子系统</strong>进行动态体积光的模拟,这个方法比上一个方法更加富有动态上的美感（但是需要配合Bloom效果，意味整个画面需要有所改变），适合作为一个附加项。</p>
+
+<h4 class="relative group"><strong>优点和缺点</strong> 
+    <div id="优点和缺点" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%98%e7%82%b9%e5%92%8c%e7%bc%ba%e7%82%b9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>简单，一个几何体加一个材质/使用粒子就能搞定。</li>
+<li>性能开销很小，因为是基于物体的材质或者是引擎自带的粒子系统，非常适合性能敏感的场景，比如移动端游戏。</li>
+<li>艺术表现力强，通过调整材质的渐变、纹理、透明度等参数，可以轻松制作出各种风格的光柱效果。</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>真实感有限，因为它只是一个几何体，并没有模拟光线与空气的真实交互。</li>
+<li>遮挡问题比较明显。如果光柱穿过了场景中的墙壁或者其他物体，它不会被正确遮挡，看起来就很假。</li>
+<li>靠近光柱时可能看起来很平面，缺乏立体感。</li>
+</ul>
+
+<h4 class="relative group"><strong>适用场景</strong> 
+    <div id="适用场景" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%82%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>面片方法特别适合那些对真实感要求不高的场景，比如舞台灯光、探照灯、或者卡通渲染风格的游戏。如果你的项目对性能要求比较高，这种方法并不是最优选择。</p>
+
+<h4 class="relative group">参考 
+    <div id="参考" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8f%82%e8%80%83" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+
+<h4 class="relative group"><a
+  href="https://www.youtube.com/watch?v=kbsd6askiCY&amp;t=195s"
+    target="_blank"
+  >https://www.youtube.com/watch?v=kbsd6askiCY&amp;t=195s</a>
+ Using Particle System 
+    <div id="httpswwwyoutubecomwatchvkbsd6askicyt195s-using-particle-system" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#httpswwwyoutubecomwatchvkbsd6askicyt195s-using-particle-system" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+
+<h3 class="relative group"><strong>2. 屏幕空间方法：光柱和场景的互动</strong> 
+    <div id="2-屏幕空间方法光柱和场景的互动" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%b1%8f%e5%b9%95%e7%a9%ba%e9%97%b4%e6%96%b9%e6%b3%95%e5%85%89%e6%9f%b1%e5%92%8c%e5%9c%ba%e6%99%af%e7%9a%84%e4%ba%92%e5%8a%a8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>面片方法的问题在于，它不会考虑光柱和场景中的物体之间的遮挡关系。而屏幕空间方法解决了这个问题。它的核心思想是：我们不在三维空间中画光，而是在屏幕上“画光”。可以理解为，我们直接在屏幕上计算光柱的效果，而不是在场景中放一个几何体。</p>
+
+<h4 class="relative group"><strong>实现思路</strong> 
+    <div id="实现思路-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9e%e7%8e%b0%e6%80%9d%e8%b7%af-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>首先，把光源的位置投影到屏幕上，<strong>确定光柱在屏幕上的范围</strong>。从光源的屏幕位置出发，向外扩散光线。沿着这些光线的方向，我们对屏幕上的像素进行采样。<strong>通过深度缓冲（Depth Buffer），判断光线是否被遮挡</strong>。比如，如果光柱前面有一堵墙，通过深度值可以知道光柱应该被遮挡。计算完光柱的强度和遮挡效果后，把它作为一个后处理效果叠加到最终画面上。</p>
+
+<h4 class="relative group"><strong>优点和缺点</strong> 
+    <div id="优点和缺点-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%98%e7%82%b9%e5%92%8c%e7%bc%ba%e7%82%b9-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>动态遮挡效果逼真。比如光柱被墙挡住后，遮挡关系是自动处理的，真实感更好。</li>
+<li>可以处理多个光源的体积光效果，比如汽车大灯或者手电筒光柱。</li>
+<li>性能开销可以调节，比如可以减少采样点来提升性能。</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>它只能处理屏幕上看得见的部分，屏幕外的光柱是无法计算。也就是说如果不出现在屏幕空间则没有体积光。</li>
+<li>效果和分辨率密切相关，分辨率越高，计算量越大。</li>
+<li>遮挡的精度受限于深度缓冲，如果场景比较复杂，可能会有一些不准确的地方。</li>
+</ul>
+
+<h4 class="relative group"><strong>适用场景</strong> 
+    <div id="适用场景-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%82%e7%94%a8%e5%9c%ba%e6%99%af-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>屏幕空间方法特别适合那些需要动态光柱效果的场景，比如手电筒、汽车大灯，或者光线穿过窗户洒进房间的画面。它对硬件的要求不算太高，适用于中高端设备。</p>
+
+<h4 class="relative group">参考 
+    <div id="参考-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8f%82%e8%80%83-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><a
+  href="https://www.youtube.com/watch?v=vnBfbZeV928"
+    target="_blank"
+  >https://www.youtube.com/watch?v=vnBfbZeV928</a>
+</p>
+
+<h3 class="relative group"><strong>3. 光线步进方法</strong> 
+    <div id="3-光线步进方法" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e5%85%89%e7%ba%bf%e6%ad%a5%e8%bf%9b%e6%96%b9%e6%b3%95" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>上面两种方法都是“假的”体积光，而光线步进方法则是“真的”体积光。它直接在三维空间中模拟了光线在空气、雾气、烟尘中的传播过程。简单来说，它会从摄像机出发，沿着每一条视线（即屏幕上的每个像素）不断采样，计算光线在这些点上的散射和吸收。</p>
+
+<h4 class="relative group"><strong>实现思路</strong> 
+    <div id="实现思路-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9e%e7%8e%b0%e6%80%9d%e8%b7%af-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>从摄像机出发，沿视线方向，对每条光线进行步进采样（类似于光线追踪）。</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/e3561098_hu_5b9fd859bcb0a2b4.png  330w,
+      /posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/e3561098_hu_3d3bf7a50aa99394.png  660w,
+      /posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/e3561098_hu_e52bcb90d229f839.png 1280w
+    "
+    data-zoom-src="/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/e3561098.png"
+    src="/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/e3561098.png">
+
+  
+</figure>
+</p>
+<p>每个采样点都会计算光线的强度变化，比如步进一步之后光线在传播中因为散射而变弱，使用数组对当前光线进行记录。</p>
+<p>如果采样点被光源照亮，还要计算光线的直接照明效果。</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/f505edc0_hu_6b84b0c57a31e406.png  330w,
+      /posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/f505edc0_hu_64cb5f7e2bd98d4.png  660w,
+      /posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/f505edc0_hu_f60dee2778510f95.png 1280w
+    "
+    data-zoom-src="/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/f505edc0.png"
+    src="/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/f505edc0.png">
+
+  
+</figure>
+</p>
+<p>把所有采样点的结果累加起来，得到当前像素的体积光效果。</p>
+<p>最后，把体积光效果和场景颜色合成，生成最终画面。</p>
+
+<h4 class="relative group"><strong>优点和缺点</strong> 
+    <div id="优点和缺点-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%98%e7%82%b9%e5%92%8c%e7%bc%ba%e7%82%b9-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>真实感爆表！它可以精确模拟光线在体积介质中的散射、吸收和遮挡。</li>
+<li>支持动态雾气、烟尘等复杂效果，比如爆炸后的烟雾中透出的一束光。</li>
+<li>灵活性极高，可以表现各种复杂的光照效果。</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>计算量巨大，<strong>每条光线都需要多次采样（比如说你的步长）</strong>，对性能要求非常高。</li>
+<li>实现难度较大，需要对体积渲染和光照模型有深入理解。</li>
+<li>对硬件要求高，通常只适合高端设备和次世代游戏。</li>
+</ul>
+
+<h4 class="relative group"><strong>适用场景</strong> 
+    <div id="适用场景-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%82%e7%94%a8%e5%9c%ba%e6%99%af-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>光线步进方法是高质量渲染的终极选择，适合那些需要表现复杂雾气、烟尘或者动态光线传播的场景，比如次世代游戏、电影级别的渲染效果。如果你追求极致的真实感，并且硬件性能允许，那这就是你的最佳选择。</p>
+<table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>优点</th>
+          <th>缺点</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>面片方法</td>
+          <td>简单高效，性能占用低</td>
+          <td>真实感不足，无法处理遮挡</td>
+          <td>卡通风格、移动端游戏</td>
+      </tr>
+      <tr>
+          <td>屏幕空间方法</td>
+          <td>动态效果好，可处理遮挡</td>
+          <td>受屏幕限制，分辨率依赖</td>
+          <td>手电筒、大灯等动态光柱</td>
+      </tr>
+      <tr>
+          <td>光线步进方法</td>
+          <td>真实感最高，支持复杂动态光线传播</td>
+          <td>性能开销大，硬件要求高</td>
+          <td>次世代游戏、电影级别渲染</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p>总的来说，如果性能要求高，可以选择面片方法。如果需要动态效果并且硬件性能允许，屏幕空间方法会是一个很好的平衡。而如果你追求极致的真实感，那就选择光线步进方法。</p>
+
+<h4 class="relative group">参考 
+    <div id="参考-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8f%82%e8%80%83-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><a
+  href="https://www.youtube.com/watch?v=0G8CVQZhMXw&amp;t=199s"
+    target="_blank"
+  >https://www.youtube.com/watch?v=0G8CVQZhMXw&amp;t=199s</a>
+  这采用了houdini生成3D纹理并使用Shadergraph实现Raymarching的效果</p>
+<p><a
+  href="https://www.youtube.com/watch?v=hXYOlXVRRL8&amp;t=570s"
+    target="_blank"
+  >https://www.youtube.com/watch?v=hXYOlXVRRL8&amp;t=570s</a>
+  上面的省流版</p>
+
+          
+          
+          
+        </div>
+
+        
+
+          
+            
+            
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4"
+        width="96"
+        height="96"
+        alt="AxonSin"
+        src="/img/blowfish_logo_hu_e74a130226122ae3.png">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        AxonSin
+      </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:hello@your_domain.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://link-to-some-website.com/"
+          target="_blank"
+          aria-label="Link"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/username"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://steamcommunity.com/profiles/userid"
+          target="_blank"
+          aria-label="Steam"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111.2 248-248.4 248-113.8 0-209.6-76.3-239-180.4l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://t.me/username"
+          target="_blank"
+          aria-label="Telegram"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+          
+
+          
+
+          
+            <div class="mb-10"></div>
+          
+
+        
+
+        
+
+        
+
+        
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+  <a href="/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/">反射算法</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-09T00:00:00&#43;00:00">9 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>18 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/blender/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Blender
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%AE%97%E6%B3%95/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    算法
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          Blender导入Unity指南
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+        
+
+  <a href="/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/">无厚度_低厚度的zfighting问题</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-06T00:00:00&#43;00:00">6 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>250 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/blender/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Blender
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%9D%90%E8%B4%A8/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    材质
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E5%85%89%E7%85%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    光照
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%89%A9%E7%90%86/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    物理
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E8%89%B2%E5%BD%A9/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    色彩
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    故障排除
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%95%99%E7%A8%8B/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    教程
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%8A%80%E5%B7%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    技巧
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          Blender导入Unity指南
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+        
+
+  <a href="/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/">自定义效果的大杀器——RenderFeature</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2024-12-14T00:00:00&#43;00:00">14 December 2024</time><span class="px-2 text-primary-500">&middot;</span><span>863 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%9D%90%E8%B4%A8/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    材质
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E5%85%89%E7%85%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    光照
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E8%89%B2%E5%BD%A9/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    色彩
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    故障排除
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E9%85%8D%E7%BD%AE/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    配置
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          问题解决方案
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+    </section>
+  
+
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
+          integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
+          data-oid="views_posts\Unity实现体积光（GodRay）的三种方案\index.md"
+          data-oid-likes="likes_posts\Unity实现体积光（GodRay）的三种方案\index.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >色彩空间</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-01-23T00:00:00&#43;00:00">23 January 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/blender%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%94%A8%E5%99%AA%E5%A3%B0%E6%B6%88%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BA%B9%E7%90%86/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Blender小技巧：用噪声消除重复纹理</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-01-26T00:00:00&#43;00:00">26 January 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+        <ul class="flex flex-col list-none sm:flex-row">
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/tags/"
+                title="Tags">
+                
+                Tags
+              </a>
+            </li>
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/categories/"
+                title="Categories">
+                
+                Categories
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          AxonSin
+      </p>
+    
+
+    
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

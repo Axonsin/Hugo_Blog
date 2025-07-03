@@ -1,0 +1,2617 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Unity的旋转、缩放、移动矩阵 &middot; 某人的小博客</title>
+  <meta name="title" content="Unity的旋转、缩放、移动矩阵 &middot; 某人的小博客" />
+  
+  <meta name="description" content="算法原理解析" />
+  <meta name="keywords" content="Unity, 算法, " />
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.2755fda1868f0bfc1843df512e7b0b0bec55a259db5f8b13dc3c0f7894e519f617c2b66f5915ec207e2a1ffc8b6d1b53dbd8f3dff8892140cb5eacc50a6edfbb.css"
+    integrity="sha512-J1X9oYaPC/wYQ99RLnsLC&#43;xVolnbX4sT3DwPeJTlGfYXwrZvWRXsIH4qH/yLbRtT29jz3/iJIUDLXqzFCm7fuw==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.dc15078f1fe553ce354f85ec1bfce7ded8b4060d4124a49b19e31dd64345b8d8f03edbbb1b681748650181f9d81da9728ca10c2b9cb2ae7bf8983d4b669ba876.js"
+    integrity="sha512-3BUHjx/lU841T4XsG/zn3ti0Bg1BJKSbGeMd1kNFuNjwPtu7G2gXSGUBgfnYHalyjKEMK5yyrnv4mD1LZpuodg==" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/">
+  <meta property="og:site_name" content="某人的小博客">
+  <meta property="og:title" content="Unity的旋转、缩放、移动矩阵">
+  <meta property="og:description" content="Unity的旋转、缩放、移动矩阵的原理解析和实现方法">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-17T00:00:00+00:00">
+    <meta property="article:tag" content="Unity">
+    <meta property="article:tag" content="算法">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Unity的旋转、缩放、移动矩阵">
+  <meta name="twitter:description" content="Unity的旋转、缩放、移动矩阵的原理解析和实现方法">
+
+    
+  
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "Unity的旋转、缩放、移动矩阵",
+    "headline": "Unity的旋转、缩放、移动矩阵",
+    "description": "Unity的旋转、缩放、移动矩阵的原理解析和实现方法",
+    "abstract": "算法原理解析",
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/posts\/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5\/",
+    "author" : {
+      "@type": "Person",
+      "name": "AxonSin"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-06-17T00:00:00\u002b00:00",
+    "datePublished": "2025-06-17T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-06-17T00:00:00\u002b00:00",
+    
+    "keywords": ["Unity","算法"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "565"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="AxonSin" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <link href="https://link-to-some-website.com/" rel="me" />
+  
+  
+  
+  
+  <link href="https://github.com/username" rel="me" />
+  
+  
+  
+  
+  <link href="https://steamcommunity.com/profiles/userid" rel="me" />
+  
+  
+  
+  
+  <link href="https://t.me/username" rel="me" />
+  
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+  
+  
+  
+  <meta name="theme-color"/>
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a
+      >
+    </div>
+    
+    
+      <div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
+    
+    
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">某人的小博客</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a
+  href="/posts/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    All Blog
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="/aboutme/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    关于我&hellip;
+  </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      All Blog
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/aboutme/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      关于我&hellip;
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+<script>
+    (function () {
+        var $mainmenu = $('.main-menu');
+        var path = window.location.pathname;
+        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+            $(e).children('p').addClass('active');
+        });
+    })();
+</script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+      
+      
+      
+      
+        
+ 
+  
+   
+  
+ 
+
+
+
+<div id="hero" class="h-[150px] md:h-[200px]"></div>
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/homepageIMAGE_hu_408646624986b124.PNG);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+
+
+<script type="text/javascript" src="/js/background-blur.min.4812321520cc2e4cd52bf9137015a55bb6c0b5e66a6b2c96b8654c0ec99be59e8e6425dd838a6fd9bac54000586f37f4a9680bbefaa2aee4601a69e188005cf6.js" integrity="sha512-SBIyFSDMLkzVK/kTcBWlW7bAteZqayyWuGVMDsmb5Z6OZCXdg4pv2brFQABYbzf0qWgLvvqiruRgGmnhiABc9g==" data-target-id="background-blur"></script>
+
+      
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Unity的旋转、缩放、移动矩阵
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-06-17T00:00:00&#43;00:00">17 June 2025</time><span class="px-2 text-primary-500">&middot;</span><span>565 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%AE%97%E6%B3%95/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    算法
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div
+            class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky 
+              lg:top-10
+            
+            ">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-平移translation矩阵"><strong>1. 平移（Translation）矩阵</strong></a>
+          <ul>
+            <li><a href="#作用"><strong>作用</strong>：</a></li>
+            <li><a href="#矩阵结构"><strong>矩阵结构</strong>：</a></li>
+            <li><a href="#关键点"><strong>关键点</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-旋转rotation矩阵"><strong>2. 旋转（Rotation）矩阵</strong></a>
+          <ul>
+            <li><a href="#作用-1"><strong>作用</strong>：</a></li>
+            <li><a href="#矩阵结构-1"><strong>矩阵结构</strong>：</a></li>
+            <li><a href="#绕x轴旋转θ角"><strong>绕X轴旋转（θ角）</strong>：</a></li>
+            <li><a href="#绕y轴旋转θ角"><strong>绕Y轴旋转（θ角）</strong>：</a></li>
+            <li><a href="#绕z轴旋转θ角"><strong>绕Z轴旋转（θ角）</strong>：</a></li>
+            <li><a href="#关键点-1"><strong>关键点</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-缩放scaling矩阵"><strong>3. 缩放（Scaling）矩阵</strong></a>
+          <ul>
+            <li><a href="#作用-2"><strong>作用</strong>：</a></li>
+            <li><a href="#矩阵结构-2"><strong>矩阵结构</strong>：</a></li>
+            <li><a href="#关键点-2"><strong>关键点</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-齐次坐标homogeneous-coordinates"><strong>4. 齐次坐标（Homogeneous Coordinates）</strong></a>
+          <ul>
+            <li><a href="#作用-3"><strong>作用</strong>：</a></li>
+            <li><a href="#结构"><strong>结构</strong>：</a></li>
+            <li><a href="#关键点-3"><strong>关键点</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-复合变换combined-transform"><strong>5. 复合变换（Combined Transform）</strong></a>
+          <ul>
+            <li><a href="#矩阵结构-3"><strong>矩阵结构</strong>：</a></li>
+            <li><a href="#unity中的实现"><strong>Unity中的实现</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-典型应用示例"><strong>6. 典型应用示例</strong></a>
+          <ul>
+            <li><a href="#1-移动物体"><strong>(1) 移动物体</strong>：</a></li>
+            <li><a href="#2-旋转物体"><strong>(2) 旋转物体</strong>：</a></li>
+            <li><a href="#3-缩放物体"><strong>(3) 缩放物体</strong>：</a></li>
+            <li><a href="#4-复合变换"><strong>(4) 复合变换</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#7-注意事项"><strong>7. 注意事项</strong></a></li>
+        <li><a href="#总结"><strong>总结</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-变换顺序的核心原因矩阵乘法的非交换性"><strong>1. 变换顺序的核心原因：矩阵乘法的非交换性</strong></a></li>
+        <li><a href="#2-顺序分解缩放--旋转--平移"><strong>2. 顺序分解：缩放 → 旋转 → 平移</strong></a>
+          <ul>
+            <li><a href="#1-先缩放scale"><strong>(1) 先缩放（Scale）</strong></a></li>
+            <li><a href="#2-再旋转rotation"><strong>(2) 再旋转（Rotation）</strong></a></li>
+            <li><a href="#3-最后平移translation"><strong>(3) 最后平移（Translation）</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#3-顺序错误的后果"><strong>3. 顺序错误的后果</strong></a>
+          <ul>
+            <li><a href="#1-先平移再缩放"><strong>(1) 先平移再缩放</strong></a></li>
+            <li><a href="#2-先旋转再缩放"><strong>(2) 先旋转再缩放</strong></a></li>
+            <li><a href="#3-先平移再旋转"><strong>(3) 先平移再旋转</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#4-为什么unity和其他引擎遵循此顺序"><strong>4. 为什么Unity和其他引擎遵循此顺序？</strong></a>
+          <ul>
+            <li><a href="#1-符合数学定义"><strong>(1) 符合数学定义</strong></a></li>
+            <li><a href="#2-父子对象的层级关系"><strong>(2) 父子对象的层级关系</strong></a></li>
+            <li><a href="#3-避免几何错误"><strong>(3) 避免几何错误</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#5-实际应用中的验证"><strong>5. 实际应用中的验证</strong></a>
+          <ul>
+            <li><a href="#1-场景中的立方体"><strong>(1) 场景中的立方体</strong></a></li>
+            <li><a href="#2-unity代码示例"><strong>(2) Unity代码示例</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#6-总结"><strong>6. 总结</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-平移translation矩阵"><strong>1. 平移（Translation）矩阵</strong></a>
+          <ul>
+            <li><a href="#作用"><strong>作用</strong>：</a></li>
+            <li><a href="#矩阵结构"><strong>矩阵结构</strong>：</a></li>
+            <li><a href="#关键点"><strong>关键点</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-旋转rotation矩阵"><strong>2. 旋转（Rotation）矩阵</strong></a>
+          <ul>
+            <li><a href="#作用-1"><strong>作用</strong>：</a></li>
+            <li><a href="#矩阵结构-1"><strong>矩阵结构</strong>：</a></li>
+            <li><a href="#绕x轴旋转θ角"><strong>绕X轴旋转（θ角）</strong>：</a></li>
+            <li><a href="#绕y轴旋转θ角"><strong>绕Y轴旋转（θ角）</strong>：</a></li>
+            <li><a href="#绕z轴旋转θ角"><strong>绕Z轴旋转（θ角）</strong>：</a></li>
+            <li><a href="#关键点-1"><strong>关键点</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-缩放scaling矩阵"><strong>3. 缩放（Scaling）矩阵</strong></a>
+          <ul>
+            <li><a href="#作用-2"><strong>作用</strong>：</a></li>
+            <li><a href="#矩阵结构-2"><strong>矩阵结构</strong>：</a></li>
+            <li><a href="#关键点-2"><strong>关键点</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-齐次坐标homogeneous-coordinates"><strong>4. 齐次坐标（Homogeneous Coordinates）</strong></a>
+          <ul>
+            <li><a href="#作用-3"><strong>作用</strong>：</a></li>
+            <li><a href="#结构"><strong>结构</strong>：</a></li>
+            <li><a href="#关键点-3"><strong>关键点</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#5-复合变换combined-transform"><strong>5. 复合变换（Combined Transform）</strong></a>
+          <ul>
+            <li><a href="#矩阵结构-3"><strong>矩阵结构</strong>：</a></li>
+            <li><a href="#unity中的实现"><strong>Unity中的实现</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-典型应用示例"><strong>6. 典型应用示例</strong></a>
+          <ul>
+            <li><a href="#1-移动物体"><strong>(1) 移动物体</strong>：</a></li>
+            <li><a href="#2-旋转物体"><strong>(2) 旋转物体</strong>：</a></li>
+            <li><a href="#3-缩放物体"><strong>(3) 缩放物体</strong>：</a></li>
+            <li><a href="#4-复合变换"><strong>(4) 复合变换</strong>：</a></li>
+          </ul>
+        </li>
+        <li><a href="#7-注意事项"><strong>7. 注意事项</strong></a></li>
+        <li><a href="#总结"><strong>总结</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-变换顺序的核心原因矩阵乘法的非交换性"><strong>1. 变换顺序的核心原因：矩阵乘法的非交换性</strong></a></li>
+        <li><a href="#2-顺序分解缩放--旋转--平移"><strong>2. 顺序分解：缩放 → 旋转 → 平移</strong></a>
+          <ul>
+            <li><a href="#1-先缩放scale"><strong>(1) 先缩放（Scale）</strong></a></li>
+            <li><a href="#2-再旋转rotation"><strong>(2) 再旋转（Rotation）</strong></a></li>
+            <li><a href="#3-最后平移translation"><strong>(3) 最后平移（Translation）</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#3-顺序错误的后果"><strong>3. 顺序错误的后果</strong></a>
+          <ul>
+            <li><a href="#1-先平移再缩放"><strong>(1) 先平移再缩放</strong></a></li>
+            <li><a href="#2-先旋转再缩放"><strong>(2) 先旋转再缩放</strong></a></li>
+            <li><a href="#3-先平移再旋转"><strong>(3) 先平移再旋转</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#4-为什么unity和其他引擎遵循此顺序"><strong>4. 为什么Unity和其他引擎遵循此顺序？</strong></a>
+          <ul>
+            <li><a href="#1-符合数学定义"><strong>(1) 符合数学定义</strong></a></li>
+            <li><a href="#2-父子对象的层级关系"><strong>(2) 父子对象的层级关系</strong></a></li>
+            <li><a href="#3-避免几何错误"><strong>(3) 避免几何错误</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#5-实际应用中的验证"><strong>5. 实际应用中的验证</strong></a>
+          <ul>
+            <li><a href="#1-场景中的立方体"><strong>(1) 场景中的立方体</strong></a></li>
+            <li><a href="#2-unity代码示例"><strong>(2) Unity代码示例</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#6-总结"><strong>6. 总结</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          <p>在Unity中，<strong>移动（平移）、旋转、缩放</strong>的矩阵变换是通过<strong>4×4的齐次坐标矩阵</strong>实现的，这些矩阵共同构成了物体在3D空间中的变换。以下是每个部分的详细解释及其作用：</p>
+<hr>
+
+<h3 class="relative group"><strong>1. 平移（Translation）矩阵</strong> 
+    <div id="1-平移translation矩阵" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%b9%b3%e7%a7%bbtranslation%e7%9f%a9%e9%98%b5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group"><strong>作用</strong>： 
+    <div id="作用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bd%9c%e7%94%a8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>移动物体</strong>：将物体在空间中沿X、Y、Z轴方向平移，改变物体的位置。</li>
+</ul>
+
+<h4 class="relative group"><strong>矩阵结构</strong>： 
+    <div id="矩阵结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9f%a9%e9%98%b5%e7%bb%93%e6%9e%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="p">|</span> <span class="m">1</span>   <span class="m">0</span>   <span class="m">0</span>   <span class="n">tx</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>   <span class="m">1</span>   <span class="m">0</span>   <span class="n">ty</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>   <span class="m">0</span>   <span class="m">1</span>   <span class="n">tz</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>   <span class="m">0</span>   <span class="m">0</span>   <span class="m">1</span>  <span class="p">|</span>
+</span></span></code></pre></div><ul>
+<li><strong>参数</strong>：<code>tx</code>, <code>ty</code>, <code>tz</code> 是沿X、Y、Z轴的位移量。</li>
+<li><strong>位置</strong>：平移向量位于矩阵的<strong>第四列</strong>（前三行最后一列）。</li>
+</ul>
+
+<h4 class="relative group"><strong>关键点</strong>： 
+    <div id="关键点" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e7%82%b9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>仅对点有效</strong>：平移仅对具有位置的点（<code>w=1</code>）生效，对方向向量（<code>w=0</code>）无效。</li>
+<li><strong>变换顺序</strong>：平移通常在旋转和缩放之后应用（如复合变换<code>M = T * R * S</code>）。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>2. 旋转（Rotation）矩阵</strong> 
+    <div id="2-旋转rotation矩阵" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%97%8b%e8%bd%acrotation%e7%9f%a9%e9%98%b5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group"><strong>作用</strong>： 
+    <div id="作用-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bd%9c%e7%94%a8-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>改变物体方向</strong>：绕X、Y、Z轴旋转，保持物体形状不变。</li>
+</ul>
+
+<h4 class="relative group"><strong>矩阵结构</strong>： 
+    <div id="矩阵结构-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9f%a9%e9%98%b5%e7%bb%93%e6%9e%84-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>旋转矩阵是<strong>3×3的正交矩阵</strong>，位于齐次矩阵的左上角（前3行前3列）。具体形式取决于旋转轴：</p>
+
+<h4 class="relative group"><strong>绕X轴旋转（θ角）</strong>： 
+    <div id="绕x轴旋转θ角" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bb%95x%e8%bd%b4%e6%97%8b%e8%bd%ac%ce%b8%e8%a7%92" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="p">|</span> <span class="m">1</span>      <span class="m">0</span>        <span class="m">0</span>      <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>  <span class="n">cosθ</span>   <span class="p">-</span><span class="n">sinθ</span>   <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>  <span class="n">sinθ</span>    <span class="n">cosθ</span>   <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>      <span class="m">0</span>        <span class="m">0</span>      <span class="m">1</span> <span class="p">|</span>
+</span></span></code></pre></div>
+<h4 class="relative group"><strong>绕Y轴旋转（θ角）</strong>： 
+    <div id="绕y轴旋转θ角" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bb%95y%e8%bd%b4%e6%97%8b%e8%bd%ac%ce%b8%e8%a7%92" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="p">|</span> <span class="n">cosθ</span>   <span class="m">0</span>   <span class="n">sinθ</span>   <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>      <span class="m">1</span>    <span class="m">0</span>     <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="p">-</span><span class="n">sinθ</span>  <span class="m">0</span>   <span class="n">cosθ</span>   <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>      <span class="m">0</span>    <span class="m">0</span>     <span class="m">1</span> <span class="p">|</span>
+</span></span></code></pre></div>
+<h4 class="relative group"><strong>绕Z轴旋转（θ角）</strong>： 
+    <div id="绕z轴旋转θ角" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bb%95z%e8%bd%b4%e6%97%8b%e8%bd%ac%ce%b8%e8%a7%92" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="p">|</span> <span class="n">cosθ</span>  <span class="p">-</span><span class="n">sinθ</span>   <span class="m">0</span>   <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="n">sinθ</span>   <span class="n">cosθ</span>   <span class="m">0</span>   <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>       <span class="m">0</span>     <span class="m">1</span>   <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>       <span class="m">0</span>     <span class="m">0</span>   <span class="m">1</span> <span class="p">|</span>
+</span></span></code></pre></div>
+<h4 class="relative group"><strong>关键点</strong>： 
+    <div id="关键点-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e7%82%b9-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>正交性</strong>：旋转矩阵的行/列向量是单位向量且彼此正交（确保不扭曲形状）。</li>
+<li><strong>组合旋转</strong>：多个旋转可通过矩阵相乘组合（如欧拉角<code>Rx * Ry * Rz</code>）。</li>
+<li><strong>Unity中的实现</strong>：Unity使用四元数（Quaternion）简化旋转操作，但底层仍通过矩阵计算。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>3. 缩放（Scaling）矩阵</strong> 
+    <div id="3-缩放scaling矩阵" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e7%bc%a9%e6%94%bescaling%e7%9f%a9%e9%98%b5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group"><strong>作用</strong>： 
+    <div id="作用-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bd%9c%e7%94%a8-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>改变物体尺寸</strong>：沿X、Y、Z轴缩放，控制物体的大小。</li>
+</ul>
+
+<h4 class="relative group"><strong>矩阵结构</strong>： 
+    <div id="矩阵结构-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9f%a9%e9%98%b5%e7%bb%93%e6%9e%84-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="p">|</span> <span class="n">sx</span>   <span class="m">0</span>    <span class="m">0</span>    <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>   <span class="n">sy</span>    <span class="m">0</span>    <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>    <span class="m">0</span>   <span class="n">sz</span>    <span class="m">0</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>    <span class="m">0</span>    <span class="m">0</span>    <span class="m">1</span> <span class="p">|</span>
+</span></span></code></pre></div><ul>
+<li><strong>参数</strong>：<code>sx</code>, <code>sy</code>, <code>sz</code> 是沿X、Y、Z轴的缩放因子。</li>
+<li><strong>位置</strong>：缩放因子位于矩阵的<strong>主对角线</strong>（左上3×3子矩阵的对角线）。</li>
+</ul>
+
+<h4 class="relative group"><strong>关键点</strong>： 
+    <div id="关键点-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e7%82%b9-2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>均匀/非均匀缩放</strong>：
+<ul>
+<li><strong>均匀缩放</strong>（<code>sx = sy = sz</code>）：保持物体形状比例。</li>
+<li><strong>非均匀缩放</strong>（如<code>sx ≠ sy</code>）：可能导致物体变形（如拉伸）。</li>
+</ul>
+</li>
+<li><strong>对旋转的影响</strong>：非均匀缩放会改变旋转轴的方向，需谨慎使用。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>4. 齐次坐标（Homogeneous Coordinates）</strong> 
+    <div id="4-齐次坐标homogeneous-coordinates" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e9%bd%90%e6%ac%a1%e5%9d%90%e6%a0%87homogeneous-coordinates" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group"><strong>作用</strong>： 
+    <div id="作用-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bd%9c%e7%94%a8-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>统一表示变换</strong>：通过添加<code>w</code>分量，将平移、旋转、缩放统一为矩阵乘法。</li>
+</ul>
+
+<h4 class="relative group"><strong>结构</strong>： 
+    <div id="结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%bb%93%e6%9e%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>齐次坐标将3D点<code>(x, y, z)</code>扩展为<code>(x, y, z, 1)</code>，向量扩展为<code>(x, y, z, 0)</code>：</p>
+<ul>
+<li><strong>点（</strong><code>w=1</code><strong>）</strong>：参与平移和线性变换。</li>
+<li><strong>向量（</strong><code>w=0</code><strong>）</strong>：仅参与旋转和缩放（无平移）。</li>
+</ul>
+
+<h4 class="relative group"><strong>关键点</strong>： 
+    <div id="关键点-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%b3%e9%94%ae%e7%82%b9-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>矩阵乘法兼容性</strong>：齐次坐标允许将平移、旋转、缩放组合成单个4×4矩阵。</li>
+<li><strong>Unity中的应用</strong>：所有变换矩阵（如<code>Model</code>、<code>View</code>、<code>Projection</code>）均基于齐次坐标。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>5. 复合变换（Combined Transform）</strong> 
+    <div id="5-复合变换combined-transform" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e5%a4%8d%e5%90%88%e5%8f%98%e6%8d%a2combined-transform" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>在Unity中，物体的变换通常通过<strong>缩放→旋转→平移</strong>的顺序组合：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">M_{\text{复合}} = T \times R \times S
+</span></span></code></pre></div>
+<h4 class="relative group"><strong>矩阵结构</strong>： 
+    <div id="矩阵结构-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9f%a9%e9%98%b5%e7%bb%93%e6%9e%84-3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="p">|</span> <span class="n">Rx</span><span class="p">*</span><span class="n">x</span>  <span class="n">Ry</span><span class="p">*</span><span class="n">x</span>  <span class="n">Rz</span><span class="p">*</span><span class="n">x</span>  <span class="n">tx</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="n">Rx</span><span class="p">*</span><span class="n">y</span>  <span class="n">Ry</span><span class="p">*</span><span class="n">y</span>  <span class="n">Rz</span><span class="p">*</span><span class="n">y</span>  <span class="n">ty</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="n">Rx</span><span class="p">*</span><span class="n">z</span>  <span class="n">Ry</span><span class="p">*</span><span class="n">z</span>  <span class="n">Rz</span><span class="p">*</span><span class="n">z</span>  <span class="n">tz</span> <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> <span class="m">0</span>     <span class="m">0</span>     <span class="m">0</span>     <span class="m">1</span>  <span class="p">|</span>
+</span></span></code></pre></div><ul>
+<li><strong>左上3×3</strong>：旋转后的缩放矩阵（<code>R × S</code>）。</li>
+<li><strong>第四列</strong>：平移向量<code>T</code>。</li>
+<li><strong>最后一行</strong>：始终为<code>(0, 0, 0, 1)</code>。</li>
+</ul>
+
+<h4 class="relative group"><strong>Unity中的实现</strong>： 
+    <div id="unity中的实现" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#unity%e4%b8%ad%e7%9a%84%e5%ae%9e%e7%8e%b0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>Transform组件</strong>：封装了位置（Position）、旋转（Rotation）、缩放（Scale），底层通过矩阵运算实现。</li>
+<li><strong>Matrix4x4类</strong>：直接操作矩阵（如<code>Matrix4x4.TRS</code>生成复合矩阵）。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>6. 典型应用示例</strong> 
+    <div id="6-典型应用示例" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e5%85%b8%e5%9e%8b%e5%ba%94%e7%94%a8%e7%a4%ba%e4%be%8b" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group"><strong>(1) 移动物体</strong>： 
+    <div id="1-移动物体" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e7%a7%bb%e5%8a%a8%e7%89%a9%e4%bd%93" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 生成平移矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="n">Matrix4x4</span> <span class="n">translation</span> <span class="p">=</span> <span class="n">Matrix4x4</span><span class="p">.</span><span class="n">Translate</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="n">Vector3</span> <span class="n">point</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">Vector3</span> <span class="n">translatedPoint</span> <span class="p">=</span> <span class="n">translation</span><span class="p">.</span><span class="n">MultiplyPoint</span><span class="p">(</span><span class="n">point</span><span class="p">);</span> <span class="c1">// 结果(6,2,3)</span>
+</span></span></code></pre></div>
+<h4 class="relative group"><strong>(2) 旋转物体</strong>： 
+    <div id="2-旋转物体" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%97%8b%e8%bd%ac%e7%89%a9%e4%bd%93" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 绕Y轴旋转90度</span>
+</span></span><span class="line"><span class="cl"><span class="n">Matrix4x4</span> <span class="n">rotation</span> <span class="p">=</span> <span class="n">Matrix4x4</span><span class="p">.</span><span class="n">Rotate</span><span class="p">(</span><span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">90</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="n">Vector3</span> <span class="n">rotatedPoint</span> <span class="p">=</span> <span class="n">rotation</span><span class="p">.</span><span class="n">MultiplyPoint</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">));</span> <span class="c1">// 结果(0,0,-1)</span>
+</span></span></code></pre></div>
+<h4 class="relative group"><strong>(3) 缩放物体</strong>： 
+    <div id="3-缩放物体" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e7%bc%a9%e6%94%be%e7%89%a9%e4%bd%93" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// X轴缩放2倍</span>
+</span></span><span class="line"><span class="cl"><span class="n">Matrix4x4</span> <span class="n">scale</span> <span class="p">=</span> <span class="n">Matrix4x4</span><span class="p">.</span><span class="n">Scale</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="n">Vector3</span> <span class="n">scaledPoint</span> <span class="p">=</span> <span class="n">scale</span><span class="p">.</span><span class="n">MultiplyPoint</span><span class="p">(</span><span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">));</span> <span class="c1">// 结果(2,2,3)</span>
+</span></span></code></pre></div>
+<h4 class="relative group"><strong>(4) 复合变换</strong>： 
+    <div id="4-复合变换" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e5%a4%8d%e5%90%88%e5%8f%98%e6%8d%a2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 缩放→旋转→平移</span>
+</span></span><span class="line"><span class="cl"><span class="n">Matrix4x4</span> <span class="n">transformMatrix</span> <span class="p">=</span> <span class="n">Matrix4x4</span><span class="p">.</span><span class="n">TRS</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">position</span><span class="p">:</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span>    <span class="c1">// 平移</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rotation</span><span class="p">:</span> <span class="n">Quaternion</span><span class="p">.</span><span class="n">Euler</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">90</span><span class="p">,</span> <span class="m">0</span><span class="p">),</span> <span class="c1">// 旋转</span>
+</span></span><span class="line"><span class="cl">    <span class="n">scale</span><span class="p">:</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>        <span class="c1">// 缩放</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span></code></pre></div><hr>
+
+<h3 class="relative group"><strong>7. 注意事项</strong> 
+    <div id="7-注意事项" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#7-%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li><strong>矩阵相乘顺序</strong>：
+<ul>
+<li><strong>右乘优先</strong>：<code>M = T × R × S</code> 表示先缩放，再旋转，最后平移（矩阵相乘顺序与操作顺序相反）。</li>
+</ul>
+</li>
+<li><strong>非均匀缩放的风险</strong>：
+<ul>
+<li>非均匀缩放会破坏旋转矩阵的正交性，可能导致法线方向错误（需重新计算法线）。</li>
+</ul>
+</li>
+<li><strong>Unity的优化</strong>：
+<ul>
+<li>Unity通过四元数（Quaternion）和欧拉角（EulerAngles）封装旋转，避免直接操作旋转矩阵的复杂性。</li>
+</ul>
+</li>
+</ol>
+<hr>
+
+<h3 class="relative group"><strong>总结</strong> 
+    <div id="总结" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>平移矩阵</strong>：控制物体位置（第四列）。</li>
+<li><strong>旋转矩阵</strong>：控制物体方向（左上3×3的正交子矩阵）。</li>
+<li><strong>缩放矩阵</strong>：控制物体尺寸（左上3×3的对角线）。</li>
+<li><strong>齐次坐标</strong>：统一平移、旋转、缩放的计算。</li>
+</ul>
+<p>通过这些矩阵的组合，Unity实现了物体在3D空间中的灵活变换，开发者可通过<code>Transform</code>组件或直接操作矩阵实现复杂效果。</p>
+
+<h1 class="relative group">为什么是这个顺序？ 
+    <div id="为什么是这个顺序" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e6%98%af%e8%bf%99%e4%b8%aa%e9%a1%ba%e5%ba%8f" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>在3D图形学和Unity引擎中，<strong>变换操作的顺序必须遵循“先缩放（Scale）→再旋转（Rotation）→最后平移（Translation）”</strong>，这是因为矩阵乘法的<strong>非交换性</strong>和变换的<strong>几何意义</strong>所决定的。以下是详细解释：</p>
+<hr>
+
+<h3 class="relative group"><strong>1. 变换顺序的核心原因：矩阵乘法的非交换性</strong> 
+    <div id="1-变换顺序的核心原因矩阵乘法的非交换性" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%98%e6%8d%a2%e9%a1%ba%e5%ba%8f%e7%9a%84%e6%a0%b8%e5%bf%83%e5%8e%9f%e5%9b%a0%e7%9f%a9%e9%98%b5%e4%b9%98%e6%b3%95%e7%9a%84%e9%9d%9e%e4%ba%a4%e6%8d%a2%e6%80%a7" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>矩阵乘法不满足交换律（即 (
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/d111982c.svg">
+
+  
+</figure>
+)），因此变换的顺序直接影响最终结果。复合变换的矩阵乘法顺序需要从右到左依次应用，即：</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/4cfe2b6f.svg">
+
+  
+</figure>
+</p>
+<p>但实际操作顺序是<strong>先缩放、再旋转、最后平移</strong>（即从右到左读取矩阵相乘的顺序）。</p>
+<hr>
+
+<h3 class="relative group"><strong>2. 顺序分解：缩放 → 旋转 → 平移</strong> 
+    <div id="2-顺序分解缩放--旋转--平移" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%a1%ba%e5%ba%8f%e5%88%86%e8%a7%a3%e7%bc%a9%e6%94%be--%e6%97%8b%e8%bd%ac--%e5%b9%b3%e7%a7%bb" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group"><strong>(1) 先缩放（Scale）</strong> 
+    <div id="1-先缩放scale" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%85%88%e7%bc%a9%e6%94%bescale" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>作用</strong>：改变物体的尺寸（沿坐标轴方向放大或缩小）。</li>
+<li><strong>关键点</strong>：
+<ul>
+<li>缩放操作<strong>不改变坐标轴的方向和原点</strong>，因此后续的旋转和平移不会受到缩放的影响。</li>
+<li>如果先缩放，后续的旋转将以缩放后的坐标轴为基准（例如，缩放后旋转会以缩放后的轴方向进行旋转）。</li>
+</ul>
+</li>
+</ul>
+
+<h4 class="relative group"><strong>(2) 再旋转（Rotation）</strong> 
+    <div id="2-再旋转rotation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%86%8d%e6%97%8b%e8%bd%acrotation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>作用</strong>：改变物体的方向（绕坐标轴旋转）。</li>
+<li><strong>关键点</strong>：
+<ul>
+<li>旋转会改变坐标轴的方向，但<strong>不改变原点</strong>。</li>
+<li>如果旋转在缩放之后，旋转后的坐标轴方向是基于缩放后的物体尺寸（例如，旋转后的轴方向不会因后续的平移而改变）。</li>
+<li>如果旋转在平移之前，旋转是围绕原点进行的，而平移后的物体位置不会被旋转影响。</li>
+</ul>
+</li>
+</ul>
+
+<h4 class="relative group"><strong>(3) 最后平移（Translation）</strong> 
+    <div id="3-最后平移translation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e6%9c%80%e5%90%8e%e5%b9%b3%e7%a7%bbtranslation" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>作用</strong>：移动物体到目标位置。</li>
+<li><strong>关键点</strong>：
+<ul>
+<li>平移会改变物体的<strong>原点位置</strong>，但不会改变坐标轴的方向或缩放后的尺寸。</li>
+<li>如果平移在最后，它将物体从原点移动到目标位置，而缩放和旋转已经确定了物体的尺寸和方向。</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>3. 顺序错误的后果</strong> 
+    <div id="3-顺序错误的后果" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e9%a1%ba%e5%ba%8f%e9%94%99%e8%af%af%e7%9a%84%e5%90%8e%e6%9e%9c" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group"><strong>(1) 先平移再缩放</strong> 
+    <div id="1-先平移再缩放" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%85%88%e5%b9%b3%e7%a7%bb%e5%86%8d%e7%bc%a9%e6%94%be" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>问题</strong>：平移后的物体距离原点更远，缩放会放大或缩小平移的距离。
+<ul>
+<li>例如：先平移 <code>(2, 0, 0)</code>，再缩放 <code>2</code>，最终位置会是 <code>(4, 0, 0)</code>（缩放影响了平移的距离）。</li>
+<li><strong>预期</strong>：可能希望缩放仅改变尺寸，但平移后的缩放会扭曲位置。</li>
+</ul>
+</li>
+</ul>
+
+<h4 class="relative group"><strong>(2) 先旋转再缩放</strong> 
+    <div id="2-先旋转再缩放" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%85%88%e6%97%8b%e8%bd%ac%e5%86%8d%e7%bc%a9%e6%94%be" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>问题</strong>：旋转后的坐标轴方向可能与缩放方向不一致，导致物体沿旋转后的轴方向缩放，产生意外变形。
+<ul>
+<li>例如：先绕Y轴旋转90°，再沿X轴缩放2倍，实际会沿旋转后的X轴（原Z轴方向）缩放，导致方向错误。</li>
+</ul>
+</li>
+</ul>
+
+<h4 class="relative group"><strong>(3) 先平移再旋转</strong> 
+    <div id="3-先平移再旋转" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e5%85%88%e5%b9%b3%e7%a7%bb%e5%86%8d%e6%97%8b%e8%bd%ac" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>问题</strong>：旋转会围绕原点进行，而平移后的物体远离原点，导致旋转中心不正确。
+<ul>
+<li>例如：先平移 <code>(5, 0, 0)</code>，再绕原点旋转90°，物体将绕原点旋转，而非自身的中心。</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>4. 为什么Unity和其他引擎遵循此顺序？</strong> 
+    <div id="4-为什么unity和其他引擎遵循此顺序" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e4%b8%ba%e4%bb%80%e4%b9%88unity%e5%92%8c%e5%85%b6%e4%bb%96%e5%bc%95%e6%93%8e%e9%81%b5%e5%be%aa%e6%ad%a4%e9%a1%ba%e5%ba%8f" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group"><strong>(1) 符合数学定义</strong> 
+    <div id="1-符合数学定义" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e7%ac%a6%e5%90%88%e6%95%b0%e5%ad%a6%e5%ae%9a%e4%b9%89" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>复合变换矩阵</strong>：<br>
+Unity的<code>Transform</code>组件默认的变换顺序是缩放→旋转→平移，其矩阵表达式为：<br>
+
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/1b55c297.svg">
+
+  
+</figure>
+
+<ul>
+<li>其中，(S)是缩放矩阵，(R)是旋转矩阵，(T)是平移矩阵。</li>
+<li>这样，物体的变换过程是：先缩放自身，再旋转自身方向，最后平移到目标位置。</li>
+</ul>
+</li>
+</ul>
+
+<h4 class="relative group"><strong>(2) 父子对象的层级关系</strong> 
+    <div id="2-父子对象的层级关系" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e7%88%b6%e5%ad%90%e5%af%b9%e8%b1%a1%e7%9a%84%e5%b1%82%e7%ba%a7%e5%85%b3%e7%b3%bb" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>本地坐标系的继承</strong>：<br>
+子对象的变换是基于父对象的变换后的坐标系。例如：
+<ul>
+<li>如果父对象先缩放，子对象的旋转和后续平移会基于父对象缩放后的坐标轴。</li>
+<li>如果父对象先平移，子对象的缩放和旋转会基于父对象的位置，可能导致位置偏移。</li>
+</ul>
+</li>
+</ul>
+
+<h4 class="relative group"><strong>(3) 避免几何错误</strong> 
+    <div id="3-避免几何错误" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e9%81%bf%e5%85%8d%e5%87%a0%e4%bd%95%e9%94%99%e8%af%af" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>保持旋转中心</strong>：<br>
+默认顺序确保旋转和缩放均以物体的<strong>本地原点</strong>（通常是几何中心）为基准，避免因平移导致旋转中心偏移。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>5. 实际应用中的验证</strong> 
+    <div id="5-实际应用中的验证" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8%e4%b8%ad%e7%9a%84%e9%aa%8c%e8%af%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group"><strong>(1) 场景中的立方体</strong> 
+    <div id="1-场景中的立方体" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%9c%ba%e6%99%af%e4%b8%ad%e7%9a%84%e7%ab%8b%e6%96%b9%e4%bd%93" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>正确顺序（缩放→旋转→平移）</strong>：<br>
+一个立方体先缩放为 <code>2x2x2</code>，绕Y轴旋转90°，最后平移到 <code>(5, 0, 0)</code>，结果符合预期。</li>
+<li><strong>错误顺序（平移→旋转→缩放）</strong>：<br>
+先平移到 <code>(5, 0, 0)</code>，再旋转会导致物体绕原点旋转（远离中心），缩放会改变平移后的距离，导致位置混乱。</li>
+</ul>
+
+<h4 class="relative group"><strong>(2) Unity代码示例</strong> 
+    <div id="2-unity代码示例" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-unity%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 正确顺序：缩放→旋转→平移</span>
+</span></span><span class="line"><span class="cl"><span class="n">transform</span><span class="p">.</span><span class="n">localScale</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>  <span class="c1">// 缩放</span>
+</span></span><span class="line"><span class="cl"><span class="n">transform</span><span class="p">.</span><span class="n">Rotate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">90</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>                   <span class="c1">// 旋转（绕Y轴）</span>
+</span></span><span class="line"><span class="cl"><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>    <span class="c1">// 平移</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 错误顺序：平移→旋转→缩放</span>
+</span></span><span class="line"><span class="cl"><span class="n">transform</span><span class="p">.</span><span class="n">position</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>    <span class="c1">// 平移</span>
+</span></span><span class="line"><span class="cl"><span class="n">transform</span><span class="p">.</span><span class="n">Rotate</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">90</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>                   <span class="c1">// 旋转（绕原点，导致位置偏移）</span>
+</span></span><span class="line"><span class="cl"><span class="n">transform</span><span class="p">.</span><span class="n">localScale</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Vector3</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">);</span>  <span class="c1">// 缩放会放大平移后的距离</span>
+</span></span></code></pre></div><hr>
+
+<h3 class="relative group"><strong>6. 总结</strong> 
+    <div id="6-总结" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e6%80%bb%e7%bb%93" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>操作顺序</strong></th>
+          <th><strong>数学意义</strong></th>
+          <th><strong>几何意义</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>缩放（S）</strong></td>
+          <td>改变坐标轴的长度（保持原点和方向）</td>
+          <td>改变物体尺寸，但不移动或旋转</td>
+      </tr>
+      <tr>
+          <td><strong>旋转（R）</strong></td>
+          <td>改变坐标轴的方向（保持原点和缩放后的长度）</td>
+          <td>改变物体方向，但不改变尺寸或位置</td>
+      </tr>
+      <tr>
+          <td><strong>平移（T）</strong></td>
+          <td>改变原点位置（保持坐标轴的方向和缩放）</td>
+          <td>移动物体到目标位置，但不改变尺寸或方向</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>遵循此顺序的原因</strong>：</p>
+<ul>
+<li><strong>缩放</strong>确保后续旋转和移动的基准是物体的原始尺寸。</li>
+<li><strong>旋转</strong>基于缩放后的坐标轴方向，避免方向错误。</li>
+<li><strong>平移</strong>最后执行，确保物体移动到正确的位置，不受缩放或旋转的影响。</li>
+</ul>
+<p>通过这种方式，可以精确控制物体的变换，避免因顺序错误导致的逻辑或视觉错误。</p>
+
+          
+          
+          
+        </div>
+
+        
+
+          
+            
+            
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4"
+        width="96"
+        height="96"
+        alt="AxonSin"
+        src="/img/blowfish_logo_hu_e74a130226122ae3.png">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        AxonSin
+      </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:hello@your_domain.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://link-to-some-website.com/"
+          target="_blank"
+          aria-label="Link"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/username"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://steamcommunity.com/profiles/userid"
+          target="_blank"
+          aria-label="Steam"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111.2 248-248.4 248-113.8 0-209.6-76.3-239-180.4l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://t.me/username"
+          target="_blank"
+          aria-label="Telegram"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+          
+
+          
+
+          
+            <div class="mb-10"></div>
+          
+
+        
+
+        
+
+        
+
+        
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+  <a href="/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/%E5%B8%B8%E8%A7%81%E7%9A%84%E5%BC%95%E6%93%8E%E7%89%A9%E7%90%86%E7%AE%97%E6%B3%95/">常见的引擎物理算法</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-05-11T00:00:00&#43;00:00">11 May 2025</time><span class="px-2 text-primary-500">&middot;</span><span>569 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">3 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/blender/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Blender
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/animation/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Animation
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/houdini/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Houdini
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/git/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Git
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%AE%97%E6%B3%95/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    算法
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%89%A9%E7%90%86/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    物理
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E8%89%B2%E5%BD%A9/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    色彩
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/mmd/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    MMD
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          Blender导入Unity指南
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+        
+
+  <a href="/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/">Unity实现体积光（GodRay）的三种方案</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-24T00:00:00&#43;00:00">24 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>103 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E5%85%89%E7%85%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    光照
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%AE%97%E6%B3%95/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    算法
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          体积光实现方案
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+        
+
+  <a href="/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/">反射算法</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-09T00:00:00&#43;00:00">9 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>18 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/blender/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Blender
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%AE%97%E6%B3%95/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    算法
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          Blender导入Unity指南
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+    </section>
+  
+
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
+          integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
+          data-oid="views_posts\Unity的旋转、缩放、移动矩阵\index.md"
+          data-oid-likes="likes_posts\Unity的旋转、缩放、移动矩阵\index.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/unity-bones-retargeting%E7%B3%BB%E7%BB%9F-1/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Unity Bones Retargeting系统</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-06-11T00:00:00&#43;00:00">11 June 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/unity%E7%9A%84scene%E7%95%8C%E9%9D%A2%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E6%85%A2%E5%88%B0%E6%8B%96%E4%B8%8D%E5%8A%A8%E7%9A%84%E9%97%AE%E9%A2%98/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Unity的Scene界面鼠标滚轮慢到拖不动的问题</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-06-19T00:00:00&#43;00:00">19 June 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+        <ul class="flex flex-col list-none sm:flex-row">
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/tags/"
+                title="Tags">
+                
+                Tags
+              </a>
+            </li>
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/categories/"
+                title="Categories">
+                
+                Categories
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          AxonSin
+      </p>
+    
+
+    
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

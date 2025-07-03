@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技巧 on 某人的小博客</title>
+    <link>http://localhost:1313/tags/%E6%8A%80%E5%B7%A7/</link>
+    <description>Recent content in 技巧 on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 26 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Blender小技巧：用噪声消除重复纹理</title>
+      <link>http://localhost:1313/posts/blender%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%94%A8%E5%99%AA%E5%A3%B0%E6%B6%88%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BA%B9%E7%90%86/</link>
+      <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/blender%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%94%A8%E5%99%AA%E5%A3%B0%E6%B6%88%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BA%B9%E7%90%86/</guid>
+      <description>问题解决方案</description>
+      
+    </item>
+    
+    <item>
+      <title>色彩空间</title>
+      <link>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</guid>
+      <description>算法原理解析</description>
+      
+    </item>
+    
+    <item>
+      <title>无厚度_低厚度的zfighting问题</title>
+      <link>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</guid>
+      <description>Blender导入Unity指南</description>
+      
+    </item>
+    
+  </channel>
+</rss>

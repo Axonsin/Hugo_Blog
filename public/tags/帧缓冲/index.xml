@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>帧缓冲 on 某人的小博客</title>
+    <link>http://localhost:1313/tags/%E5%B8%A7%E7%BC%93%E5%86%B2/</link>
+    <description>Recent content in 帧缓冲 on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%B8%A7%E7%BC%93%E5%86%B2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>什么是帧缓冲（Frame Buffer）？</title>
+      <link>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</guid>
+      <description>帧缓冲技术详解</description>
+      
+    </item>
+    
+  </channel>
+</rss>

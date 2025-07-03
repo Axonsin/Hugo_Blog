@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blender on 某人的小博客</title>
+    <link>http://localhost:1313/categories/blender/</link>
+    <description>Recent content in Blender on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/blender/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Blender导入场景进入Unity</title>
+      <link>http://localhost:1313/posts/blender%E5%AF%BC%E5%85%A5%E5%9C%BA%E6%99%AF%E8%BF%9B%E5%85%A5unity/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/blender%E5%AF%BC%E5%85%A5%E5%9C%BA%E6%99%AF%E8%BF%9B%E5%85%A5unity/</guid>
+      <description>Blender模型导入Unity的完整工作流程</description>
+      
+    </item>
+    
+    <item>
+      <title>Blender小技巧：用噪声消除重复纹理</title>
+      <link>http://localhost:1313/posts/blender%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%94%A8%E5%99%AA%E5%A3%B0%E6%B6%88%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BA%B9%E7%90%86/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/blender%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%94%A8%E5%99%AA%E5%A3%B0%E6%B6%88%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BA%B9%E7%90%86/</guid>
+      <description>两种方法解决纹理重复问题</description>
+      
+    </item>
+    
+    <item>
+      <title>MikuMiku Rig &amp;&amp; Uuunya Tools</title>
+      <link>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</guid>
+      <description>Blender MMD骨骼工具介绍</description>
+      
+    </item>
+    
+    <item>
+      <title>关于blender选中物体不显示高亮描边的问题</title>
+      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eblender%E9%80%89%E4%B8%AD%E7%89%A9%E4%BD%93%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%AB%98%E4%BA%AE%E6%8F%8F%E8%BE%B9%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8Eblender%E9%80%89%E4%B8%AD%E7%89%A9%E4%BD%93%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%AB%98%E4%BA%AE%E6%8F%8F%E8%BE%B9%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>blender物体高亮描边显示问题</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 某人的小博客</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Animation</title>
+      <link>http://localhost:1313/tags/animation/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/animation/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>OBS</title>
+      <link>http://localhost:1313/tags/obs/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/obs/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Shader</title>
+      <link>http://localhost:1313/tags/shader/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/shader/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>插件</title>
+      <link>http://localhost:1313/tags/%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E6%8F%92%E4%BB%B6/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>渲染</title>
+      <link>http://localhost:1313/tags/%E6%B8%B2%E6%9F%93/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E6%B8%B2%E6%9F%93/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>色彩</title>
+      <link>http://localhost:1313/tags/%E8%89%B2%E5%BD%A9/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E8%89%B2%E5%BD%A9/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Unity</title>
+      <link>http://localhost:1313/tags/unity/</link>
+      <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/unity/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>故障排除</title>
+      <link>http://localhost:1313/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/</link>
+      <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>http://localhost:1313/tags/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 17 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Blender</title>
+      <link>http://localhost:1313/tags/blender/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/blender/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>MMD</title>
+      <link>http://localhost:1313/tags/mmd/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/mmd/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Retargeting</title>
+      <link>http://localhost:1313/tags/retargeting/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/retargeting/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>配置</title>
+      <link>http://localhost:1313/tags/%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E9%85%8D%E7%BD%AE/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>光照</title>
+      <link>http://localhost:1313/tags/%E5%85%89%E7%85%A7/</link>
+      <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E5%85%89%E7%85%A7/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>材质</title>
+      <link>http://localhost:1313/tags/%E6%9D%90%E8%B4%A8/</link>
+      <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E6%9D%90%E8%B4%A8/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/git/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Houdini</title>
+      <link>http://localhost:1313/tags/houdini/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/houdini/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>物理</title>
+      <link>http://localhost:1313/tags/%E7%89%A9%E7%90%86/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E7%89%A9%E7%90%86/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>教程</title>
+      <link>http://localhost:1313/tags/%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E6%95%99%E7%A8%8B/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>半导体</title>
+      <link>http://localhost:1313/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>电子</title>
+      <link>http://localhost:1313/tags/%E7%94%B5%E5%AD%90/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E7%94%B5%E5%AD%90/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>空穴</title>
+      <link>http://localhost:1313/tags/%E7%A9%BA%E7%A9%B4/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E7%A9%BA%E7%A9%B4/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>VEX</title>
+      <link>http://localhost:1313/tags/vex/</link>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/vex/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>技巧</title>
+      <link>http://localhost:1313/tags/%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E6%8A%80%E5%B7%A7/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>网络配置</title>
+      <link>http://localhost:1313/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

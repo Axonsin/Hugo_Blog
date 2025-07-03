@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shader编程 on 某人的小博客</title>
+    <link>http://localhost:1313/categories/shader%E7%BC%96%E7%A8%8B/</link>
+    <description>Recent content in Shader编程 on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/shader%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>C#脚本和Shader中共享同步变量</title>
+      <link>http://localhost:1313/posts/c%23%E8%84%9A%E6%9C%AC%E5%92%8Cshader%E4%B8%AD%E5%85%B1%E4%BA%AB%E5%90%8C%E6%AD%A5%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/c%23%E8%84%9A%E6%9C%AC%E5%92%8Cshader%E4%B8%AD%E5%85%B1%E4%BA%AB%E5%90%8C%E6%AD%A5%E5%8F%98%E9%87%8F/</guid>
+      <description>解决天空盒跳变问题的变量共享方案</description>
+      
+    </item>
+    
+    <item>
+      <title>利用Stencil Buffer进行描边</title>
+      <link>http://localhost:1313/posts/%E5%88%A9%E7%94%A8stencil-buffer%E8%BF%9B%E8%A1%8C%E6%8F%8F%E8%BE%B9/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E5%88%A9%E7%94%A8stencil-buffer%E8%BF%9B%E8%A1%8C%E6%8F%8F%E8%BE%B9/</guid>
+      <description>Stencil Buffer描边技术实现</description>
+      
+    </item>
+    
+  </channel>
+</rss>

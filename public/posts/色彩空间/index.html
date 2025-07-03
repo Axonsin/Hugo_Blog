@@ -1,0 +1,4017 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>色彩空间 &middot; 某人的小博客</title>
+  <meta name="title" content="色彩空间 &middot; 某人的小博客" />
+  
+  <meta name="description" content="算法原理解析" />
+  <meta name="keywords" content="Shader, Houdini, 渲染, 算法, 物理, 色彩, 技巧, 配置, " />
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.2755fda1868f0bfc1843df512e7b0b0bec55a259db5f8b13dc3c0f7894e519f617c2b66f5915ec207e2a1ffc8b6d1b53dbd8f3dff8892140cb5eacc50a6edfbb.css"
+    integrity="sha512-J1X9oYaPC/wYQ99RLnsLC&#43;xVolnbX4sT3DwPeJTlGfYXwrZvWRXsIH4qH/yLbRtT29jz3/iJIUDLXqzFCm7fuw==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.dc15078f1fe553ce354f85ec1bfce7ded8b4060d4124a49b19e31dd64345b8d8f03edbbb1b681748650181f9d81da9728ca10c2b9cb2ae7bf8983d4b669ba876.js"
+    integrity="sha512-3BUHjx/lU841T4XsG/zn3ti0Bg1BJKSbGeMd1kNFuNjwPtu7G2gXSGUBgfnYHalyjKEMK5yyrnv4mD1LZpuodg==" data-copy="Copy" data-copied="Copied"></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/">
+  <meta property="og:site_name" content="某人的小博客">
+  <meta property="og:title" content="色彩空间">
+  <meta property="og:description" content="色彩空间的原理解析和实现方法">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-01-23T00:00:00+00:00">
+    <meta property="article:tag" content="Shader">
+    <meta property="article:tag" content="Houdini">
+    <meta property="article:tag" content="渲染">
+    <meta property="article:tag" content="算法">
+    <meta property="article:tag" content="物理">
+    <meta property="article:tag" content="色彩">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="色彩空间">
+  <meta name="twitter:description" content="色彩空间的原理解析和实现方法">
+
+    
+  
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "色彩空间",
+    "headline": "色彩空间",
+    "description": "色彩空间的原理解析和实现方法",
+    "abstract": "算法原理解析",
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/posts\/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4\/",
+    "author" : {
+      "@type": "Person",
+      "name": "AxonSin"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-01-23T00:00:00\u002b00:00",
+    "datePublished": "2025-01-23T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-01-23T00:00:00\u002b00:00",
+    
+    "keywords": ["Shader","Houdini","渲染","算法","物理","色彩","技巧","配置"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1376"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="AxonSin" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <link href="https://link-to-some-website.com/" rel="me" />
+  
+  
+  
+  
+  <link href="https://github.com/username" rel="me" />
+  
+  
+  
+  
+  <link href="https://steamcommunity.com/profiles/userid" rel="me" />
+  
+  
+  
+  
+  <link href="https://t.me/username" rel="me" />
+  
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+  
+  
+  
+  <meta name="theme-color"/>
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a
+      >
+    </div>
+    
+    
+      <div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
+    
+    
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">某人的小博客</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a
+  href="/posts/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    All Blog
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="/aboutme/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    关于我&hellip;
+  </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      All Blog
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/aboutme/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      关于我&hellip;
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+<script>
+    (function () {
+        var $mainmenu = $('.main-menu');
+        var path = window.location.pathname;
+        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+            $(e).children('p').addClass('active');
+        });
+    })();
+</script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+      
+      
+      
+      
+        
+ 
+  
+   
+  
+ 
+
+
+
+<div id="hero" class="h-[150px] md:h-[200px]"></div>
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/homepageIMAGE_hu_408646624986b124.PNG);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+
+
+<script type="text/javascript" src="/js/background-blur.min.4812321520cc2e4cd52bf9137015a55bb6c0b5e66a6b2c96b8654c0ec99be59e8e6425dd838a6fd9bac54000586f37f4a9680bbefaa2aee4601a69e188005cf6.js" integrity="sha512-SBIyFSDMLkzVK/kTcBWlW7bAteZqayyWuGVMDsmb5Z6OZCXdg4pv2brFQABYbzf0qWgLvvqiruRgGmnhiABc9g==" data-target-id="background-blur"></script>
+
+      
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        色彩空间
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-23T00:00:00&#43;00:00">23 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>1376 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">7 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/houdini/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Houdini
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%AE%97%E6%B3%95/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    算法
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%89%A9%E7%90%86/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    物理
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E8%89%B2%E5%BD%A9/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    色彩
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%8A%80%E5%B7%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    技巧
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E9%85%8D%E7%BD%AE/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    配置
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div
+            class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky 
+              lg:top-10
+            
+            ">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#扩展cie色度图">扩展：CIE色度图</a>
+      <ul>
+        <li><a href="#为什么都是红色相同的数值如p3srgb都是0255的rgb表示在cie的坐标映射却不同">为什么都是红色，相同的数值（如P3，sRGB都是0~255的RGB表示），在CIE的坐标映射却不同？</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-单个像素的数据结构">1. <strong>单个像素的数据结构</strong></a>
+      <ul>
+        <li><a href="#a-8bit色深的rgb图片最常见"><strong>A. 8bit色深的RGB图片（最常见）</strong></a></li>
+        <li><a href="#b-10bit12bit色深的rgb图片高端显示渲染视频"><strong>B. 10bit、12bit色深的RGB图片（高端显示/渲染/视频）</strong></a></li>
+        <li><a href="#c-16bit32bit色深高精度浮点"><strong>C. 16bit、32bit色深（高精度浮点）</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#2-整个图像的数据结构">2. <strong>整个图像的数据结构</strong></a></li>
+    <li><a href="#3-色深在文件格式中的表现">3. <strong>色深在文件格式中的表现</strong></a></li>
+    <li><a href="#4-显卡显示器操作系统的色深支持">4. <strong>显卡/显示器/操作系统的色深支持</strong></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-基本流程概述">1. <strong>基本流程概述</strong></a></li>
+    <li><a href="#2-详细流程分解">2. <strong>详细流程分解</strong></a>
+      <ul>
+        <li><a href="#a-应用程序输出一般为-srgb"><strong>A. 应用程序输出（一般为 sRGB）</strong></a></li>
+        <li><a href="#b-操作系统色彩管理系统处理"><strong>B. 操作系统/色彩管理系统处理</strong></a>
+          <ul>
+            <li><a href="#1degammasrgb--线性空间linear-rgb">1）<strong>degamma：sRGB → 线性空间（Linear RGB）</strong></a></li>
+            <li><a href="#2色彩空间变换色域映射">2）<strong>色彩空间变换（色域映射）</strong></a></li>
+            <li><a href="#3gamma-编码">3）<strong>gamma 编码</strong></a></li>
+            <li><a href="#4ditheringbit-depth-降位">4）<strong>Dithering/Bit-depth 降位</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#c-信号传输到显示器"><strong>C. 信号传输到显示器</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-流程图简化">3. <strong>流程图简化</strong></a></li>
+    <li><a href="#4-实际例子">4. <strong>实际例子</strong></a></li>
+    <li><a href="#5-补充说明">5. <strong>补充说明</strong></a></li>
+    <li><a href="#6-关键词解释">6. <strong>关键词解释</strong></a></li>
+    <li><a href="#tips从主机到显示器会传输什么数据">Tips：从主机到显示器会传输什么数据？</a>
+      <ul>
+        <li><a href="#1-edid显示器能力描述"><strong>1. EDID（显示器能力描述）</strong></a>
+          <ul>
+            <li><a href="#主机读取edid流程"><strong>主机读取EDID流程</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#2-色域握手的历史和现状"><strong>2. 色域握手的历史和现状</strong></a></li>
+        <li><a href="#3-hdr-和高级色域的元数据"><strong>3. HDR 和高级色域的元数据</strong></a></li>
+        <li><a href="#4-实际操作流程"><strong>4. 实际操作流程</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#人眼的非线性感知">人眼的非线性感知</a></li>
+    <li><a href="#带宽的压缩">带宽的压缩</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#icc数据结构">ICC数据结构</a>
+      <ul>
+        <li><a href="#1-设备描述文本device-description"><strong>1. 设备描述文本（Device Description）</strong></a></li>
+        <li><a href="#2-颜色空间与色域信息"><strong>2. 颜色空间与色域信息</strong></a></li>
+        <li><a href="#3-颜色转换规则"><strong>3. 颜色转换规则</strong></a></li>
+        <li><a href="#4-渲染意图rendering-intent"><strong>4. 渲染意图（Rendering Intent）</strong></a></li>
+        <li><a href="#5-校准数据"><strong>5. 校准数据</strong></a></li>
+        <li><a href="#6-特定设备信息"><strong>6. 特定设备信息</strong></a></li>
+        <li><a href="#7-标准化格式与兼容性"><strong>7. 标准化格式与兼容性</strong></a></li>
+        <li><a href="#8-示例嵌入的-icc-profile-数据"><strong>8. 示例：嵌入的 ICC Profile 数据</strong></a></li>
+        <li><a href="#9-嵌入-icc-profile-的实际作用"><strong>9. 嵌入 ICC Profile 的实际作用</strong></a></li>
+        <li><a href="#10-常见嵌入场景"><strong>10. 常见嵌入场景</strong></a></li>
+        <li><a href="#总结"><strong>总结</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#2-实际效果"><strong>(2) 实际效果</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#在应用内实现色彩空间转换bypass-dwm"><strong>在应用内实现色彩空间转换（Bypass DWM）</strong></a>
+          <ul>
+            <li><a href="#全屏独占模式full-screen-exclusive-mode"><strong>全屏独占模式（Full-Screen Exclusive Mode）</strong></a></li>
+            <li><a href="#这对吗">这对吗？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是lut">什么是LUT？</a></li>
+    <li><a href="#lut的数据结构">LUT的数据结构</a>
+      <ul>
+        <li><a href="#逻辑结构">逻辑结构</a></li>
+        <li><a href="#工作原理">工作原理</a></li>
+      </ul>
+    </li>
+    <li><a href="#gpu中的实现">GPU中的实现</a>
+      <ul>
+        <li><a href="#存储方式2d纹理数组">存储方式：2D纹理数组</a></li>
+        <li><a href="#查找过程">查找过程</a></li>
+      </ul>
+    </li>
+    <li><a href="#lut的实际应用">LUT的实际应用</a>
+      <ul>
+        <li><a href="#电影调色">电影调色</a></li>
+        <li><a href="#hdr到sdr的色调映射">HDR到SDR的色调映射</a></li>
+        <li><a href="#色彩空间转换">色彩空间转换</a></li>
+      </ul>
+    </li>
+    <li><a href="#lut的优势与限制">LUT的优势与限制</a>
+      <ul>
+        <li><a href="#优势">优势</a></li>
+        <li><a href="#限制">限制</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#yuv色彩空间基础">YUV色彩空间基础</a></li>
+    <li><a href="#子采样格式解析">子采样格式解析</a>
+      <ul>
+        <li><a href="#444无子采样">4:4:4（无子采样）</a></li>
+        <li><a href="#422水平子采样">4:2:2（水平子采样）</a></li>
+        <li><a href="#420水平垂直子采样">4:2:0（水平+垂直子采样）</a></li>
+      </ul>
+    </li>
+    <li><a href="#实际应用场景">实际应用场景</a></li>
+    <li><a href="#为什么这样做">为什么这样做？</a>
+      <ul>
+        <li><a href="#人眼视觉特性">人眼视觉特性</a></li>
+        <li><a href="#实际效果对比">实际效果对比</a></li>
+      </ul>
+    </li>
+    <li><a href="#各厂商的支持情况">各厂商的支持情况</a>
+      <ul>
+        <li><a href="#手机厂商">手机厂商</a></li>
+        <li><a href="#专业设备">专业设备</a></li>
+      </ul>
+    </li>
+    <li><a href="#选择建议">选择建议</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#扩展cie色度图">扩展：CIE色度图</a>
+      <ul>
+        <li><a href="#为什么都是红色相同的数值如p3srgb都是0255的rgb表示在cie的坐标映射却不同">为什么都是红色，相同的数值（如P3，sRGB都是0~255的RGB表示），在CIE的坐标映射却不同？</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-单个像素的数据结构">1. <strong>单个像素的数据结构</strong></a>
+      <ul>
+        <li><a href="#a-8bit色深的rgb图片最常见"><strong>A. 8bit色深的RGB图片（最常见）</strong></a></li>
+        <li><a href="#b-10bit12bit色深的rgb图片高端显示渲染视频"><strong>B. 10bit、12bit色深的RGB图片（高端显示/渲染/视频）</strong></a></li>
+        <li><a href="#c-16bit32bit色深高精度浮点"><strong>C. 16bit、32bit色深（高精度浮点）</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#2-整个图像的数据结构">2. <strong>整个图像的数据结构</strong></a></li>
+    <li><a href="#3-色深在文件格式中的表现">3. <strong>色深在文件格式中的表现</strong></a></li>
+    <li><a href="#4-显卡显示器操作系统的色深支持">4. <strong>显卡/显示器/操作系统的色深支持</strong></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-基本流程概述">1. <strong>基本流程概述</strong></a></li>
+    <li><a href="#2-详细流程分解">2. <strong>详细流程分解</strong></a>
+      <ul>
+        <li><a href="#a-应用程序输出一般为-srgb"><strong>A. 应用程序输出（一般为 sRGB）</strong></a></li>
+        <li><a href="#b-操作系统色彩管理系统处理"><strong>B. 操作系统/色彩管理系统处理</strong></a>
+          <ul>
+            <li><a href="#1degammasrgb--线性空间linear-rgb">1）<strong>degamma：sRGB → 线性空间（Linear RGB）</strong></a></li>
+            <li><a href="#2色彩空间变换色域映射">2）<strong>色彩空间变换（色域映射）</strong></a></li>
+            <li><a href="#3gamma-编码">3）<strong>gamma 编码</strong></a></li>
+            <li><a href="#4ditheringbit-depth-降位">4）<strong>Dithering/Bit-depth 降位</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#c-信号传输到显示器"><strong>C. 信号传输到显示器</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#3-流程图简化">3. <strong>流程图简化</strong></a></li>
+    <li><a href="#4-实际例子">4. <strong>实际例子</strong></a></li>
+    <li><a href="#5-补充说明">5. <strong>补充说明</strong></a></li>
+    <li><a href="#6-关键词解释">6. <strong>关键词解释</strong></a></li>
+    <li><a href="#tips从主机到显示器会传输什么数据">Tips：从主机到显示器会传输什么数据？</a>
+      <ul>
+        <li><a href="#1-edid显示器能力描述"><strong>1. EDID（显示器能力描述）</strong></a>
+          <ul>
+            <li><a href="#主机读取edid流程"><strong>主机读取EDID流程</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#2-色域握手的历史和现状"><strong>2. 色域握手的历史和现状</strong></a></li>
+        <li><a href="#3-hdr-和高级色域的元数据"><strong>3. HDR 和高级色域的元数据</strong></a></li>
+        <li><a href="#4-实际操作流程"><strong>4. 实际操作流程</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#人眼的非线性感知">人眼的非线性感知</a></li>
+    <li><a href="#带宽的压缩">带宽的压缩</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#icc数据结构">ICC数据结构</a>
+      <ul>
+        <li><a href="#1-设备描述文本device-description"><strong>1. 设备描述文本（Device Description）</strong></a></li>
+        <li><a href="#2-颜色空间与色域信息"><strong>2. 颜色空间与色域信息</strong></a></li>
+        <li><a href="#3-颜色转换规则"><strong>3. 颜色转换规则</strong></a></li>
+        <li><a href="#4-渲染意图rendering-intent"><strong>4. 渲染意图（Rendering Intent）</strong></a></li>
+        <li><a href="#5-校准数据"><strong>5. 校准数据</strong></a></li>
+        <li><a href="#6-特定设备信息"><strong>6. 特定设备信息</strong></a></li>
+        <li><a href="#7-标准化格式与兼容性"><strong>7. 标准化格式与兼容性</strong></a></li>
+        <li><a href="#8-示例嵌入的-icc-profile-数据"><strong>8. 示例：嵌入的 ICC Profile 数据</strong></a></li>
+        <li><a href="#9-嵌入-icc-profile-的实际作用"><strong>9. 嵌入 ICC Profile 的实际作用</strong></a></li>
+        <li><a href="#10-常见嵌入场景"><strong>10. 常见嵌入场景</strong></a></li>
+        <li><a href="#总结"><strong>总结</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#2-实际效果"><strong>(2) 实际效果</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#在应用内实现色彩空间转换bypass-dwm"><strong>在应用内实现色彩空间转换（Bypass DWM）</strong></a>
+          <ul>
+            <li><a href="#全屏独占模式full-screen-exclusive-mode"><strong>全屏独占模式（Full-Screen Exclusive Mode）</strong></a></li>
+            <li><a href="#这对吗">这对吗？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是lut">什么是LUT？</a></li>
+    <li><a href="#lut的数据结构">LUT的数据结构</a>
+      <ul>
+        <li><a href="#逻辑结构">逻辑结构</a></li>
+        <li><a href="#工作原理">工作原理</a></li>
+      </ul>
+    </li>
+    <li><a href="#gpu中的实现">GPU中的实现</a>
+      <ul>
+        <li><a href="#存储方式2d纹理数组">存储方式：2D纹理数组</a></li>
+        <li><a href="#查找过程">查找过程</a></li>
+      </ul>
+    </li>
+    <li><a href="#lut的实际应用">LUT的实际应用</a>
+      <ul>
+        <li><a href="#电影调色">电影调色</a></li>
+        <li><a href="#hdr到sdr的色调映射">HDR到SDR的色调映射</a></li>
+        <li><a href="#色彩空间转换">色彩空间转换</a></li>
+      </ul>
+    </li>
+    <li><a href="#lut的优势与限制">LUT的优势与限制</a>
+      <ul>
+        <li><a href="#优势">优势</a></li>
+        <li><a href="#限制">限制</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#yuv色彩空间基础">YUV色彩空间基础</a></li>
+    <li><a href="#子采样格式解析">子采样格式解析</a>
+      <ul>
+        <li><a href="#444无子采样">4:4:4（无子采样）</a></li>
+        <li><a href="#422水平子采样">4:2:2（水平子采样）</a></li>
+        <li><a href="#420水平垂直子采样">4:2:0（水平+垂直子采样）</a></li>
+      </ul>
+    </li>
+    <li><a href="#实际应用场景">实际应用场景</a></li>
+    <li><a href="#为什么这样做">为什么这样做？</a>
+      <ul>
+        <li><a href="#人眼视觉特性">人眼视觉特性</a></li>
+        <li><a href="#实际效果对比">实际效果对比</a></li>
+      </ul>
+    </li>
+    <li><a href="#各厂商的支持情况">各厂商的支持情况</a>
+      <ul>
+        <li><a href="#手机厂商">手机厂商</a></li>
+        <li><a href="#专业设备">专业设备</a></li>
+      </ul>
+    </li>
+    <li><a href="#选择建议">选择建议</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h1 class="relative group">引言 
+    <div id="引言" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%bc%95%e8%a8%80" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>这是我偶然在Houdini的时候在导出的时候遇到的问题，Houdini为了更加可定制化的工作流直接采用了exr作为输出；但是exr文件在ps里面打开后的效果和达芬奇的效果完全不一致，恰好当时色彩空间也是我的心头之痛，而且几乎没有从图形学上解释色彩的文章，比较深的也只是讲到了色度图；因此打算写这篇文章。</p>
+
+<h1 class="relative group">色彩的表示 
+    <div id="色彩的表示" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%89%b2%e5%bd%a9%e7%9a%84%e8%a1%a8%e7%a4%ba" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>我们都知道，在选择颜色的时候，不同的软件有不同的办法来调整颜色。如果我们把三原色R,G,B来表示为坐标系的三个数据，就可以得到科研中常用于色彩分析的三维空间：</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/0e4d01d7_hu_1d45ee86fa0e26ec.png  330w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/0e4d01d7_hu_b910340dfbca7f65.png  660w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/0e4d01d7_hu_13463763844685a3.png 1280w
+    "
+    data-zoom-src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/0e4d01d7.png"
+    src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/0e4d01d7.png">
+
+  
+</figure>
+</p>
+<p>当然，这是计算机领域的表示法，艺术家们需要一个更加直观的表示方法，于是除了简单的RGB直接相加，另一种表示方法HSL应运而生，<font style="color:rgb(44, 44, 54);">HSL模型可以更直观地反映了人类对颜色的感知方式，</font>直接利用Hue(色相),Saturation(饱和度),Lightness(明度）表示。我们Ps中的选色盘和选色图都是基于这个标准。</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/5e96d269_hu_dc0a9bd6ce72c61c.png  330w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/5e96d269_hu_c622f064420f4b77.png  660w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/5e96d269_hu_71a68d79727a9c66.png 1280w
+    "
+    data-zoom-src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/5e96d269.png"
+    src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/5e96d269.png">
+
+  
+</figure>
+</p>
+<p>但其实HSL并不是最终发送给计算机的，计算机最后还是用RGB来进行色彩的表示。因为实际上RGB的数据结构只有(x,y,z)，即colorRGB = vec3(x,y,z)。也就是说，这个数值实际上只能直接表示Hue和Saturation，而Lightness则是用RGB进行一套公式转换出来的；在一些shader中，比如要进行亮度阈值计算，就会直接提取RGB来算出Lightness，再套亮度判断。</p>
+<p>另外HSL和RGB之间是可以无损转换的，虽然两者的表示方法不一致(HSL:0<del>360°,0</del>100%,0<del>100%;RGB <strong>8bit</strong>:0-255，如果都取int则<font style="color:rgb(25, 27, 31);">360x101x101=3672360（360万色）和256x256x256=16777216 （1670万色），</font>**<font style="color:rgb(25, 27, 31);">亦可以用16进制表示:#000000</del>#FFFFFF，一个FF表示为2的8次幂255</font>**)，<strong>HSL 色轮的某些组合（特别是高亮度或低饱和度）会收敛到白色、灰色、黑色</strong>，导致一些 HSL 组合映射到相同的 RGB 值；但是理论上，在算法下只要表达的精度够高，两者之间仍然是可以进行色彩转换的。</p>
+<p>有一个理论是说HSL能够表达的色彩要少于RGB，这个说法属于是理所当然的认为HSL认为为整数/一位小数了，**我在色轮中给你看到一位小数 != 这个颜色的实际HSL值。**除此以外，HSL有一个特点就是因为引入了Lightness，那么Lightness约接近于0/1，那么颜色重合度越高（因为越接近于白色和黑色）</p>
+<p>因此HSL的色彩坐标图更加接近于双锥体，和上图的RGB三维坐标图作为对比：</p>
+<ul>
+<li><strong>H（Hue，色相）</strong>：绕圆周旋转，360°，代表颜色种类。</li>
+<li><strong>S（Saturation，饱和度）</strong>：从中心（灰色）到边缘（最纯色）。</li>
+<li><strong>L（Lightness，亮度）</strong>：从底部（黑）到顶部（白），中间是最大纯度。</li>
+</ul>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/62818472_hu_a75613747dd3b443.png  330w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/62818472_hu_8d5bf063a30ee1fc.png  660w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/62818472_hu_124c3379c9fe45ff.png 1280w
+    "
+    data-zoom-src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/62818472.png"
+    src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/62818472.png">
+
+  
+</figure>
+</p>
+<p>并且现代计算机为了进行图层叠加或者混合（也就是alpha test、alpha clipping等等和透明度有关的计算），会引入一个新的量Alpha，也会使用colorRGBA = vec4(x,y,z,a)，不过至于引入alpha之后色彩要如何叠加表示我就先不讲了，这里///又是一个大坑&hellip;</p>
+
+<h2 class="relative group">扩展：CIE色度图 
+    <div id="扩展cie色度图" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%89%a9%e5%b1%95cie%e8%89%b2%e5%ba%a6%e5%9b%be" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p><font style="color:rgb(25, 27, 31);">实际上，rgb(255, 0, 0) 或者 #FF0000 这样的色值参数，仅仅只是告诉计算机显示设备：请你展示纯红色，不掺杂一点蓝也不掺杂一点绿的纯红色。此时，显示设备会尽自己的全力去显示一个 100% 饱和度的纯红色，但不同的显示设备，他们的展示效果是不同的，其中某些显示设备的红色看起来可能会比另外一些更鲜艳（比如手机屏幕看起来比电脑屏色彩艳丽）。这就带来了一个问题：RGB 色值的表现是基于显示设备的，不同的显示设备对 RGB 的表达能力有所不同，虽然他们接受到的色值参数是一致的，但呈现出来的颜色的视觉感受却并不相同，换言之就是他们并没有展示出相同的颜色，那到底哪个红色才是准确的呢？</font></p>
+<p><font style="color:rgb(25, 27, 31);">实际上这个问题早在 1931 年就得到了解决，为了定义一种与设备无关的颜色模型，让色彩能够脱离设备而准确定义，1931 年国际照明委员会（CIE）的色彩科学家们在 </font><a
+  href="https://zhida.zhihu.com/search?content_id=114846309&amp;content_type=Article&amp;match_order=1&amp;q=RGB&#43;%E6%A8%A1%E5%9E%8B&amp;zhida_source=entity"
+    target="_blank"
+  ><font style="color:rgb(9, 64, 142);">RGB 模型</font></a>
+<font style="color:rgb(25, 27, 31);">基础上，通过数学的方法推导出了理论的 RGB 三基色，并以此创建了一个标准的色彩系统。而这一色彩系统的常见展示方式，就是 CIE 色度图（CIE chromaticity diagram）（如下图），我们之后所讨论的色彩空间往往都是基于这个色度图去展示的。</font></p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/c0933ac2_hu_2c3c8a140525ce65.png  330w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/c0933ac2_hu_926715b79a5b6260.png  660w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/c0933ac2_hu_f3237733197481c0.png 1280w
+    "
+    data-zoom-src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/c0933ac2.png"
+    src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/c0933ac2.png">
+
+  
+</figure>
+</p>
+<p><font style="color:rgb(25, 27, 31);">为什么 CIE 色度图会长这个样子，一个看起来没什么规则的奇怪三角形，之前的圆形色盘不是更美观吗？事实上这个形状是通过数学计算得来的，之所以计算结果长这样，其中一个重要规则是 “</font><a
+  href="https://zhida.zhihu.com/search?content_id=114846309&amp;content_type=Article&amp;match_order=1&amp;q=%E6%84%9F%E7%9F%A5%E5%9D%87%E5%8C%80%E6%80%A7&amp;zhida_source=entity"
+    target="_blank"
+  ><font style="color:rgb(9, 64, 142);">感知均匀性</font></a>
+<font style="color:rgb(25, 27, 31);">（perceptual uniformity）”，说人话就是这个形状更容易表现色彩之间的关系。还是没明白？没关系，我们举个例子:</font></p>
+<p><font style="color:rgb(25, 27, 31);">比如图一中，如果 A 点（绿色） 和 B 点（红色）两个点的颜色等比例混合，那么得到的新的颜色黄色一定在 A 点和 B 点连线的中点 E 点上，反观（图二）在圆形色盘（非感知均匀性图形）上去连接纯绿色 A 和纯红色 B 两个点，他们的中点 E 并不是纯黄色，纯黄色在圆周 F 点上；换言之，如果 A 点和 B 点两个颜色通过任意比例混合，那么得到的新的颜色也必然在 A B 两点的连线上。也就是说，（图三）R G B 三个点的颜色通过任意比例混合，他们所表现出来的新颜色也必然在这个三角范围内。</font></p>
+<p><font style="color:rgb(25, 27, 31);">这里要声明一下，除了几何上的追求，还有一个就是生物学上对于感知的特点：</font></p>
+<ul>
+<li><strong>CIE 色度图</strong><font style="color:rgb(25, 27, 31);">（如 </font><strong><font style="color:rgb(25, 27, 31);">CIE 1931 xy 色度图</font></strong><font style="color:rgb(25, 27, 31);">，最常见的显示器色域可视化，除了1931还有很多版本，比如说1960UCS系列、1976系列、CIECAM系列）的边界是根据人眼对颜色的实际感知和混合结果、而不是简单的几何规则推算出来的。</font></li>
+<li><font style="color:rgb(25, 27, 31);">它追求的是“感知均匀性”——即色彩空间的距离对应人眼感知的色差，空间中距离相等的两点，人的感知色差也尽量相等。</font></li>
+<li><font style="color:rgb(25, 27, 31);">红色和绿色在这两个色彩空间中差异最大，也就是说如果采用蓝色调作为界面主色的话，在不同的色彩空间设备上差异会小一些，相反，采用红色和绿色，表现差异会比较大，越是饱和度高的红、绿色，差异越明显。</font></li>
+</ul>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/163c8778_hu_621cfe46ca4db982.png  330w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/163c8778_hu_9295aecc01a376f.png  660w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/163c8778_hu_ad3251b53ee150e6.png 1280w
+    "
+    data-zoom-src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/163c8778.png"
+    src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/163c8778.png">
+
+  
+</figure>
+</p>
+
+<h3 class="relative group">为什么都是红色，相同的数值（如P3，sRGB都是0~255的RGB表示），在CIE的坐标映射却不同？ 
+    <div id="为什么都是红色相同的数值如p3srgb都是0255的rgb表示在cie的坐标映射却不同" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%83%bd%e6%98%af%e7%ba%a2%e8%89%b2%e7%9b%b8%e5%90%8c%e7%9a%84%e6%95%b0%e5%80%bc%e5%a6%82p3srgb%e9%83%bd%e6%98%af0255%e7%9a%84rgb%e8%a1%a8%e7%a4%ba%e5%9c%a8cie%e7%9a%84%e5%9d%90%e6%a0%87%e6%98%a0%e5%b0%84%e5%8d%b4%e4%b8%8d%e5%90%8c" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>sRGB、P3等色彩空间的红绿蓝基色的CIE xy坐标</strong>，其实是由其标准定义直接给出的，来源于它们的物理“基色光”的CIE 1931 xy色度坐标。<del><strong>（直接去CIE委员会查坐标就行了）   还有P3和sRGB其实用的数据共通只是显示器协议</strong></del></p>
+<p>换而言之，每个RGB色彩空间（比如sRGB、P3、AdobeRGB）都规定了其R、G、B三基色的CIE xyY坐标（通常Y=1，因为y代表亮度，这个已经不是我们色域考虑的范围），再加上白点（D65等），这样就能唯一确定该空间的全部色域。</p>
+
+<h1 class="relative group">色彩的数据结构 
+    <div id="色彩的数据结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%89%b2%e5%bd%a9%e7%9a%84%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p><strong>色深（bit depth）在数据结构上如何体现</strong>，其实就是图像文件、帧缓冲、内存等如何“用多少比特来存每个像素/通道的颜色值”。</p>
+
+<h2 class="relative group">1. <strong>单个像素的数据结构</strong> 
+    <div id="1-单个像素的数据结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8d%95%e4%b8%aa%e5%83%8f%e7%b4%a0%e7%9a%84%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group"><strong>A. 8bit色深的RGB图片（最常见）</strong> 
+    <div id="a-8bit色深的rgb图片最常见" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#a-8bit%e8%89%b2%e6%b7%b1%e7%9a%84rgb%e5%9b%be%e7%89%87%e6%9c%80%e5%b8%b8%e8%a7%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>每个像素有3个通道（R、G、B），每个通道用8位（1字节）。</li>
+<li><strong>每个通道能表达0~255（256种）数值。</strong></li>
+<li>一个像素一共占3字节（24位）。</li>
+<li>数据排列方式通常是交错（R, G, B, R, G, B&hellip;）。</li>
+</ul>
+<p><strong>示例（像素值）：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>R</th>
+          <th>G</th>
+          <th>B</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>78</td>
+          <td>129</td>
+          <td>255</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>二进制数据：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">01001110 10000001 11111111
+</span></span></code></pre></div>
+<h3 class="relative group"><strong>B. 10bit、12bit色深的RGB图片（高端显示/渲染/视频）</strong> 
+    <div id="b-10bit12bit色深的rgb图片高端显示渲染视频" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#b-10bit12bit%e8%89%b2%e6%b7%b1%e7%9a%84rgb%e5%9b%be%e7%89%87%e9%ab%98%e7%ab%af%e6%98%be%e7%a4%ba%e6%b8%b2%e6%9f%93%e8%a7%86%e9%a2%91" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>每通道用10位或12位，能表示1024或4096级。</li>
+<li>数据排列：
+<ul>
+<li>常见存储方式是16位对齐（即每通道用16位，但高位有效，低位补0）。</li>
+<li>也有“打包存储”：比如30位图像（R10G10B10A2），4字节打包3个10bit加2bit alpha。</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例（10bit每通道）：</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>R</th>
+          <th>G</th>
+          <th>B</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>278</td>
+          <td>800</td>
+          <td>1023</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>二进制数据（打包方式，举例）：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">000100010110 1100100000 1111111111
+</span></span></code></pre></div>
+<h3 class="relative group"><strong>C. 16bit、32bit色深（高精度浮点）</strong> 
+    <div id="c-16bit32bit色深高精度浮点" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#c-16bit32bit%e8%89%b2%e6%b7%b1%e9%ab%98%e7%b2%be%e5%ba%a6%e6%b5%ae%e7%82%b9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>每通道用16位无符号整数（0~65535），或者32位float（如OpenEXR格式）。</li>
+<li>用于HDR渲染、科学图像、电影特效等。</li>
+</ul>
+
+<h2 class="relative group">2. <strong>整个图像的数据结构</strong> 
+    <div id="2-整个图像的数据结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e6%95%b4%e4%b8%aa%e5%9b%be%e5%83%8f%e7%9a%84%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>以<strong>2x2像素RGB 8bit</strong>图片为例：</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>(R0,G0,B0)</td>
+          <td>(R1,G1,B1)</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>(R2,G2,B2)</td>
+          <td>(R3,G3,B3)</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>内存中数据排列（交错存储）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">R0 G0 B0 R1 G1 B1 R2 G2 B2 R3 G3 B3
+</span></span></code></pre></div><p>总共需要2×2×3=12字节。</p>
+
+<h2 class="relative group">3. <strong>色深在文件格式中的表现</strong> 
+    <div id="3-色深在文件格式中的表现" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e8%89%b2%e6%b7%b1%e5%9c%a8%e6%96%87%e4%bb%b6%e6%a0%bc%e5%bc%8f%e4%b8%ad%e7%9a%84%e8%a1%a8%e7%8e%b0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><strong>PNG</strong>：支持8bit和16bit色深（每通道）。</li>
+<li><strong>JPEG</strong>：大多数只支持8bit（有部分高端JPEG支持12bit）。</li>
+<li><strong>TIFF</strong>：支持8/16/32bit，甚至浮点数。</li>
+<li><strong>OpenEXR</strong>：支持16bit半精度浮点、32bit浮点、高端影视通用。</li>
+<li><strong>BMP</strong>：8/16/24/32bit，各种排列。</li>
+<li><strong>Raw（相机底片）</strong>：常见12bit、14bit、16bit，通常是单通道bayer阵列。</li>
+</ul>
+
+<h2 class="relative group">4. <strong>显卡/显示器/操作系统的色深支持</strong> 
+    <div id="4-显卡显示器操作系统的色深支持" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e6%98%be%e5%8d%a1%e6%98%be%e7%a4%ba%e5%99%a8%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e7%9a%84%e8%89%b2%e6%b7%b1%e6%94%af%e6%8c%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><strong>帧缓冲</strong>（<strong>framebuffer</strong>）<strong>可以是24bit（8bit×3）、30bit（10bit×3）、36bit等。</strong></li>
+<li><strong>HDMI、DisplayPort</strong>等接口支持10bit、12bit输出（取决于显示器和显卡）。</li>
+<li><strong>显示器</strong>也分8bit、10bit、12bit面板。</li>
+</ul>
+<p><strong>色深在数据结构上，就是每个颜色通道用多少位来存储。8bit每通道就是1字节，10bit/12bit通常用16位对齐，16bit/32bit直接用高精度数值。色深越高，单像素占用空间越大，能表达的颜色级数越多。</strong></p>
+
+<h1 class="relative group">色彩的传输 
+    <div id="色彩的传输" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%89%b2%e5%bd%a9%e7%9a%84%e4%bc%a0%e8%be%93" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+
+<h2 class="relative group">1. <strong>基本流程概述</strong> 
+    <div id="1-基本流程概述" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%9f%ba%e6%9c%ac%e6%b5%81%e7%a8%8b%e6%a6%82%e8%bf%b0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ol>
+<li><strong>应用输出 RGB 数值（通常是 sRGB 空间，gamma 编码）</strong></li>
+<li><strong>操作系统或图形驱动进行色彩空间转换（如 sRGB → P3/Rec.2020/显示器色彩空间）</strong></li>
+<li><strong>进行 gamma/degamma 处理（线性化和显示端编码）</strong></li>
+<li><strong>发送到显示器，显示器解读并显示实际的光学颜色</strong></li>
+</ol>
+<hr>
+
+<h2 class="relative group">2. <strong>详细流程分解</strong> 
+    <div id="2-详细流程分解" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e8%af%a6%e7%bb%86%e6%b5%81%e7%a8%8b%e5%88%86%e8%a7%a3" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group"><strong>A. 应用程序输出（一般为 sRGB）</strong> 
+    <div id="a-应用程序输出一般为-srgb" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#a-%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e8%be%93%e5%87%ba%e4%b8%80%e8%88%ac%e4%b8%ba-srgb" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>图片、网页、视频等，通常以 sRGB 编码的 RGB 数值输出。</li>
+<li>这些数值是<strong>经过 gamma 编码的</strong>（非线性，适合存储和人的感知）。</li>
+</ul>
+
+<h3 class="relative group"><strong>B. 操作系统/色彩管理系统处理</strong> 
+    <div id="b-操作系统色彩管理系统处理" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#b-%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e8%89%b2%e5%bd%a9%e7%ae%a1%e7%90%86%e7%b3%bb%e7%bb%9f%e5%a4%84%e7%90%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">1）<strong>degamma：sRGB → 线性空间（Linear RGB）</strong> 
+    <div id="1degammasrgb--线性空间linear-rgb" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1degammasrgb--%e7%ba%bf%e6%80%a7%e7%a9%ba%e9%97%b4linear-rgb" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>首先，把 sRGB 的 gamma 编码 RGB 数值“解码”为<strong>线性光强度</strong>。</li>
+<li>这一步叫<strong>degamma</strong>或<strong>gamma解码</strong>。</li>
+<li>公式如下（sRGB为例）：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">如果 C_srgb &lt;= 0.04045:
+</span></span><span class="line"><span class="cl">    C_linear = C_srgb / 12.92
+</span></span><span class="line"><span class="cl">否则:
+</span></span><span class="line"><span class="cl">    C_linear = ((C_srgb + 0.055) / 1.055) ^ 2.4
+</span></span></code></pre></div><p>其中 C_srgb ∈ [0,1]。</p>
+<p>gamma和degamma<font style="color:rgb(44, 44, 54);">是描述 </font><strong><font style="color:rgb(44, 44, 54);">亮度信号与显示亮度之间非线性关系</font></strong><font style="color:rgb(44, 44, 54);"> 的关键参数。它通过调整输入信号（如数字图像中的RGB值）与输出亮度之间的映射关系。</font></p>
+<p><font style="color:rgb(44, 44, 54);">但其实gamma设计的初衷是为了适配CRT显示器，CRT显示器的特性就是亮度不随电压的变化而线性变化。因此在传输到显示器之前还要做一遍gamma，也就是gamma2.2（sRGB标准）.反过来，还有gamma0.45（用于degamma恢复到线性响应）。因为现在的显示器已经可以基本做到</font><strong><font style="color:rgb(44, 44, 54);">线性的亮度显示</font></strong><font style="color:rgb(44, 44, 54);">，而现代操作系统仍然保持gamma工作流（即从主机端输出到显示器端仍然是</font><strong><font style="color:rgb(44, 44, 54);">被gamma后</font></strong><font style="color:rgb(44, 44, 54);">的色彩数据），因此显示器端要做一遍degamma。</font></p>
+
+<h4 class="relative group">2）<strong>色彩空间变换（色域映射）</strong> 
+    <div id="2色彩空间变换色域映射" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2%e8%89%b2%e5%bd%a9%e7%a9%ba%e9%97%b4%e5%8f%98%e6%8d%a2%e8%89%b2%e5%9f%9f%e6%98%a0%e5%b0%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>把线性 sRGB 转换为显示器的色彩空间（比如显示器是 P3、Rec.709、Rec.2020、AdobeRGB等）。</li>
+<li>这一步通过<strong>矩阵变换</strong>完成：<br>
+<code>线性sRGB → 线性显示器RGB</code></li>
+<li>变换用的是不同空间的基色矩阵（色度坐标）和白点适配。</li>
+</ul>
+
+<h4 class="relative group">3）<strong>gamma 编码</strong> 
+    <div id="3gamma-编码" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3gamma-%e7%bc%96%e7%a0%81" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>线性显示器 RGB 需要“重新编码”（gamma），以适配显示器的电子特性和人眼感知。</li>
+<li>比如普通 SDR 显示器用 sRGB gamma，HDR 显示器用 PQ（ST2084）、HLG等。</li>
+<li>这一步叫<strong>gamma编码</strong>或<strong>EOTF（Electro-Optical Transfer Function）</strong>。</li>
+</ul>
+<p>常见 gamma 编码（以 sRGB 为例）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">如果 C_linear &lt;= 0.0031308:
+</span></span><span class="line"><span class="cl">    C_display = C_linear * 12.92
+</span></span><span class="line"><span class="cl">否则:
+</span></span><span class="line"><span class="cl">    C_display = 1.055 * (C_linear ^ (1/2.4)) - 0.055
+</span></span></code></pre></div>
+<h4 class="relative group">4）<strong>Dithering/Bit-depth 降位</strong> 
+    <div id="4ditheringbit-depth-降位" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4ditheringbit-depth-%e9%99%8d%e4%bd%8d" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>有时候还会做抖动处理，以便更好地显示低位深色彩。</li>
+</ul>
+
+<h3 class="relative group"><strong>C. 信号传输到显示器</strong> 
+    <div id="c-信号传输到显示器" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#c-%e4%bf%a1%e5%8f%b7%e4%bc%a0%e8%be%93%e5%88%b0%e6%98%be%e7%a4%ba%e5%99%a8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>最终的 RGB 数值（已编码，适配显示器色域和 gamma）通过 HDMI/DP 等传给显示器。</li>
+<li>显示器解读信号，发光显示。</li>
+</ul>
+
+<h2 class="relative group">3. <strong>流程图简化</strong> 
+    <div id="3-流程图简化" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e6%b5%81%e7%a8%8b%e5%9b%be%e7%ae%80%e5%8c%96" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">[应用输出(sRGB, gamma编码)]
+</span></span><span class="line"><span class="cl">          |
+</span></span><span class="line"><span class="cl">degamma，先统一转换为线性空间计算
+</span></span><span class="line"><span class="cl">（Windows因为软件支持不同，由系统收集应用显示后统一在系统层WCS/DWM转换）
+</span></span><span class="line"><span class="cl">（iOS系列则在架构设计之初就会启用全局色彩管理，即：在构建应用时苹果就已经嵌入色彩转换引擎ColorSync）
+</span></span><span class="line"><span class="cl">          ↓
+</span></span><span class="line"><span class="cl">[framebuffer上所有出现的应用都将遍历以上两步，将所有色彩空间转为线性空间]
+</span></span><span class="line"><span class="cl">          |
+</span></span><span class="line"><span class="cl">色彩空间变换（如果有不同色域出现在屏幕上则在这一步进行统一的色彩重映射）
+</span></span><span class="line"><span class="cl">          ↓
+</span></span><span class="line"><span class="cl">统一gamma压缩，将数据传输到显示器
+</span></span><span class="line"><span class="cl">          |
+</span></span><span class="line"><span class="cl">显示器接收到gamma后的色彩
+</span></span><span class="line"><span class="cl">          ↓
+</span></span><span class="line"><span class="cl">[显示器RGB, degamma编码]
+</span></span><span class="line"><span class="cl">          |
+</span></span><span class="line"><span class="cl">显示器显示
+</span></span></code></pre></div><p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/1759d84d_hu_4fead47a8fc120eb.png  330w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/1759d84d_hu_db5812aeb493488b.png  660w,
+      /posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/1759d84d_hu_f258c437f4c006e2.png 1280w
+    "
+    data-zoom-src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/1759d84d.png"
+    src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/1759d84d.png">
+
+  
+</figure>
+</p>
+
+<h2 class="relative group">4. <strong>实际例子</strong> 
+    <div id="4-实际例子" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e5%ae%9e%e9%99%85%e4%be%8b%e5%ad%90" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li>用 Photoshop 打开一张 sRGB 图片，在 P3 屏幕上查看：
+<ol>
+<li>Photoshop 输出 sRGB (gamma编码)</li>
+<li>操作系统 degamma → 线性sRGB</li>
+<li>线性sRGB → 线性P3（色彩空间变换）</li>
+<li>gamma编码 → P3 gamma（或保持线性，视显示器而定）</li>
+<li>输出到显示器，正确显示原色</li>
+</ol>
+</li>
+</ul>
+
+<h2 class="relative group">5. <strong>补充说明</strong> 
+    <div id="5-补充说明" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e8%a1%a5%e5%85%85%e8%af%b4%e6%98%8e" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><strong>色彩空间管理</strong>（ICC Profile）：操作系统和应用程序要正确读取、嵌入、转换色彩空间信息（profile），否则会色偏。</li>
+<li><strong>未管理流程</strong>：如果没有色彩管理（很多PC默认如此），sRGB数值直接发到P3或其他色域显示器，会导致“溢色”或“错误显示”。</li>
+</ul>
+
+<h2 class="relative group">6. <strong>关键词解释</strong> 
+    <div id="6-关键词解释" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e5%85%b3%e9%94%ae%e8%af%8d%e8%a7%a3%e9%87%8a" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><strong>gamma</strong>：一种将线性光强度非线性编码为接近人眼感知的数值的数学函数。</li>
+<li><strong>degamma</strong>：将非线性数值还原为线性光强度。</li>
+<li><strong>色彩空间变换</strong>：不同色域之间的RGB值变换。</li>
+<li><strong>EOTF/OETF</strong>：光电/电光转移函数，描述信号和实际亮度的关系。</li>
+</ul>
+<p>操作系统的色彩管理流程，会先把应用输出的 gamma 编码 RGB 数值“degamma”成线性空间，再做色彩空间变换，最后重新 gamma 编码后输出到显示器，确保在不同色域和显示特性下，色彩能准确还原。</p>
+
+<h2 class="relative group">Tips：从主机到显示器会传输什么数据？ 
+    <div id="tips从主机到显示器会传输什么数据" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#tips%e4%bb%8e%e4%b8%bb%e6%9c%ba%e5%88%b0%e6%98%be%e7%a4%ba%e5%99%a8%e4%bc%9a%e4%bc%a0%e8%be%93%e4%bb%80%e4%b9%88%e6%95%b0%e6%8d%ae" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>主机通过<strong>显卡</strong>（GPU）把帧缓冲区里的像素数据输出到显示器，主要包括：</p>
+<ol>
+<li><strong>像素 RGB 数值流</strong>
+<ul>
+<li>每个像素的 RGB（或 YCbCr，也称为YUV我们的采集卡经常使用。<font style="color:rgb(44, 44, 54);">Y（亮度）、Cb（蓝色色度）、Cr（红色色度）</font>）数值，通常是 8bit/10bit/12bit，色彩空间、gamma 编码方式由上下文决定。</li>
+</ul>
+</li>
+<li><strong>信号格式</strong>
+<ul>
+<li>比如 HDMI、DisplayPort、DVI、USB-C Alt Mode 等。</li>
+<li>协议规定了分辨率、刷新率、色深、色彩格式（RGB/YCbCr）、压缩方式等。</li>
+</ul>
+</li>
+<li><strong>同步信号</strong>
+<ul>
+<li>时序信号（VSync、HSync、DE），确保图像正确显示。</li>
+</ul>
+</li>
+<li><strong>部分元数据</strong>
+<ul>
+<li>比如 HDR 标记、色度子采样信息、颜色量化范围（全/限幅）等。</li>
+</ul>
+</li>
+</ol>
+
+<h3 class="relative group"><strong>1. EDID（显示器能力描述）</strong> 
+    <div id="1-edid显示器能力描述" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-edid%e6%98%be%e7%a4%ba%e5%99%a8%e8%83%bd%e5%8a%9b%e6%8f%8f%e8%bf%b0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>EDID</strong>（Extended Display Identification Data）是显示器通过 I²C 通道（DDC/CI）向主机报告“我能支持什么”的标准协议。</li>
+<li>包含：
+<ul>
+<li>支持的分辨率、刷新率、色深、色彩格式</li>
+<li>支持的色域（如 sRGB、AdobeRGB、P3、BT.2020）、色度坐标</li>
+<li>支持的 HDR 标准（如 HDR10、Dolby Vision）、EOTF（Gamma/PQ/HLG 等）</li>
+</ul>
+</li>
+</ul>
+
+<h4 class="relative group"><strong>主机读取EDID流程</strong> 
+    <div id="主机读取edid流程" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%bb%e6%9c%ba%e8%af%bb%e5%8f%96edid%e6%b5%81%e7%a8%8b" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>操作系统启动/显示设备热插拔时，显卡读取显示器 EDID 信息</li>
+<li>操作系统/驱动据此列出分辨率、刷新率、色深、色域等选项</li>
+<li>部分操作系统会自动根据 EDID 选择合适的色彩输出（如 macOS 优先输出 P3）</li>
+</ul>
+
+<h3 class="relative group"><strong>2. 色域握手的历史和现状</strong> 
+    <div id="2-色域握手的历史和现状" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e8%89%b2%e5%9f%9f%e6%8f%a1%e6%89%8b%e7%9a%84%e5%8e%86%e5%8f%b2%e5%92%8c%e7%8e%b0%e7%8a%b6" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>传统 SDR 环境（sRGB 时代）</strong>：
+<ul>
+<li>大多数显示器只支持 sRGB，EDID 并不强调色域</li>
+<li>主机默认以 sRGB 方式输出，广色域显示器通常手动切换模式</li>
+</ul>
+</li>
+<li><strong>现代广色域/高端显示器</strong>：
+<ul>
+<li>EDID 里会声明 P3、AdobeRGB、Rec.2020 等支持情况</li>
+<li>新版 HDMI/DP 协议和 VESA DisplayID 标准允许更细致的色度坐标、色域声明</li>
+<li>主机可以据此自动优化输出</li>
+</ul>
+</li>
+</ul>
+
+<h3 class="relative group"><strong>3. HDR 和高级色域的元数据</strong> 
+    <div id="3-hdr-和高级色域的元数据" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-hdr-%e5%92%8c%e9%ab%98%e7%ba%a7%e8%89%b2%e5%9f%9f%e7%9a%84%e5%85%83%e6%95%b0%e6%8d%ae" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>当启用 HDR 或 BT.2020 色域时，主机不仅通过 EDID 得知显示器能力，<strong>还会在视频流里插入 HDR 元数据（如 EOTF、色域主色点、白点等），显示器据此调整显示模式</strong>。</li>
+<li>比如 Windows 11、macOS、部分 Linux 桌面环境都已支持 HDR 色域和 EOTF 自动协商。</li>
+</ul>
+
+<h3 class="relative group"><strong>4. 实际操作流程</strong> 
+    <div id="4-实际操作流程" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e5%ae%9e%e9%99%85%e6%93%8d%e4%bd%9c%e6%b5%81%e7%a8%8b" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li><strong>主机读取显示器 EDID/DisplayID，了解其支持的分辨率、色深、色域等能力</strong></li>
+<li><strong>主机/操作系统选择合适的输出配置：</strong>
+<ul>
+<li>比如输出 P3 10bit，或 sRGB 8bit，或 HDR BT.2020 10bit</li>
+</ul>
+</li>
+<li><strong>（可选）操作系统/专业软件做色彩空间变换，把内容适配到目标色域</strong></li>
+<li><strong>主机编码好信号，通过 HDMI/DP 发送到显示器</strong></li>
+<li><strong>显示器根据输入信号和自身设置，选择合适的显示模式（有的能自动切换色域/模式）</strong></li>
+</ol>
+
+<h1 class="relative group">为什么Gamma如今还存在？ 
+    <div id="为什么gamma如今还存在" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%ba%e4%bb%80%e4%b9%88gamma%e5%a6%82%e4%bb%8a%e8%bf%98%e5%ad%98%e5%9c%a8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p><del>其实就是船大难调头了你不可能在已经成熟的市场重新定义一个完全线性的显示流</del></p>
+<p>以前Gamma的存在是因为CRT显示器的亮度并不随电压的变化而均匀变化；因此在传输视频信号给显示器的时候，主机端就要做一遍Gamma2.2（Linear to sRGB），使主机的输出Gamma视频能和CRT的显示劣势相抵消。</p>
+<p>虽然现代显示屏已经实现了将视频信号几乎以线性亮度显示出来，但是因此还要说到Gamma的另一个特性——暗部的低压缩。</p>
+
+<h2 class="relative group">人眼的非线性感知 
+    <div id="人眼的非线性感知" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%ba%ba%e7%9c%bc%e7%9a%84%e9%9d%9e%e7%ba%bf%e6%80%a7%e6%84%9f%e7%9f%a5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>其实这是在使用Gamma抵消CRT显示器显示缺陷的副产物——Gamma矫正会使暗部的灰阶被拉伸，而亮部的灰阶会被压缩。</p>
+<p>但是<font style="color:rgb(44, 44, 54);">人眼对亮度的感知是非线性的：</font><strong><font style="color:rgb(44, 44, 54);">在暗部区域，人眼对亮度变化的敏感度更高</font></strong><font style="color:rgb(44, 44, 54);">，而在亮部区域，亮度变化对人眼的影响会减弱。</font></p>
+<p>RGB的每个通道（红、绿、蓝）的取值范围为0到255，这表示每个颜色通道有256个灰阶（0到255共256个值）。如果用人眼的范围感知打比方则有：</p>
+<ul>
+<li><strong>暗部敏感</strong>：在暗部区域，亮度的微小变化（如从1到2）会显著影响视觉感知。</li>
+<li><strong>亮部迟钝</strong>：在亮部区域，亮度的大幅变化（如从200到255）对视觉感知的影响较小。</li>
+</ul>
+<p><strong>Gamma校正的补偿作用</strong>：</p>
+<ul>
+<li>通过非线性映射，Gamma校正将更多灰阶分配到人眼敏感的暗部区域。例如，将256个灰阶中的一部分（如前100个灰阶）用于暗部，而仅用少量灰阶（如后50个灰阶）覆盖亮部。这样，在有限的256个灰阶中，暗部能呈现更丰富的细节。</li>
+</ul>
+<p>用数学方式来表达Gamma的灰阶拉伸作用的话，有：</p>
+<p>假设Gamma值为2.2（常见标准），输入线性亮度值为 
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/d3a6c2bc.svg">
+
+  
+</figure>
+，输出Gamma编码值为 
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/a098efef.svg">
+
+  
+</figure>
+：</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/c5a412d0.svg">
+
+  
+</figure>
+</p>
+<p><strong>暗部</strong>：</p>
+<p>假设线性亮度 
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/6c4db7a8.svg">
+
+  
+</figure>
+（10%亮度），则Gamma编码值为：</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/57fb659b.svg">
+
+  
+</figure>
+</p>
+<p>在Gamma空间中，0.1的亮度被映射到像素值91，而非线性空间中的0.1亮度对应像素值25.5（25.5 × 0.1 = 2.55）。显然，Gamma空间中暗部的灰阶被拉伸了。</p>
+<p><strong>亮部</strong>：</p>
+<p>线性亮度 
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/607d6716.svg">
+
+  
+</figure>
+（90%亮度），Gamma编码值为：</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img class="my-0 rounded-md" loading="lazy" alt="image" src="/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/0ca41ed7.svg">
+
+  
+</figure>
+</p>
+<p>在Gamma空间中，0.9的亮度仅映射到像素值242，而非线性空间中的0.9亮度对应像素值229.5。亮部的灰阶被压缩了。</p>
+
+<h2 class="relative group">带宽的压缩 
+    <div id="带宽的压缩" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%b8%a6%e5%ae%bd%e7%9a%84%e5%8e%8b%e7%bc%a9" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>我们知道<font style="color:rgb(44, 44, 54);">通过非线性映射（如Gamma值2.2），将暗部灰阶拉伸，亮部灰阶压缩(我们用sRGB 8bit来做比方，即灰阶由RGB加权后。但这个压缩的gamma具体的色阶分配是多少？又压缩了多少？</font></p>
+<p>假设图像为8位通道（256级灰阶），亮度范围为0-1（0=黑，1=白）：</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>亮度区间</strong></th>
+          <th><strong>未使用Gamma校正（线性）</strong></th>
+          <th><strong>使用Gamma校正（Gamma=2.2）</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>暗部（0-0.2）</strong></td>
+          <td>占256级中的51级（0-51）</td>
+          <td>占256级中的约150级（0-150）</td>
+      </tr>
+      <tr>
+          <td><strong>中灰（0.2-0.5）</strong></td>
+          <td>占256级中的76级（52-127）</td>
+          <td>占256级中的约80级（151-230）</td>
+      </tr>
+      <tr>
+          <td><strong>亮部（0.5-1.0）</strong></td>
+          <td>占256级中的129级（128-255）</td>
+          <td>占256级中的约26级（231-256）</td>
+      </tr>
+  </tbody>
+</table>
+<p>而实际上我们日常的显示几乎是高灰阶为主的，比如我们平时的浏览器；<strong>人们对高灰阶的感知并不明显，经过gamma压缩后高灰阶的数据量也被减少了，这也就变相减少了主机到显示器的数据传输量。</strong></p>
+<p>其实这个做法也和摄影圈“<strong>向右曝光</strong>”的思路一致：因为人眼对于暗部细节更加敏感，所以向右曝光至少不会产生欠曝（因为曝光过低导致暗部拉不回来的叫法），<strong>保留暗部细节&gt;保留亮部细节。这句话用在Gamma的作用也同样适用</strong>。</p>
+
+<h1 class="relative group">ICC配置文件——文件的自身色彩声明 
+    <div id="icc配置文件文件的自身色彩声明" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#icc%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e6%96%87%e4%bb%b6%e7%9a%84%e8%87%aa%e8%ba%ab%e8%89%b2%e5%bd%a9%e5%a3%b0%e6%98%8e" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>如果我们在打开一个图像文件的时候，在查看元数据的时候可以看到这一行：</p>
+<p><a
+  href="photoshop:ICCProfile">photoshop:ICCProfile</a>
+sRGB IEC61966-2.1 (线性 RGB 配置文件)&lt;/photoshop:ICCProfile&gt;</p>
+<p>这就是嵌入到文件中的ICC Profile，用于告诉系统要如何处理这个色域/degamma的数值。</p>
+<p>其实一般情况下ICC配置文件并没有什么用，<strong>因为大家都是约定俗成的使用sRGB</strong>，包括所有网站的图像压缩都会自动转换成为sRGB格式，有用的情况是在高色域显示器进行创作编辑时可以直接读取并且直接渲染到屏幕上。</p>
+
+<h2 class="relative group">ICC数据结构 
+    <div id="icc数据结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#icc%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>当一个图像文件嵌入了 <strong>ICC Profile（ICC配置文件）</strong> 时，该文件中会包含以下关键数据，用于描述图像的色彩特性并确保跨设备的颜色一致性：</p>
+
+<h3 class="relative group"><strong>1. 设备描述文本（Device Description）</strong> 
+    <div id="1-设备描述文本device-description" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e8%ae%be%e5%a4%87%e6%8f%8f%e8%bf%b0%e6%96%87%e6%9c%acdevice-description" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>内容</strong>：
+<ul>
+<li><strong>设备类型</strong>：说明该ICC配置文件是为哪种设备设计的（如显示器、打印机、扫描仪等）。</li>
+<li><strong>制造商信息</strong>：记录配置文件的创建者或设备制造商。</li>
+<li><strong>创建时间</strong>：配置文件生成的时间戳。</li>
+<li><strong>校准条件</strong>：例如显示器的白点色温（如D65）、亮度、环境光条件等。</li>
+</ul>
+</li>
+<li><strong>作用</strong>：帮助用户和软件识别配置文件的来源及适用性。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>2. 颜色空间与色域信息</strong> 
+    <div id="2-颜色空间与色域信息" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e9%a2%9c%e8%89%b2%e7%a9%ba%e9%97%b4%e4%b8%8e%e8%89%b2%e5%9f%9f%e4%bf%a1%e6%81%af" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>内容</strong>：
+<ul>
+<li><strong>色彩空间</strong>：描述图像数据所基于的色彩空间（如 sRGB、Adobe RGB、ProPhoto RGB 等）。</li>
+<li><strong>色域（Color Gamut）</strong>：通过 <strong>CIE XYZ 或 Lab</strong> 坐标表示设备或图像能再现的颜色范围。</li>
+<li><strong>白点（White Point）</strong>：定义设备的白色参考值（如 D65 表示色温 6500K）。</li>
+<li><strong>Gamma 曲线</strong>：描述设备对亮度的响应关系（如 sRGB 的 Gamma=2.2）。</li>
+</ul>
+</li>
+<li><strong>作用</strong>：确保图像在不同设备上以相同的色彩空间和色域呈现。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>3. 颜色转换规则</strong> 
+    <div id="3-颜色转换规则" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e9%a2%9c%e8%89%b2%e8%bd%ac%e6%8d%a2%e8%a7%84%e5%88%99" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>内容</strong>：
+<ul>
+<li><strong>设备到 PCS 的转换</strong>：将设备色彩空间（如 RGB）转换为标准色彩空间（如 CIE XYZ 或 Lab）。</li>
+<li><strong>PCS 到设备的转换</strong>：将标准色彩空间转换回目标设备色彩空间（如 CMYK）。</li>
+<li><strong>颜色转换表（LUT）</strong>：通过表格形式存储输入值到输出值的映射关系（如 3D LUT 或 1D LUT）。</li>
+</ul>
+</li>
+<li><strong>作用</strong>：实现图像颜色在不同设备间的精确转换。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>4. 渲染意图（Rendering Intent）</strong> 
+    <div id="4-渲染意图rendering-intent" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e6%b8%b2%e6%9f%93%e6%84%8f%e5%9b%berendering-intent" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>内容</strong>：
+<ul>
+<li><strong>Perceptual（感知意图）</strong>：保持颜色之间的视觉关系，适合图像和照片。</li>
+<li><strong>Relative Colorimetric（相对色度意图）</strong>：保留可再现的颜色，超出目标色域的颜色裁剪或替换。</li>
+<li><strong>Absolute Colorimetric（绝对色度意图）</strong>：严格匹配白点，用于特定行业（如医疗影像）。</li>
+<li><strong>Saturation（饱和度意图）</strong>：优先保持颜色的鲜艳度，适合图表和图形。</li>
+</ul>
+</li>
+<li><strong>作用</strong>：定义颜色转换时的策略，处理色域不匹配的问题。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>5. 校准数据</strong> 
+    <div id="5-校准数据" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#5-%e6%a0%a1%e5%87%86%e6%95%b0%e6%8d%ae" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>内容</strong>：
+<ul>
+<li><strong>校准测量值</strong>：通过专业校色工具（如 Datacolor Spyder）测量设备的色彩特性后生成。</li>
+<li><strong>3D LUT（查找表）</strong>：高级配置文件可能包含 3D LUT，直接定义输入 RGB 值到输出 RGB 值的映射关系。</li>
+</ul>
+</li>
+<li><strong>作用</strong>：确保图像颜色在设备上准确再现（如显示器校准后的颜色校正）。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>6. 特定设备信息</strong> 
+    <div id="6-特定设备信息" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#6-%e7%89%b9%e5%ae%9a%e8%ae%be%e5%a4%87%e4%bf%a1%e6%81%af" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>内容</strong>：
+<ul>
+<li><strong>输入设备</strong>：如扫描仪或数码相机的色彩捕捉能力（如色深、动态范围）。</li>
+<li><strong>输出设备</strong>：如打印机的墨水特性（如光泽纸与哑光纸的色差）。</li>
+<li><strong>显示设备</strong>：如显示器的亮度、对比度、色域覆盖范围。</li>
+</ul>
+</li>
+<li><strong>作用</strong>：描述设备的物理特性，确保颜色在设备间传递的一致性。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>7. 标准化格式与兼容性</strong> 
+    <div id="7-标准化格式与兼容性" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#7-%e6%a0%87%e5%87%86%e5%8c%96%e6%a0%bc%e5%bc%8f%e4%b8%8e%e5%85%bc%e5%ae%b9%e6%80%a7" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>内容</strong>：
+<ul>
+<li><strong>ICC 标准格式</strong>：遵循 ICC 于 1995 年制定的规范（ICC.1:2001-12）。</li>
+<li><strong>文件扩展名</strong>：通常为 <code>.icc</code> 或 <code>.icm</code>（Windows）。</li>
+</ul>
+</li>
+<li><strong>作用</strong>：确保跨平台（Windows、macOS）和跨设备（RGB、CMYK、扫描仪等）的通用性。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>8. 示例：嵌入的 ICC Profile 数据</strong> 
+    <div id="8-示例嵌入的-icc-profile-数据" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#8-%e7%a4%ba%e4%be%8b%e5%b5%8c%e5%85%a5%e7%9a%84-icc-profile-%e6%95%b0%e6%8d%ae" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>假设一个图像文件嵌入了 <strong>sRGB IEC61966-2.1</strong> 配置文件：</p>
+<ul>
+<li><strong>色域</strong>：sRGB 标准色域（覆盖约 35% 的 NTSC 色域）。</li>
+<li><strong>白点</strong>：D65（6500K 色温）。</li>
+<li><strong>Gamma 曲线</strong>：Gamma=2.2。</li>
+<li><strong>用途</strong>：广泛用于网页、电子设备，默认支持所有浏览器和操作系统。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>9. 嵌入 ICC Profile 的实际作用</strong> 
+    <div id="9-嵌入-icc-profile-的实际作用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#9-%e5%b5%8c%e5%85%a5-icc-profile-%e7%9a%84%e5%ae%9e%e9%99%85%e4%bd%9c%e7%94%a8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>确保颜色一致性</strong>：嵌入的 ICC Profile 会告诉软件（如 Photoshop、浏览器）图像数据基于哪种色彩空间，从而在不同设备上正确解释颜色。</li>
+<li><strong>避免色差</strong>：例如，若图像基于 Adobe RGB 色域，而显示器仅支持 sRGB，嵌入的 ICC Profile 会提示软件进行色域转换，避免颜色失真。</li>
+<li><strong>支持专业工作流</strong>：摄影师、设计师通过嵌入 ICC Profile，确保图像从拍摄到打印的全链路颜色一致。</li>
+</ul>
+<hr>
+
+<h3 class="relative group"><strong>10. 常见嵌入场景</strong> 
+    <div id="10-常见嵌入场景" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#10-%e5%b8%b8%e8%a7%81%e5%b5%8c%e5%85%a5%e5%9c%ba%e6%99%af" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th><strong>文件类型</strong></th>
+          <th><strong>是否支持嵌入 ICC Profile</strong></th>
+          <th><strong>典型用途</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>PSD</strong></td>
+          <td>✅</td>
+          <td>专业设计、摄影后期</td>
+      </tr>
+      <tr>
+          <td><strong>TIFF</strong></td>
+          <td>✅</td>
+          <td>高精度图像存储</td>
+      </tr>
+      <tr>
+          <td><strong>JPEG</strong></td>
+          <td>✅（部分压缩可能丢失数据）</td>
+          <td>网络图片、社交媒体</td>
+      </tr>
+      <tr>
+          <td><strong>PNG</strong></td>
+          <td>✅</td>
+          <td>无损压缩图像</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+
+<h3 class="relative group"><strong>总结</strong> 
+    <div id="总结" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>嵌入的 ICC Profile 包含了 <strong>设备色彩特性描述、颜色转换规则、渲染意图、校准数据</strong> 等核心信息。它通过标准化格式（如 <code>.icc</code>）确保图像在不同设备（显示器、打印机、扫描仪）之间传递时，颜色表现一致，是专业设计、摄影和印刷领域不可或缺的工具。</p>
+
+<h1 class="relative group">Windows屏幕的多软件色彩管理 
+    <div id="windows屏幕的多软件色彩管理" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#windows%e5%b1%8f%e5%b9%95%e7%9a%84%e5%a4%9a%e8%bd%af%e4%bb%b6%e8%89%b2%e5%bd%a9%e7%ae%a1%e7%90%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p>在Windows，由于没有苹果的强制标准，~~所有人都可以插上一脚 ~~不同软件对于色彩理解有不同的显示方法。这就要聊到我们高贵的渲染管线了</p>
+<p>一般来说，Framebuffer（储存于显存）desktop的一般是24位RGB+8位Alpha通道，合计32位深度，也就是说我们传统的8bit。当然可以自适应改善成为40位（4x10bit）、48位（4x12bit）。</p>
+<p>但是在Windows中，<strong>CPU在提交渲染信息给GPU之前，WDDM会查询所有在屏幕中的软件渲染API是否有声明这个软件的色彩空间</strong>。具体也就是在DirectX中写出：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">DXGI_COLOR_SPACE_TYPE colorSpace = DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709; // sRGB
+</span></span><span class="line"><span class="cl">swapChain-&gt;SetColorSpace1(colorSpace);
+</span></span></code></pre></div><ul>
+<li><strong>支持的色彩空间类型</strong>：
+<ul>
+<li><code>DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709</code>（sRGB）</li>
+<li><code>DXGI_COLOR_SPACE_RGB_STUDIO_G22_NONE_P709</code>（Adobe RGB）</li>
+<li><code>DXGI_COLOR_SPACE_RGB_FULL_G10_NONE_P709</code>（DCI-P3）</li>
+<li><code>DXGI_COLOR_SPACE_YCBCR709</code>（BT.709）</li>
+<li><code>DXGI_COLOR_SPACE_YCBCR601</code>（BT.601）</li>
+<li><code>DXGI_COLOR_SPACE_RGB_FULL_G2084_NONE_P2020</code>（HDR10 / BT.2020）</li>
+</ul>
+</li>
+<li><strong>DWM 的处理流程</strong>：
+<ol>
+<li><strong>应用声明色彩空间</strong>：通过 <code>SetColorSpace1</code> 告知 DWM 输出的色彩空间（如 HDR10）。</li>
+<li><strong>DWM 合成阶段</strong>：
+<ul>
+<li>将应用输出的色彩空间转换为 <strong>CCCS（规范合成色彩空间）</strong>（scRGB + FP16 线性伽马）。</li>
+<li>再将 CCCS 转换为显示器的物理色彩空间（如 BT.2020 或 ST.2084）。</li>
+</ul>
+</li>
+<li><strong>最终输出</strong>：通过 GPU 显式控制显示器的色彩输出，确保颜色准确性。</li>
+</ol>
+</li>
+</ul>
+
+<h4 class="relative group"><strong>(2) 实际效果</strong> 
+    <div id="2-实际效果" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%ae%9e%e9%99%85%e6%95%88%e6%9e%9c" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>HDR 应用</strong>：如果应用声明为 HDR10（<code>DXGI_COLOR_SPACE_RGB_FULL_G2084_NONE_P2020</code>），DWM 会启用 HDR 模式，使用 ST.2084 EOTF 进行转换。</li>
+<li><strong>SDR 应用</strong>：如果应用声明为 sRGB，DWM 会使用 sRGB 伽马（Gamma=2.2）进行合成。</li>
+</ul>
+
+<h3 class="relative group"><strong>在应用内实现色彩空间转换（Bypass DWM）</strong> 
+    <div id="在应用内实现色彩空间转换bypass-dwm" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%9c%a8%e5%ba%94%e7%94%a8%e5%86%85%e5%ae%9e%e7%8e%b0%e8%89%b2%e5%bd%a9%e7%a9%ba%e9%97%b4%e8%bd%ac%e6%8d%a2bypass-dwm" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>如果希望完全绕过 DWM 的色彩管理，应用可以在自身内部实现完整的色彩空间转换逻辑，并直接输出到显示器。</p>
+
+<h4 class="relative group"><strong>全屏独占模式（Full-Screen Exclusive Mode）</strong> 
+    <div id="全屏独占模式full-screen-exclusive-mode" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%a8%e5%b1%8f%e7%8b%ac%e5%8d%a0%e6%a8%a1%e5%bc%8ffull-screen-exclusive-mode" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>原理</strong>：
+<ul>
+<li>应用通过 DirectX 的 <strong>全屏独占模式</strong> 直接控制显示器，绕过 DWM 的合成阶段。</li>
+<li>此模式下，应用可以完全控制帧缓冲区的色彩空间和输出格式。</li>
+</ul>
+</li>
+</ul>
+
+<h4 class="relative group">这对吗？ 
+    <div id="这对吗" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%bf%99%e5%af%b9%e5%90%97" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p><strong>实则不然</strong>。这个说法在历史上<strong>部分正确</strong>，但现在已经<strong>基本过时</strong>了。</p>
+<p><strong>传统全屏模式（Exclusive Fullscreen）的确实情况：</strong><br>
+在Windows 7/8时代，独占全屏模式确实可以绕过很多系统层面的处理：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// 传统的独占全屏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">DXGI_SWAP_CHAIN_DESC</span> <span class="n">desc</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl"><span class="n">desc</span><span class="p">.</span><span class="n">Windowed</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">;</span>  <span class="c1">// 独占全屏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">desc</span><span class="p">.</span><span class="n">SwapEffect</span> <span class="o">=</span> <span class="n">DXGI_SWAP_EFFECT_DISCARD</span><span class="p">;</span>
+</span></span></code></pre></div><p>此时应用直接控制显示器，DWM被绕过，色彩管理也相对简单。</p>
+<p><strong>现代情况的变化：</strong><br>
+从Windows 10开始，为了能支持未来的HDR显示器，并且适配新的Dither功能等新技术（比如我们常说的显示器8抖10，8bit用dithering升格到10bit），情况发生了重大变化：</p>
+<ol>
+<li><strong>Fullscreen Optimizations</strong>: 即使是&quot;全屏&quot;应用，系统也可能将其作为全屏窗口运行，仍然通过DWM处理</li>
+<li><strong>DWM色彩管理增强</strong>: 现代DWM有更完善的色彩管理，即使在全屏模式下也会参与色彩处理</li>
+<li><strong>HDR和Wide Color支持</strong>: 系统需要在全屏模式下也能正确处理HDR/WCG内容</li>
+</ol>
+<p><strong>专业应用的实际做法：</strong><br>
+现代专业软件更依赖于：</p>
+<ul>
+<li>正确的DirectX DXGI色彩空间声明</li>
+<li>与系统色彩管理的协作而非对抗</li>
+<li>硬件级的校色bypass（通过显卡驱动扩展）</li>
+</ul>
+<p>所以简单的&quot;开全屏就能bypass色彩管理&quot;这种说法现在并不可靠，特别是对于需要精确色彩的专业应用。</p>
+
+<h1 class="relative group">扩展：HDR 
+    <div id="扩展hdr" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%89%a9%e5%b1%95hdr" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>SDR</th>
+          <th>HDR</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>峰值亮度</strong></td>
+          <td>100-400 nits</td>
+          <td>400-10,000+ nits</td>
+      </tr>
+      <tr>
+          <td><strong>位深度</strong></td>
+          <td>8位 (偶尔10位)</td>
+          <td>10位/12位</td>
+      </tr>
+      <tr>
+          <td><strong>色彩空间</strong></td>
+          <td>Rec.709 (sRGB)</td>
+          <td>Rec.2020 (DCI-P3)</td>
+      </tr>
+      <tr>
+          <td><strong>传递函数</strong></td>
+          <td>Gamma 2.4</td>
+          <td>PQ (SMPTE ST 2084) / HLG</td>
+      </tr>
+      <tr>
+          <td><strong>动态范围</strong></td>
+          <td>~6-7档光圈</td>
+          <td>10-14档光圈</td>
+      </tr>
+      <tr>
+          <td><strong>对比度</strong></td>
+          <td>1,000:1 - 5,000:1</td>
+          <td>100,000:1 - 1,000,000:1</td>
+      </tr>
+      <tr>
+          <td><strong>编码方式</strong></td>
+          <td>相对编码</td>
+          <td>PQ:绝对编码 / HLG:相对编码</td>
+      </tr>
+      <tr>
+          <td><strong>显示器握手</strong></td>
+          <td>无需握手，手动调节亮度</td>
+          <td>需要EDID信息交换</td>
+      </tr>
+      <tr>
+          <td><strong>色调映射</strong></td>
+          <td>不需要</td>
+          <td>需要Tone mapping</td>
+      </tr>
+      <tr>
+          <td><strong>向后兼容</strong></td>
+          <td>N/A</td>
+          <td>HDR显示器可显示SDR内容(HLG编码)</td>
+      </tr>
+      <tr>
+          <td><strong>文件大小</strong></td>
+          <td>相对较小</td>
+          <td>更大 (更高位深度)</td>
+      </tr>
+      <tr>
+          <td><strong>制作成本</strong></td>
+          <td>较低</td>
+          <td>较高 (需要HDR监视器等)</td>
+      </tr>
+      <tr>
+          <td><strong>主要标准</strong></td>
+          <td>Rec.709，约等于sRGB<br/>AdobeRGB, Display-P3(iOS)</td>
+          <td>Rec.2020,DCI-P3(色域标准)<br/>HDR10, HDR10+, Dolby Vision</td>
+      </tr>
+      <tr>
+          <td><strong>广播应用</strong></td>
+          <td>传统电视广播</td>
+          <td>新一代广播 (HLG主导)</td>
+      </tr>
+      <tr>
+          <td><strong>流媒体</strong></td>
+          <td>通用支持</td>
+          <td>Netflix, YouTube等支持</td>
+      </tr>
+      <tr>
+          <td><strong>游戏支持</strong></td>
+          <td>全平台支持</td>
+          <td>PS5, Xbox Series, PC支持</td>
+      </tr>
+      <tr>
+          <td><strong>显示设备要求</strong></td>
+          <td>普通显示器</td>
+          <td>支持HDR的显示器/电视</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>关键差异总结</strong>：</p>
+<ul>
+<li>HDR最大优势是亮度范围和色彩表现力</li>
+<li>SDR更成熟，兼容性更好</li>
+<li>HDR需要完整的端到端支持链条</li>
+<li>两者可以共存，HDR设备通常向下兼容SDR</li>
+</ul>
+<p>除了HDR和SDR在数据结构上还有几个关键区别：</p>
+<p><strong>位深度差异</strong>：SDR通常使用8位或10位编码，而HDR一般需要10位或12位来表示更大的动态范围。更高的位深度允许HDR存储更多的亮度级别，避免在高动态范围下出现色带问题。</p>
+<p><strong>色彩空间</strong>：SDR主要使用Rec.709色彩空间，而HDR使用更广的色彩空间如Rec.2020，能够表示更丰富的颜色。</p>
+<p><strong>传递函数</strong>：这是最核心的区别。SDR使用Gamma 2.4编码，而HDR使用PQ（SMPTE ST 2084）或HLG（Hybrid Log-Gamma）编码。</p>
+<p>关于编码实现：</p>
+<p><strong>Gamma编码</strong>：SDR的Gamma 2.4是一个简单的幂函数，将线性光信号压缩到0-1范围。公式大致是 V = L^(1/2.4)，其中L是线性亮度值。</p>
+<p><strong>PQ编码</strong>：PQ是感知量化器，专门为人眼视觉系统设计。它使用复杂的数学函数将0到10000 nits的亮度范围映射到0-1的编码值。PQ曲线基于人眼对不同亮度的敏感度，在暗部分配更多编码值，亮部相对较少。</p>
+<p><strong>HLG编码</strong>：HLG结合了传统Gamma和对数编码的优势。在低亮度区域使用类似Gamma的平方根函数，在高亮度区域切换到对数编码。这种混合方式既保持了与SDR的向后兼容性，又能处理高动态范围内容。</p>
+<p>PQ是绝对编码，每个编码值对应固定的物理亮度；而HLG是相对编码，需要根据显示设备的峰值亮度来解释编码值。这使得HLG在广播应用中更加实用。</p>
+
+<h1 class="relative group">扩展：LutsLUT（Look-Up Table）完全解析：从原理到GPU实现 
+    <div id="扩展lutslutlook-up-table完全解析从原理到gpu实现" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%89%a9%e5%b1%95lutslutlook-up-table%e5%ae%8c%e5%85%a8%e8%a7%a3%e6%9e%90%e4%bb%8e%e5%8e%9f%e7%90%86%e5%88%b0gpu%e5%ae%9e%e7%8e%b0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+
+<h2 class="relative group">什么是LUT？ 
+    <div id="什么是lut" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%80%e4%b9%88%e6%98%aflut" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>LUT（Look-Up Table，查找表）是色彩处理中的核心工具，本质上是一个<strong>三维色彩映射表</strong>。它将输入的RGB值直接映射到输出的RGB值，实现快速而精确的色彩变换。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">基本流程：输入RGB → LUT查表 → 输出RGB
+</span></span></code></pre></div>
+<h2 class="relative group">LUT的数据结构 
+    <div id="lut的数据结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#lut%e7%9a%84%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>以常见的32×32×32 LUT为例：</p>
+
+<h3 class="relative group">逻辑结构 
+    <div id="逻辑结构" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%bb%e8%be%91%e7%bb%93%e6%9e%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>维度</strong>：R、G、B三个维度，每维32个采样点</li>
+<li><strong>总容量</strong>：32 × 32 × 32 = 32,768个预设映射点</li>
+<li><strong>数据内容</strong>：每个格子存储 输入(R,G,B) → 输出(R&rsquo;,G&rsquo;,B&rsquo;) 的映射关系</li>
+<li><strong>文件大小</strong>：通常几百KB</li>
+</ul>
+
+<h3 class="relative group">工作原理 
+    <div id="工作原理" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">输入处理：8位输入(0-255) → 缩放到LUT坐标(0-31)
+</span></span><span class="line"><span class="cl">例如：RGB(128,64,192) → LUT坐标(16,8,24)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">查表映射：LUT[16][8][24] = (新R值, 新G值, 新B值)
+</span></span></code></pre></div>
+<h2 class="relative group">GPU中的实现 
+    <div id="gpu中的实现" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#gpu%e4%b8%ad%e7%9a%84%e5%ae%9e%e7%8e%b0" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>虽然逻辑上是三维结构，但在GPU中有更巧妙的实现方式：</p>
+
+<h3 class="relative group">存储方式：2D纹理数组 
+    <div id="存储方式2d纹理数组" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ad%98%e5%82%a8%e6%96%b9%e5%bc%8f2d%e7%ba%b9%e7%90%86%e6%95%b0%e7%bb%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>32×32×32的LUT实际存储为<strong>32张32×32的2D纹理</strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Blue=0  → 第1张32×32纹理
+</span></span><span class="line"><span class="cl">Blue=1  → 第2张32×32纹理
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">Blue=31 → 第32张32×32纹理
+</span></span></code></pre></div>
+<h3 class="relative group">查找过程 
+    <div id="查找过程" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%9f%a5%e6%89%be%e8%bf%87%e7%a8%8b" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p><strong>第一步：B值确定纹理层</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">输入RGB(R=128, G=64, B=192)
+</span></span><span class="line"><span class="cl">B值192 → 缩放到0-31 → B_index = 24
+</span></span><span class="line"><span class="cl">选择第24层纹理
+</span></span></code></pre></div><p><strong>第二步：RG值作为UV坐标</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">R值128 → 缩放到0-1 → U = 0.502
+</span></span><span class="line"><span class="cl">G值64  → 缩放到0-1 → V = 0.251
+</span></span><span class="line"><span class="cl">在第24层纹理的UV(0.502, 0.251)位置采样
+</span></span></code></pre></div><p><strong>第三步：三线性插值</strong><br>
+为确保平滑过渡，需要在相邻B层间插值：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-glsl" data-lang="glsl"><span class="line"><span class="cl"><span class="c1">// GLSL着色器实现</span>
+</span></span><span class="line"><span class="cl"><span class="k">vec3</span> <span class="n">applyLUT</span><span class="p">(</span><span class="k">vec3</span> <span class="n">inputColor</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">float</span> <span class="n">b_index</span> <span class="o">=</span> <span class="n">inputColor</span><span class="p">.</span><span class="n">b</span> <span class="o">*</span> <span class="mf">31.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">int</span> <span class="n">b_floor</span> <span class="o">=</span> <span class="k">int</span><span class="p">(</span><span class="n">b_index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">int</span> <span class="n">b_ceil</span> <span class="o">=</span> <span class="n">b_floor</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">float</span> <span class="n">b_weight</span> <span class="o">=</span> <span class="n">fract</span><span class="p">(</span><span class="n">b_index</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">vec2</span> <span class="n">uv</span> <span class="o">=</span> <span class="n">inputColor</span><span class="p">.</span><span class="n">rg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">color1</span> <span class="o">=</span> <span class="n">texture</span><span class="p">(</span><span class="n">lutTexture</span><span class="p">,</span> <span class="k">vec3</span><span class="p">(</span><span class="n">uv</span><span class="p">,</span> <span class="n">b_floor</span><span class="p">)).</span><span class="n">rgb</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">vec3</span> <span class="n">color2</span> <span class="o">=</span> <span class="n">texture</span><span class="p">(</span><span class="n">lutTexture</span><span class="p">,</span> <span class="k">vec3</span><span class="p">(</span><span class="n">uv</span><span class="p">,</span> <span class="n">b_ceil</span><span class="p">)).</span><span class="n">rgb</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">mix</span><span class="p">(</span><span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">,</span> <span class="n">b_weight</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>当然，三线性插值同样可以在R和G（即UV采样中）实现。</p>
+
+<h2 class="relative group">LUT的实际应用 
+    <div id="lut的实际应用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#lut%e7%9a%84%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">电影调色 
+    <div id="电影调色" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%94%b5%e5%bd%b1%e8%b0%83%e8%89%b2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>原始素材</strong>：平淡的原始RGB值</li>
+<li><strong>LUT处理</strong>：增强对比度、调整色温、营造氛围</li>
+<li><strong>结果</strong>：具有电影级视觉效果的画面</li>
+</ul>
+
+<h3 class="relative group">HDR到SDR的色调映射 
+    <div id="hdr到sdr的色调映射" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#hdr%e5%88%b0sdr%e7%9a%84%e8%89%b2%e8%b0%83%e6%98%a0%e5%b0%84" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">输入：HDR (R=1024, G=512, B=256) [超出SDR范围]
+</span></span><span class="line"><span class="cl">LUT处理：智能压缩到SDR范围，保持视觉层次
+</span></span><span class="line"><span class="cl">输出：(R=240, G=180, B=120) [适合SDR显示]
+</span></span></code></pre></div>
+<h3 class="relative group">色彩空间转换 
+    <div id="色彩空间转换" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%89%b2%e5%bd%a9%e7%a9%ba%e9%97%b4%e8%bd%ac%e6%8d%a2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>将不同色彩标准间的复杂转换预计算并存储在LUT中，实现实时转换。</p>
+
+<h2 class="relative group">LUT的优势与限制 
+    <div id="lut的优势与限制" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#lut%e7%9a%84%e4%bc%98%e5%8a%bf%e4%b8%8e%e9%99%90%e5%88%b6" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">优势 
+    <div id="优势" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%98%e5%8a%bf" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li><strong>处理速度快</strong> - 直接查表，无需实时复杂计算</li>
+<li><strong>精确度高</strong> - 可以实现任意复杂的非线性调整</li>
+<li><strong>结果一致</strong> - 同样输入永远得到相同输出</li>
+<li><strong>硬件友好</strong> - GPU纹理采样天然适合LUT查找</li>
+<li><strong>易于分发</strong> - 调色师可以将复杂的调色方案打包成LUT文件</li>
+</ol>
+
+<h3 class="relative group">限制 
+    <div id="限制" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%99%90%e5%88%b6" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li><strong>精度限制</strong> - 32×32×32只有32,768个采样点，可能产生色彩断层。但是可以进行改进，或者使用双线性/三线性插值算法</li>
+<li><strong>文件大小</strong> - 更高精度的LUT（如64×64×64）占用更多存储空间</li>
+<li><strong>单向映射</strong> - LUT变换通常不可逆</li>
+<li><strong>内存占用</strong> - 需要将整个LUT作为纹理加载到显存中</li>
+</ol>
+<hr>
+
+<h1 class="relative group">扩展：色度取样/<strong>色度子采样</strong>（Chroma Subsampling）技术 
+    <div id="扩展色度取样色度子采样chroma-subsampling技术" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%89%a9%e5%b1%95%e8%89%b2%e5%ba%a6%e5%8f%96%e6%a0%b7%e8%89%b2%e5%ba%a6%e5%ad%90%e9%87%87%e6%a0%b7chroma-subsampling%e6%8a%80%e6%9c%af" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+
+<h2 class="relative group">YUV色彩空间基础 
+    <div id="yuv色彩空间基础" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#yuv%e8%89%b2%e5%bd%a9%e7%a9%ba%e9%97%b4%e5%9f%ba%e7%a1%80" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>首先需要理解视频通常使用<strong>YUV色彩空间</strong>而非RGB：</p>
+<ul>
+<li><strong>Y</strong>：亮度信息（Luma），人眼最敏感</li>
+<li><strong>U/V</strong>：色度信息（Chroma），人眼相对不敏感</li>
+<li>为什么不用RGB？这和视频格式的bitrate有关。详见VBR/CBR技术。听说现在Av1格式用到了更强的</li>
+</ul>
+
+<h2 class="relative group">子采样格式解析 
+    <div id="子采样格式解析" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ad%90%e9%87%87%e6%a0%b7%e6%a0%bc%e5%bc%8f%e8%a7%a3%e6%9e%90" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">4:4:4（无子采样） 
+    <div id="444无子采样" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#444%e6%97%a0%e5%ad%90%e9%87%87%e6%a0%b7" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Y Y Y Y    U U U U    V V V V
+</span></span><span class="line"><span class="cl">完整保留所有像素的色度信息
+</span></span><span class="line"><span class="cl">文件大小：最大，质量最好
+</span></span></code></pre></div>
+<h3 class="relative group">4:2:2（水平子采样） 
+    <div id="422水平子采样" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#422%e6%b0%b4%e5%b9%b3%e5%ad%90%e9%87%87%e6%a0%b7" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Y Y Y Y    U   U      V   V
+</span></span><span class="line"><span class="cl">水平方向每2个像素共享1个色度样本
+</span></span><span class="line"><span class="cl">文件大小：比4:4:4小33%
+</span></span></code></pre></div>
+<h3 class="relative group">4:2:0（水平+垂直子采样） 
+    <div id="420水平垂直子采样" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#420%e6%b0%b4%e5%b9%b3%e5%9e%82%e7%9b%b4%e5%ad%90%e9%87%87%e6%a0%b7" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">Y Y Y Y    U           V
+</span></span><span class="line"><span class="cl">Y Y Y Y    
+</span></span><span class="line"><span class="cl">每4个像素（2×2块）共享1个色度样本
+</span></span><span class="line"><span class="cl">文件大小：比4:4:4小50%
+</span></span></code></pre></div>
+<h2 class="relative group">实际应用场景 
+    <div id="实际应用场景" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th>格式</th>
+          <th>应用场景</th>
+          <th>文件大小</th>
+          <th>质量</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>4:4:4</strong></td>
+          <td>专业后期制作、无损存储</td>
+          <td>最大</td>
+          <td>最高</td>
+      </tr>
+      <tr>
+          <td><strong>4:2:2</strong></td>
+          <td>专业摄像、直播推流</td>
+          <td>中等</td>
+          <td>高</td>
+      </tr>
+      <tr>
+          <td><strong>4:2:0</strong></td>
+          <td>消费级录制、网络视频</td>
+          <td>最小</td>
+          <td>良好</td>
+      </tr>
+  </tbody>
+</table>
+
+<h2 class="relative group">为什么这样做？ 
+    <div id="为什么这样做" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%bf%99%e6%a0%b7%e5%81%9a" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">人眼视觉特性 
+    <div id="人眼视觉特性" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%ba%ba%e7%9c%bc%e8%a7%86%e8%a7%89%e7%89%b9%e6%80%a7" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>人眼对<strong>亮度变化</strong>非常敏感</li>
+<li>对<strong>色彩变化</strong>相对不敏感</li>
+<li>利用这个特性可以在几乎不影响观感的情况下大幅压缩</li>
+</ul>
+
+<h3 class="relative group">实际效果对比 
+    <div id="实际效果对比" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9e%e9%99%85%e6%95%88%e6%9e%9c%e5%af%b9%e6%af%94" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">4K视频1小时存储空间：
+</span></span><span class="line"><span class="cl">4:4:4 → ~200GB
+</span></span><span class="line"><span class="cl">4:2:2 → ~130GB  
+</span></span><span class="line"><span class="cl">4:2:0 → ~100GB
+</span></span></code></pre></div>
+<h2 class="relative group">各厂商的支持情况 
+    <div id="各厂商的支持情况" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%90%84%e5%8e%82%e5%95%86%e7%9a%84%e6%94%af%e6%8c%81%e6%83%85%e5%86%b5" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">手机厂商 
+    <div id="手机厂商" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%89%8b%e6%9c%ba%e5%8e%82%e5%95%86" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>iPhone 14 Pro</strong>：支持4:2:2 ProRes录制</li>
+<li><strong>三星S23 Ultra</strong>：支持4:2:0录制（消费级）</li>
+<li><strong>索尼Xperia</strong>：专业模式支持4:2:2</li>
+</ul>
+
+<h3 class="relative group">专业设备 
+    <div id="专业设备" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%93%e4%b8%9a%e8%ae%be%e5%a4%87" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>RED相机</strong>：支持4:4:4 RAW</li>
+<li><strong>BlackMagic</strong>：4:2:2 ProRes为主</li>
+<li><strong>佳能/索尼专业摄像机</strong>：4:2:2标准</li>
+</ul>
+
+<h2 class="relative group">选择建议 
+    <div id="选择建议" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%89%e6%8b%a9%e5%bb%ba%e8%ae%ae" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p><strong>选择4:2:0</strong>：</p>
+<ul>
+<li>日常录制、社交分享</li>
+<li>存储空间有限</li>
+<li>网络传输需求</li>
+</ul>
+<p><strong>选择4:2:2</strong>：</p>
+<ul>
+<li>专业视频制作</li>
+<li>需要后期调色</li>
+<li>绿幕抠像等专业需求</li>
+</ul>
+<p><strong>选择4:4:4</strong>：</p>
+<ul>
+<li>无损存储要求</li>
+<li>极致后期处理</li>
+<li>存储空间充足</li>
+</ul>
+<p><strong>总结</strong>：这些数字直接关系到视频质量和文件大小的平衡。厂商提供不同选项让用户根据需求选择最适合的录制格式。</p>
+
+<h1 class="relative group">Ref： 
+    <div id="ref" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#ref" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+<p><a
+  href="https://learn.microsoft.com/zh-cn/windows/win32/direct3darticles/high-dynamic-range"
+    target="_blank"
+  >在高/标准动态范围显示器上将 DirectX 与高级颜色配合使用 - Win32 apps</a>
+</p>
+<p><a
+  href="https://support.microsoft.com/zh-cn/windows/%E4%BB%80%E4%B9%88%E6%98%AF-windows-%E4%B8%AD%E7%9A%84-hdr-f5fbf5cb-149d-4a0d-8be1-9ed78c68d3b4"
+    target="_blank"
+  >什么是 Windows 中的 HDR？ - Microsoft 支持</a>
+</p>
+<p><a
+  href="https://support.microsoft.com/zh-cn/windows/%E5%9C%A8-windows-%E4%B8%AD%E6%9B%B4%E6%94%B9%E5%B1%8F%E5%B9%95%E4%BA%AE%E5%BA%A6%E5%92%8C%E9%A2%9C%E8%89%B2-3f67a2f2-5c65-ceca-778b-5858fc007041"
+    target="_blank"
+  >在 Windows 中更改屏幕亮度和颜色 - Microsoft 支持</a>
+</p>
+<p>D-Gamut白皮书</p>
+<p><a
+  href="https://dl.djicdn.com/downloads/zenmuse&#43;x7/20171010/D-Log_D-Gamut_Whitepaper.pdf"
+    target="_blank"
+  >https://dl.djicdn.com/downloads/zenmuse+x7/20171010/D-Log_D-Gamut_Whitepaper.pdf</a>
+</p>
+<p>Nikon N-Log技术规格解读</p>
+<p><a
+  href="https://zhuanlan.zhihu.com/p/492611718"
+    target="_blank"
+  >https://zhuanlan.zhihu.com/p/492611718</a>
+</p>
+<p>Windows的色彩管理问题</p>
+<p><a
+  href="https://www.zhihu.com/question/416078246"
+    target="_blank"
+  >https://www.zhihu.com/question/416078246</a>
+</p>
+<p>Gamma和Linear空间</p>
+<p><a
+  href="https://zhuanlan.zhihu.com/p/492870542"
+    target="_blank"
+  >https://zhuanlan.zhihu.com/p/492870542</a>
+</p>
+<p>What is NaN?</p>
+<p><a
+  href="https://zhuanlan.zhihu.com/p/655239364"
+    target="_blank"
+  >https://zhuanlan.zhihu.com/p/655239364</a>
+</p>
+<p>如何理解色度取样？</p>
+<p><a
+  href="https://zhuanlan.zhihu.com/p/41530371"
+    target="_blank"
+  >https://zhuanlan.zhihu.com/p/41530371</a>
+</p>
+<pre><code>- 
+</code></pre>
+
+          
+          
+          
+        </div>
+
+        
+
+          
+            
+            
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4"
+        width="96"
+        height="96"
+        alt="AxonSin"
+        src="/img/blowfish_logo_hu_e74a130226122ae3.png">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        AxonSin
+      </div>
+    
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:hello@your_domain.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://link-to-some-website.com/"
+          target="_blank"
+          aria-label="Link"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/username"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://steamcommunity.com/profiles/userid"
+          target="_blank"
+          aria-label="Steam"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111.2 248-248.4 248-113.8 0-209.6-76.3-239-180.4l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://t.me/username"
+          target="_blank"
+          aria-label="Telegram"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+          
+
+          
+
+          
+            <div class="mb-10"></div>
+          
+
+        
+
+        
+
+        
+
+        
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+  <a href="/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/">无厚度_低厚度的zfighting问题</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-06T00:00:00&#43;00:00">6 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>250 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/blender/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Blender
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%9D%90%E8%B4%A8/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    材质
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E5%85%89%E7%85%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    光照
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%89%A9%E7%90%86/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    物理
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E8%89%B2%E5%BD%A9/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    色彩
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    故障排除
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%95%99%E7%A8%8B/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    教程
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%8A%80%E5%B7%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    技巧
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          Blender导入Unity指南
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+        
+
+  <a href="/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/">自定义效果的大杀器——RenderFeature</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2024-12-14T00:00:00&#43;00:00">14 December 2024</time><span class="px-2 text-primary-500">&middot;</span><span>863 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">5 mins</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%9D%90%E8%B4%A8/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    材质
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E5%85%89%E7%85%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    光照
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E8%89%B2%E5%BD%A9/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    色彩
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    故障排除
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E9%85%8D%E7%BD%AE/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    配置
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          问题解决方案
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+        
+
+  <a href="/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/">反射算法</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-09T00:00:00&#43;00:00">9 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>18 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">1 min</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/blender/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Blender
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%AE%97%E6%B3%95/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    算法
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          Blender导入Unity指南
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+    </section>
+  
+
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
+          integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
+          data-oid="views_posts\色彩空间\index.md"
+          data-oid-likes="likes_posts\色彩空间\index.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >反射算法</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-01-09T00:00:00&#43;00:00">9 January 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Unity实现体积光（GodRay）的三种方案</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-01-24T00:00:00&#43;00:00">24 January 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+        <ul class="flex flex-col list-none sm:flex-row">
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/tags/"
+                title="Tags">
+                
+                Tags
+              </a>
+            </li>
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/categories/"
+                title="Categories">
+                
+                Categories
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          AxonSin
+      </p>
+    
+
+    
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

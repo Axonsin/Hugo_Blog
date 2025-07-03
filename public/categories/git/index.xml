@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 某人的小博客</title>
+    <link>http://localhost:1313/categories/git/</link>
+    <description>Recent content in Git on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Gitignore配置</title>
+      <link>http://localhost:1313/posts/gitignore%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/gitignore%E9%85%8D%E7%BD%AE/</guid>
+      <description>常用项目的Git忽略文件配置</description>
+      
+    </item>
+    
+  </channel>
+</rss>

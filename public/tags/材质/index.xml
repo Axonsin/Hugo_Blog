@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>材质 on 某人的小博客</title>
+    <link>http://localhost:1313/tags/%E6%9D%90%E8%B4%A8/</link>
+    <description>Recent content in 材质 on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 25 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%9D%90%E8%B4%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>TBDR&#43;Forward vs. IMR&#43;Deferred_ 两种设备的不同权衡</title>
+      <link>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</link>
+      <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</guid>
+      <description>算法原理解析</description>
+      
+    </item>
+    
+    <item>
+      <title>Houdini中的Enforce Unique Name Attribute per instance</title>
+      <link>http://localhost:1313/posts/houdini%E4%B8%AD%E7%9A%84enforce-unique-name-attribute-per-instance/</link>
+      <pubDate>Sat, 10 May 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/houdini%E4%B8%AD%E7%9A%84enforce-unique-name-attribute-per-instance/</guid>
+      <description>问题解决方案</description>
+      
+    </item>
+    
+    <item>
+      <title>MikuMiku Rig &amp;&amp; Uuunya Tools</title>
+      <link>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</link>
+      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/mikumiku-rig--uuunya-tools/</guid>
+      <description>Blender导入Unity指南</description>
+      
+    </item>
+    
+    <item>
+      <title>C#脚本和Shader中共享同步变量</title>
+      <link>http://localhost:1313/posts/c%23%E8%84%9A%E6%9C%AC%E5%92%8Cshader%E4%B8%AD%E5%85%B1%E4%BA%AB%E5%90%8C%E6%AD%A5%E5%8F%98%E9%87%8F/</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/c%23%E8%84%9A%E6%9C%AC%E5%92%8Cshader%E4%B8%AD%E5%85%B1%E4%BA%AB%E5%90%8C%E6%AD%A5%E5%8F%98%E9%87%8F/</guid>
+      <description>问题解决方案</description>
+      
+    </item>
+    
+    <item>
+      <title>Unity区域光（Area Light） 没有反应</title>
+      <link>http://localhost:1313/posts/unity%E5%8C%BA%E5%9F%9F%E5%85%89area-light-%E6%B2%A1%E6%9C%89%E5%8F%8D%E5%BA%94/</link>
+      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/unity%E5%8C%BA%E5%9F%9F%E5%85%89area-light-%E6%B2%A1%E6%9C%89%E5%8F%8D%E5%BA%94/</guid>
+      <description>渲染技术解析</description>
+      
+    </item>
+    
+    <item>
+      <title>quixel导入blender的bl插件以及中文化适配&amp;bug修改</title>
+      <link>http://localhost:1313/posts/quixel%E5%AF%BC%E5%85%A5blender%E7%9A%84bl%E6%8F%92%E4%BB%B6%E4%BB%A5%E5%8F%8A%E4%B8%AD%E6%96%87%E5%8C%96%E9%80%82%E9%85%8Dbug%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Thu, 06 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/quixel%E5%AF%BC%E5%85%A5blender%E7%9A%84bl%E6%8F%92%E4%BB%B6%E4%BB%A5%E5%8F%8A%E4%B8%AD%E6%96%87%E5%8C%96%E9%80%82%E9%85%8Dbug%E4%BF%AE%E6%94%B9/</guid>
+      <description>Blender导入Unity指南</description>
+      
+    </item>
+    
+    <item>
+      <title>Houdini：从Mantra切换为Karma的材质工作流切换</title>
+      <link>http://localhost:1313/posts/houdini%E4%BB%8Emantra%E5%88%87%E6%8D%A2%E4%B8%BAkarma%E7%9A%84%E6%9D%90%E8%B4%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%87%E6%8D%A2/</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/houdini%E4%BB%8Emantra%E5%88%87%E6%8D%A2%E4%B8%BAkarma%E7%9A%84%E6%9D%90%E8%B4%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%87%E6%8D%A2/</guid>
+      <description>VEX编程技巧</description>
+      
+    </item>
+    
+    <item>
+      <title>Blender小技巧：用噪声消除重复纹理</title>
+      <link>http://localhost:1313/posts/blender%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%94%A8%E5%99%AA%E5%A3%B0%E6%B6%88%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BA%B9%E7%90%86/</link>
+      <pubDate>Sun, 26 Jan 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/blender%E5%B0%8F%E6%8A%80%E5%B7%A7%E7%94%A8%E5%99%AA%E5%A3%B0%E6%B6%88%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BA%B9%E7%90%86/</guid>
+      <description>问题解决方案</description>
+      
+    </item>
+    
+    <item>
+      <title>无厚度_低厚度的zfighting问题</title>
+      <link>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</guid>
+      <description>Blender导入Unity指南</description>
+      
+    </item>
+    
+    <item>
+      <title>Blender导入场景进入Unity</title>
+      <link>http://localhost:1313/posts/blender%E5%AF%BC%E5%85%A5%E5%9C%BA%E6%99%AF%E8%BF%9B%E5%85%A5unity/</link>
+      <pubDate>Thu, 26 Dec 2024 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/blender%E5%AF%BC%E5%85%A5%E5%9C%BA%E6%99%AF%E8%BF%9B%E5%85%A5unity/</guid>
+      <description>Blender导入Unity指南</description>
+      
+    </item>
+    
+    <item>
+      <title>自定义效果的大杀器——RenderFeature</title>
+      <link>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</guid>
+      <description>问题解决方案</description>
+      
+    </item>
+    
+  </channel>
+</rss>

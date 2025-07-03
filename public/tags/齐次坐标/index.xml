@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>齐次坐标 on 某人的小博客</title>
+    <link>http://localhost:1313/tags/%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87/</link>
+    <description>Recent content in 齐次坐标 on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Unity的旋转、缩放、移动矩阵</title>
+      <link>http://localhost:1313/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/unity%E7%9A%84%E6%97%8B%E8%BD%AC%E7%BC%A9%E6%94%BE%E7%A7%BB%E5%8A%A8%E7%9F%A9%E9%98%B5/</guid>
+      <description>Unity 3D变换矩阵的数学基础</description>
+      
+    </item>
+    
+    <item>
+      <title>xyzw中的w：齐次坐标系的作用</title>
+      <link>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
+      <description>齐次坐标中w分量的数学意义</description>
+      
+    </item>
+    
+  </channel>
+</rss>

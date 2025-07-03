@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>图形学 on 某人的小博客</title>
+    <link>http://localhost:1313/categories/%E5%9B%BE%E5%BD%A2%E5%AD%A6/</link>
+    <description>Recent content in 图形学 on 某人的小博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>youremail@example.com (AxonSin)</managingEditor>
+    <webMaster>youremail@example.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%9B%BE%E5%BD%A2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>xyzw中的w：齐次坐标系的作用</title>
+      <link>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
+      <description>齐次坐标中w分量的数学意义</description>
+      
+    </item>
+    
+    <item>
+      <title>什么是帧缓冲（Frame Buffer）？</title>
+      <link>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</guid>
+      <description>帧缓冲技术详解</description>
+      
+    </item>
+    
+    <item>
+      <title>基本渲染管线</title>
+      <link>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</guid>
+      <description>渲染管线的三个主要阶段解析</description>
+      
+    </item>
+    
+    <item>
+      <title>色彩空间</title>
+      <link>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</guid>
+      <description>图形学视角下的色彩空间详解</description>
+      
+    </item>
+    
+    <item>
+      <title>菲涅尔计算式以及近似公式</title>
+      <link>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</guid>
+      <description>菲涅尔反射的数学原理和近似算法</description>
+      
+    </item>
+    
+    <item>
+      <title>重生之我在OBS写Shader——OBS ShaderFilter插件</title>
+      <link>http://localhost:1313/posts/%E9%87%8D%E7%94%9F%E4%B9%8B%E6%88%91%E5%9C%A8obs%E5%86%99shaderobs-shaderfilter%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
+      <author>youremail@example.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E9%87%8D%E7%94%9F%E4%B9%8B%E6%88%91%E5%9C%A8obs%E5%86%99shaderobs-shaderfilter%E6%8F%92%E4%BB%B6/</guid>
+      <description>OBS ShaderFilter插件使用与技巧</description>
+      
+    </item>
+    
+  </channel>
+</rss>
