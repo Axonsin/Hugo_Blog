@@ -88,6 +88,7 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
   showWordCount = true
   # sharingLinks = [ "linkedin", "twitter", "bluesky", "mastodon", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram", "line"]
   showZenMode = false
+  # showComments = true
 
 [list]
   showHero = true
@@ -174,3 +175,17 @@ forgejoDefaultServer = "https://v8.next.forgejo.org"
 
 [advertisement]
   # adsense = ""
+
+
+
+# [params.page.comment]
+#   enable = true
+
+
+# [params.page.comment.giscus]
+#   enable = true
+#   repo = "Axonsin/Hugo_Blog"            # 仓库，例如 "user/repo"
+#   repoId = "R_kgDOPGO8PQ"               # 从 giscus.app 网站复制的 Repo ID
+#   category = "Show and tell"            # 在 GitHub Discussions 中设置的分类名
+#   categoryId = "DIC_kwDOPGO8Pc4CsdHz"   # 从 giscus.app 网站复制的 Category ID
+#   mapping = "pathname"                  # 映射方式，与 giscus.app 上的选择保持一致
