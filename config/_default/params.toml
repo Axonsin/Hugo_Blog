@@ -12,7 +12,7 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 
-replyByEmail = false
+replyByEmail = true
 
 # mainSections = ["section1", "section2"]
 # robots = ""

@@ -132,21 +132,21 @@
     </item>
     
     <item>
-      <title>什么是帧缓冲（Frame Buffer）？</title>
-      <link>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</link>
-      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
-      <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</guid>
-      <description>渲染技术解析</description>
-      
-    </item>
-    
-    <item>
       <title>基本渲染管线</title>
       <link>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</link>
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</guid>
+      <description>渲染技术解析</description>
+      
+    </item>
+    
+    <item>
+      <title>什么是帧缓冲（Frame Buffer）？</title>
+      <link>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</link>
+      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/%E4%BB%80%E4%B9%88%E6%98%AF%E5%B8%A7%E7%BC%93%E5%86%B2frame-buffer/</guid>
       <description>渲染技术解析</description>
       
     </item>

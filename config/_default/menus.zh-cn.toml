@@ -11,12 +11,12 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
- name = "All Blog"
+ name = "所有博客"
  pageRef = "posts"
  weight = 10
 
  [[main]]
- name = "About Me"
+ name = "关于我"
  pageRef = "aboutme"
  weight = 15
 
@@ -64,11 +64,11 @@
 
 
 [[footer]]
-  name = "Tags"
+  name = "标签"
   pageRef = "tags"
   weight = 10
 
 [[footer]]
-  name = "Categories"
+  name = "分类"
   pageRef = "categories"
   weight = 20

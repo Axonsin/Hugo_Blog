@@ -52,21 +52,21 @@
     </item>
     
     <item>
-      <title>渲染</title>
-      <link>http://localhost:1313/tags/%E6%B8%B2%E6%9F%93/</link>
-      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
-      <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/tags/%E6%B8%B2%E6%9F%93/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>色彩</title>
       <link>http://localhost:1313/tags/%E8%89%B2%E5%BD%A9/</link>
       <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/tags/%E8%89%B2%E5%BD%A9/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>渲染</title>
+      <link>http://localhost:1313/tags/%E6%B8%B2%E6%9F%93/</link>
+      <pubDate>Mon, 30 Jun 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E6%B8%B2%E6%9F%93/</guid>
       <description></description>
       
     </item>
@@ -142,21 +142,21 @@
     </item>
     
     <item>
-      <title>光照</title>
-      <link>http://localhost:1313/tags/%E5%85%89%E7%85%A7/</link>
-      <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
-      <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/tags/%E5%85%89%E7%85%A7/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>材质</title>
       <link>http://localhost:1313/tags/%E6%9D%90%E8%B4%A8/</link>
       <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/tags/%E6%9D%90%E8%B4%A8/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>光照</title>
+      <link>http://localhost:1313/tags/%E5%85%89%E7%85%A7/</link>
+      <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/tags/%E5%85%89%E7%85%A7/</guid>
       <description></description>
       
     </item>
