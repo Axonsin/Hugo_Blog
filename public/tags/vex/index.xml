@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VEX on Axon的逼仄之梦</title>
-    <link>http://localhost:1313/tags/vex/</link>
+    <link>http://localhost:3430/tags/vex/</link>
     <description>Recent content in VEX on Axon的逼仄之梦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
     <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
-    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/vex/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:3430/tags/vex/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>VEX：如何沿用上组变量</title>
-      <link>http://localhost:1313/posts/vex%E5%A6%82%E4%BD%95%E6%B2%BF%E7%94%A8%E4%B8%8A%E7%BB%84%E5%8F%98%E9%87%8F-1/</link>
+      <link>http://localhost:3430/posts/vex%E5%A6%82%E4%BD%95%E6%B2%BF%E7%94%A8%E4%B8%8A%E7%BB%84%E5%8F%98%E9%87%8F-1/</link>
       <pubDate>Sat, 15 Feb 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/vex%E5%A6%82%E4%BD%95%E6%B2%BF%E7%94%A8%E4%B8%8A%E7%BB%84%E5%8F%98%E9%87%8F-1/</guid>
+      <guid>http://localhost:3430/posts/vex%E5%A6%82%E4%BD%95%E6%B2%BF%E7%94%A8%E4%B8%8A%E7%BB%84%E5%8F%98%E9%87%8F-1/</guid>
       <description>VEX编程技巧</description>
       
     </item>
     
     <item>
       <title>Houdini：从Mantra切换为Karma的材质工作流切换</title>
-      <link>http://localhost:1313/posts/houdini%E4%BB%8Emantra%E5%88%87%E6%8D%A2%E4%B8%BAkarma%E7%9A%84%E6%9D%90%E8%B4%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%87%E6%8D%A2/</link>
+      <link>http://localhost:3430/posts/houdini%E4%BB%8Emantra%E5%88%87%E6%8D%A2%E4%B8%BAkarma%E7%9A%84%E6%9D%90%E8%B4%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%87%E6%8D%A2/</link>
       <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/houdini%E4%BB%8Emantra%E5%88%87%E6%8D%A2%E4%B8%BAkarma%E7%9A%84%E6%9D%90%E8%B4%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%87%E6%8D%A2/</guid>
+      <guid>http://localhost:3430/posts/houdini%E4%BB%8Emantra%E5%88%87%E6%8D%A2%E4%B8%BAkarma%E7%9A%84%E6%9D%90%E8%B4%A8%E5%B7%A5%E4%BD%9C%E6%B5%81%E5%88%87%E6%8D%A2/</guid>
       <description>VEX编程技巧</description>
       
     </item>

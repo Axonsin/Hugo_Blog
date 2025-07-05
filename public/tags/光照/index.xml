@@ -2,91 +2,91 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>光照 on Axon的逼仄之梦</title>
-    <link>http://localhost:1313/tags/%E5%85%89%E7%85%A7/</link>
+    <link>http://localhost:3430/tags/%E5%85%89%E7%85%A7/</link>
     <description>Recent content in 光照 on Axon的逼仄之梦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
     <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
-    <lastBuildDate>Sun, 25 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%85%89%E7%85%A7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:3430/tags/%E5%85%89%E7%85%A7/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>TBDR&#43;Forward vs. IMR&#43;Deferred_ 两种设备的不同权衡</title>
-      <link>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</link>
+      <link>http://localhost:3430/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</link>
       <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</guid>
+      <guid>http://localhost:3430/posts/tbdr&#43;forward-vs.-imr&#43;deferred_-%E4%B8%A4%E7%A7%8D%E8%AE%BE%E5%A4%87%E7%9A%84%E4%B8%8D%E5%90%8C%E6%9D%83%E8%A1%A1/</guid>
       <description>算法原理解析</description>
       
     </item>
     
     <item>
       <title>Unity区域光（Area Light） 没有反应</title>
-      <link>http://localhost:1313/posts/unity%E5%8C%BA%E5%9F%9F%E5%85%89area-light-%E6%B2%A1%E6%9C%89%E5%8F%8D%E5%BA%94/</link>
+      <link>http://localhost:3430/posts/unity%E5%8C%BA%E5%9F%9F%E5%85%89area-light-%E6%B2%A1%E6%9C%89%E5%8F%8D%E5%BA%94/</link>
       <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/unity%E5%8C%BA%E5%9F%9F%E5%85%89area-light-%E6%B2%A1%E6%9C%89%E5%8F%8D%E5%BA%94/</guid>
+      <guid>http://localhost:3430/posts/unity%E5%8C%BA%E5%9F%9F%E5%85%89area-light-%E6%B2%A1%E6%9C%89%E5%8F%8D%E5%BA%94/</guid>
       <description>渲染技术解析</description>
       
     </item>
     
     <item>
       <title>Unity阴影实现</title>
-      <link>http://localhost:1313/posts/unity%E9%98%B4%E5%BD%B1%E5%AE%9E%E7%8E%B0/</link>
+      <link>http://localhost:3430/posts/unity%E9%98%B4%E5%BD%B1%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/unity%E9%98%B4%E5%BD%B1%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>http://localhost:3430/posts/unity%E9%98%B4%E5%BD%B1%E5%AE%9E%E7%8E%B0/</guid>
       <description>问题解决方案</description>
       
     </item>
     
     <item>
       <title>菲涅尔计算式以及近似公式</title>
-      <link>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</link>
+      <link>http://localhost:3430/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</link>
       <pubDate>Fri, 31 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</guid>
+      <guid>http://localhost:3430/posts/%E8%8F%B2%E6%B6%85%E5%B0%94%E8%AE%A1%E7%AE%97%E5%BC%8F%E4%BB%A5%E5%8F%8A%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F/</guid>
       <description>算法原理解析</description>
       
     </item>
     
     <item>
       <title>基本渲染管线</title>
-      <link>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</link>
+      <link>http://localhost:3430/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</link>
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</guid>
+      <guid>http://localhost:3430/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</guid>
       <description>渲染技术解析</description>
       
     </item>
     
     <item>
       <title>Unity实现体积光（GodRay）的三种方案</title>
-      <link>http://localhost:1313/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/</link>
+      <link>http://localhost:3430/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/</link>
       <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/</guid>
+      <guid>http://localhost:3430/posts/unity%E5%AE%9E%E7%8E%B0%E4%BD%93%E7%A7%AF%E5%85%89godray%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%A1%88/</guid>
       <description>体积光实现方案</description>
       
     </item>
     
     <item>
       <title>无厚度_低厚度的zfighting问题</title>
-      <link>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</link>
+      <link>http://localhost:3430/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://localhost:3430/posts/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/</guid>
       <description>Blender导入Unity指南</description>
       
     </item>
     
     <item>
       <title>自定义效果的大杀器——RenderFeature</title>
-      <link>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</link>
+      <link>http://localhost:3430/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</guid>
+      <guid>http://localhost:3430/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</guid>
       <description>问题解决方案</description>
       
     </item>
