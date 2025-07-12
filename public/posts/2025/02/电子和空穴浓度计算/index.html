@@ -1,0 +1,3060 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=3430&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="en" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>电子和空穴浓度计算 &middot; Axon的逼仄之梦</title>
+  <meta name="title" content="电子和空穴浓度计算 &middot; Axon的逼仄之梦" />
+  
+  <meta name="description" content="计算在不同条件下的电子和空穴浓度" />
+  <meta name="keywords" content="半导体, 电子, 空穴, " />
+  
+  
+  <link rel="canonical" href="http://localhost:3430/posts/2025/02/%E7%94%B5%E5%AD%90%E5%92%8C%E7%A9%BA%E7%A9%B4%E6%B5%93%E5%BA%A6%E8%AE%A1%E7%AE%97/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.2755fda1868f0bfc1843df512e7b0b0bec55a259db5f8b13dc3c0f7894e519f617c2b66f5915ec207e2a1ffc8b6d1b53dbd8f3dff8892140cb5eacc50a6edfbb.css"
+    integrity="sha512-J1X9oYaPC/wYQ99RLnsLC&#43;xVolnbX4sT3DwPeJTlGfYXwrZvWRXsIH4qH/yLbRtT29jz3/iJIUDLXqzFCm7fuw==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.307871a56175e86776ce9eee06d8661da3a71f496dae166f917725cca7721295f2c8d30a797bbc89889c5946fd1f6394996a9daf30697ad18ca4a955bbb9d1e5.js"
+    integrity="sha512-MHhxpWF16Gd2zp7uBthmHaOnH0ltrhZvkXclzKdyEpXyyNMKeXu8iYicWUb9H2OUmWqdrzBpetGMpKlVu7nR5Q=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.dc15078f1fe553ce354f85ec1bfce7ded8b4060d4124a49b19e31dd64345b8d8f03edbbb1b681748650181f9d81da9728ca10c2b9cb2ae7bf8983d4b669ba876.js"
+    integrity="sha512-3BUHjx/lU841T4XsG/zn3ti0Bg1BJKSbGeMd1kNFuNjwPtu7G2gXSGUBgfnYHalyjKEMK5yyrnv4mD1LZpuodg==" data-copy="复制" data-copied="已复制"></script>
+  
+  
+  
+  <script src="/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js" integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj&#43;Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script>
+  
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:url" content="http://localhost:3430/posts/2025/02/%E7%94%B5%E5%AD%90%E5%92%8C%E7%A9%BA%E7%A9%B4%E6%B5%93%E5%BA%A6%E8%AE%A1%E7%AE%97/">
+  <meta property="og:site_name" content="Axon的逼仄之梦">
+  <meta property="og:title" content="电子和空穴浓度计算">
+  <meta property="og:description" content="计算在不同条件下的电子和空穴浓度">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-16T00:00:00+00:00">
+    <meta property="article:tag" content="半导体">
+    <meta property="article:tag" content="电子">
+    <meta property="article:tag" content="空穴">
+    <meta property="og:image" content="http://localhost:3430/posts/2025/02/%E7%94%B5%E5%AD%90%E5%92%8C%E7%A9%BA%E7%A9%B4%E6%B5%93%E5%BA%A6%E8%AE%A1%E7%AE%97/featured.png">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:3430/posts/2025/02/%E7%94%B5%E5%AD%90%E5%92%8C%E7%A9%BA%E7%A9%B4%E6%B5%93%E5%BA%A6%E8%AE%A1%E7%AE%97/featured.png">
+  <meta name="twitter:title" content="电子和空穴浓度计算">
+  <meta name="twitter:description" content="计算在不同条件下的电子和空穴浓度">
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "电子和空穴浓度计算",
+    "headline": "电子和空穴浓度计算",
+    "description": "计算在不同条件下的电子和空穴浓度",
+    "abstract": "\u003ch1 class=\u0022relative group\u0022\u003e第二章 \n    \u003cdiv id=\u0022第二章\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100\u0022\u003e\n        \u003ca class=\u0022group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline\u0022 href=\u0022#%e7%ac%ac%e4%ba%8c%e7%ab%a0\u0022 aria-label=\u0022锚点\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e        \n    \n\u003c\/h1\u003e\n\u003cp\u003e\n\n\n\n\n\n\n\u003cfigure\u003e\n    \u003cimg class=\u0022my-0 rounded-md\u0022 loading=\u0022lazy\u0022 alt=\u0022第二章作业1\u0022 src=\u0022image-6.png\u0022\u003e\n\n  \n\u003c\/figure\u003e\n\n\n\n\n\n\n\n\n\u003cfigure\u003e\n    \u003cimg class=\u0022my-0 rounded-md\u0022 loading=\u0022lazy\u0022 alt=\u0022第二章作业2\u0022 src=\u0022image-7.png\u0022\u003e\n\n  \n\u003c\/figure\u003e\n\n\n\n\n\n\n\n\n\u003cfigure\u003e\n    \u003cimg class=\u0022my-0 rounded-md\u0022 loading=\u0022lazy\u0022 alt=\u0022第二章作业3\u0022 src=\u0022image-8.png\u0022\u003e\n\n  \n\u003c\/figure\u003e\n\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:3430\/posts\/2025\/02\/%E7%94%B5%E5%AD%90%E5%92%8C%E7%A9%BA%E7%A9%B4%E6%B5%93%E5%BA%A6%E8%AE%A1%E7%AE%97\/",
+    "author" : {
+      "@type": "Person",
+      "name": "AxonSin"
+    },
+    "copyrightYear": "2025",
+    "dateCreated": "2025-02-16T00:00:00\u002b00:00",
+    "datePublished": "2025-02-16T00:00:00\u002b00:00",
+    
+    "dateModified": "2025-02-16T00:00:00\u002b00:00",
+    
+    "keywords": ["半导体","电子","空穴"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "6727"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="AxonSin" />
+  
+  
+  
+  
+  
+  
+  
+  
+  <link href="https://qm.qq.com/q/jwDI8O9906?from=tim" rel="me" />
+  
+  
+  
+  
+  <link href="https://github.com/Axonsin" rel="me" />
+  
+  
+  
+  
+  <link href="https://steamcommunity.com/profiles/76561198935509035/" rel="me" />
+  
+  
+  
+  
+  <link href="https://t.me/Axons0721" rel="me" />
+  
+  
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+  
+  
+  
+  <meta name="theme-color"/>
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content"
+        ><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>跳过正文</a
+      >
+    </div>
+    
+    
+      <div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu">
+    
+    
+    
+    <div>
+        <a href="/" class="flex">
+            <span class="sr-only">Axon的逼仄之梦</span>
+
+            
+            <img src="/img/website_logo.png" width="112" height="112"
+                class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom" alt="Axon的逼仄之梦" />
+            
+
+        </a>
+    </div>
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">Axon的逼仄之梦</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a
+  href="/posts/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    所有博客
+  </p>
+</a>
+
+
+
+            
+            
+  <a
+  href="/aboutme/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    关于我
+  </p>
+</a>
+
+
+
+            
+            
+
+            
+
+
+            
+            <button id="search-button" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+
+            
+            
+            <div
+                class=" flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+
+
+            
+            <button id="search-button-mobile" aria-label="Search" class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+                title="">
+                
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+            </button>
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 md:hidden">
+
+        <label id="menu-button" class="block">
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li id="menu-close-button">
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      所有博客
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+  <a
+    href="/aboutme/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      关于我
+    </p>
+  </a>
+</li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+<script>
+    (function () {
+        var $mainmenu = $('.main-menu');
+        var path = window.location.pathname;
+        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+            $(e).children('p').addClass('active');
+        });
+    })();
+</script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+
+
+  <article>
+    
+      
+      
+      
+      
+        
+
+
+<div id="hero" class="h-[150px] md:h-[200px]"></div>
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/posts/2025/02/%E7%94%B5%E5%AD%90%E5%92%8C%E7%A9%BA%E7%A9%B4%E6%B5%93%E5%BA%A6%E8%AE%A1%E7%AE%97/featured_hu_2b42c97fe13f3667.png);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+
+
+<script type="text/javascript" src="/js/background-blur.min.4812321520cc2e4cd52bf9137015a55bb6c0b5e66a6b2c96b8654c0ec99be59e8e6425dd838a6fd9bac54000586f37f4a9680bbefaa2aee4601a69e188005cf6.js" integrity="sha512-SBIyFSDMLkzVK/kTcBWlW7bAteZqayyWuGVMDsmb5Z6OZCXdg4pv2brFQABYbzf0qWgLvvqiruRgGmnhiABc9g==" data-target-id="background-blur"></script>
+
+      
+    
+
+
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        电子和空穴浓度计算
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-02-16T00:00:00&#43;00:00">16 February 2025</time><span class="px-2 text-primary-500">&middot;</span><span>6727 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">14 分钟</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E5%8D%8A%E5%AF%BC%E4%BD%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    半导体
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%94%B5%E5%AD%90/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    电子
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%A9%BA%E7%A9%B4/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    空穴
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+
+        
+          
+          
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4"
+        width="96"
+        height="96"
+        alt="AxonSin"
+        src="/img/author_avatar_hu_ddaac1ef1b477da8.JPG">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        作者
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        AxonSin
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">梦想是复活在赛博世界，成为一名赛博垃圾人。</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="mailto:axon_sin@foxmail.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://qm.qq.com/q/jwDI8O9906?from=tim"
+          target="_blank"
+          aria-label="Link"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M172.5 131.1C228.1 75.51 320.5 75.51 376.1 131.1C426.1 181.1 433.5 260.8 392.4 318.3L391.3 319.9C381 334.2 361 337.6 346.7 327.3C332.3 317 328.9 297 339.2 282.7L340.3 281.1C363.2 249 359.6 205.1 331.7 177.2C300.3 145.8 249.2 145.8 217.7 177.2L105.5 289.5C73.99 320.1 73.99 372 105.5 403.5C133.3 431.4 177.3 435 209.3 412.1L210.9 410.1C225.3 400.7 245.3 404 255.5 418.4C265.8 432.8 262.5 452.8 248.1 463.1L246.5 464.2C188.1 505.3 110.2 498.7 60.21 448.8C3.741 392.3 3.741 300.7 60.21 244.3L172.5 131.1zM467.5 380C411 436.5 319.5 436.5 263 380C213 330 206.5 251.2 247.6 193.7L248.7 192.1C258.1 177.8 278.1 174.4 293.3 184.7C307.7 194.1 311.1 214.1 300.8 229.3L299.7 230.9C276.8 262.1 280.4 306.9 308.3 334.8C339.7 366.2 390.8 366.2 422.3 334.8L534.5 222.5C566 191 566 139.1 534.5 108.5C506.7 80.63 462.7 76.99 430.7 99.9L429.1 101C414.7 111.3 394.7 107.1 384.5 93.58C374.2 79.2 377.5 59.21 391.9 48.94L393.5 47.82C451 6.731 529.8 13.25 579.8 63.24C636.3 119.7 636.3 211.3 579.8 267.7L467.5 380z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/Axonsin"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://steamcommunity.com/profiles/76561198935509035/"
+          target="_blank"
+          aria-label="Steam"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M496 256c0 137-111.2 248-248.4 248-113.8 0-209.6-76.3-239-180.4l95.2 39.3c6.4 32.1 34.9 56.4 68.9 56.4 39.2 0 71.9-32.4 70.2-73.5l84.5-60.2c52.1 1.3 95.8-40.9 95.8-93.5 0-51.6-42-93.5-93.7-93.5s-93.7 42-93.7 93.5v1.2L176.6 279c-15.5-.9-30.7 3.4-43.5 12.1L0 236.1C10.2 108.4 117.1 8 247.6 8 384.8 8 496 119 496 256zM155.7 384.3l-30.5-12.6a52.79 52.79 0 0 0 27.2 25.8c26.9 11.2 57.8-1.6 69-28.4 5.4-13 5.5-27.3.1-40.3-5.4-13-15.5-23.2-28.5-28.6-12.9-5.4-26.7-5.2-38.9-.6l31.5 13c19.8 8.2 29.2 30.9 20.9 50.7-8.3 19.9-31 29.2-50.8 21zm173.8-129.9c-34.4 0-62.4-28-62.4-62.3s28-62.3 62.4-62.3 62.4 28 62.4 62.3-27.9 62.3-62.4 62.3zm.1-15.6c25.9 0 46.9-21 46.9-46.8 0-25.9-21-46.8-46.9-46.8s-46.9 21-46.9 46.8c.1 25.8 21.1 46.8 46.9 46.8z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://t.me/Axons0721"
+          target="_blank"
+          aria-label="Telegram"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/></svg>
+
+  </span>
+
+</span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+        
+
+        
+
+        
+          <div class="mb-5"></div>
+        
+
+      
+
+    </header>
+
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div
+            class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky 
+              lg:top-10
+            
+            ">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算在t--300-k时比费米能级高3kt的能级被电子占据的概率">计算在T = 300 K时，比费米能级高3kT的能级被电子占据的概率。</a></li>
+    <li><a href="#硅在300k时施主杂质浓度为nd91015-cm-3-受主杂质浓度为含有na111014-cm-3计算电子和空穴的浓度">硅在300K时施主杂质浓度为ND=9<em>1015 cm-3, 受主杂质浓度为含有NA=1.1</em>1014 cm-3，计算电子和空穴的浓度</a></li>
+    <li><a href="#求导带中e--ec-kt2时被电子占据的概率并计算t--300-k时硅中的热平衡电子浓度设费米能级位于导带下方025-ev处t--300-k时硅中的n-28--1019-cm-3">求导带中E = Ec+ kT/2时被电子占据的概率，并计算T = 300 K时硅中的热平衡电子浓度。设费米能级位于导带下方0.25 eV处。T = 300 K时硅中的N= 2.8 × 1019 cm-3。</a></li>
+    <li><a href="#已知载流子迁移率求扩散系数设t300k时某载流子的迁移率为1000cm2vs">已知载流子迁移率，求扩散系数。设T=300K时某载流子的迁移率为1000cm2/V·s。</a></li>
+    <li><a href="#题目4">题目4</a></li>
+    <li><a href="#题目5">题目5</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#试述门阵列和标准单元设计方法的概念和它们之间的异同点">试述门阵列和标准单元设计方法的概念和它们之间的异同点。</a>
+      <ul>
+        <li><a href="#门阵列设计方法ga">门阵列设计方法（GA）</a></li>
+        <li><a href="#标准单元设计方法sc">标准单元设计方法（SC）</a></li>
+      </ul>
+    </li>
+    <li><a href="#异同点分析">异同点分析</a>
+      <ul>
+        <li><a href="#相同点">相同点</a></li>
+        <li><a href="#不同点">不同点</a></li>
+        <li><a href="#优缺点对比">优缺点对比</a></li>
+        <li><a href="#应用场景">应用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#标准单元库中的单元的主要描述形式有哪些分别在ic设计的什么阶段应用">标准单元库中的单元的主要描述形式有哪些？分别在IC设计的什么阶段应用？</a>
+      <ul>
+        <li><a href="#标准单元库中单元的主要描述形式">标准单元库中单元的主要描述形式</a>
+          <ul>
+            <li><a href="#1-逻辑符号l">1. 逻辑符号（L）</a></li>
+            <li><a href="#2-功能描述">2. 功能描述</a></li>
+            <li><a href="#3-电路结构和电学指标">3. 电路结构和电学指标</a></li>
+            <li><a href="#4-版图信息">4. 版图信息</a></li>
+          </ul>
+        </li>
+        <li><a href="#在ic设计各阶段的应用">在IC设计各阶段的应用</a>
+          <ul>
+            <li><a href="#功能设计阶段">功能设计阶段</a></li>
+            <li><a href="#逻辑和电路设计阶段">逻辑和电路设计阶段</a></li>
+            <li><a href="#版图设计阶段">版图设计阶段</a></li>
+            <li><a href="#标准单元库的层次化应用">标准单元库的层次化应用</a></li>
+            <li><a href="#设计流程中的迭代应用">设计流程中的迭代应用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#集成电路的可测性设计是指什么">集成电路的可测性设计是指什么？</a>
+      <ul>
+        <li><a href="#集成电路可测性设计的定义">集成电路可测性设计的定义</a></li>
+        <li><a href="#可测性设计的核心要素">可测性设计的核心要素</a>
+          <ul>
+            <li><a href="#1-可控制性controllability">1. 可控制性（Controllability）</a></li>
+            <li><a href="#2-可观察性observability">2. 可观察性（Observability）</a></li>
+          </ul>
+        </li>
+        <li><a href="#集成电路测试的特殊性和背景">集成电路测试的特殊性和背景</a>
+          <ul>
+            <li><a href="#测试的目的">测试的目的</a></li>
+            <li><a href="#测试面临的挑战">测试面临的挑战</a></li>
+          </ul>
+        </li>
+        <li><a href="#主要的可测性设计技术">主要的可测性设计技术</a>
+          <ul>
+            <li><a href="#1-扫描路径测试技术">1. 扫描路径测试技术</a></li>
+            <li><a href="#2-特征量分析测试技术">2. 特征量分析测试技术</a></li>
+          </ul>
+        </li>
+        <li><a href="#可测性设计的设计原则">可测性设计的设计原则</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是直接带隙间接带隙半导体为什么直接带隙半导体的光吸收系数比间接带隙半导体大">什么是直接带隙/间接带隙半导体？为什么直接带隙半导体的光吸收系数比间接带隙半导体大？</a>
+      <ul>
+        <li><a href="#直接带隙与间接带隙半导体">直接带隙与间接带隙半导体</a></li>
+        <li><a href="#光吸收系数的差异原因">光吸收系数的差异原因</a>
+          <ul>
+            <li><a href="#直接带隙半导体">直接带隙半导体</a></li>
+            <li><a href="#间接带隙半导体">间接带隙半导体</a></li>
+          </ul>
+        </li>
+        <li><a href="#实际例子">实际例子</a></li>
+      </ul>
+    </li>
+    <li><a href="#太阳能电池的电流表达式">太阳能电池的电流表达式</a></li>
+    <li><a href="#开路电压表达式">开路电压表达式</a></li>
+    <li><a href="#短路电流表达式">短路电流表达式</a></li>
+    <li><a href="#物理意义">物理意义</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目录
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算在t--300-k时比费米能级高3kt的能级被电子占据的概率">计算在T = 300 K时，比费米能级高3kT的能级被电子占据的概率。</a></li>
+    <li><a href="#硅在300k时施主杂质浓度为nd91015-cm-3-受主杂质浓度为含有na111014-cm-3计算电子和空穴的浓度">硅在300K时施主杂质浓度为ND=9<em>1015 cm-3, 受主杂质浓度为含有NA=1.1</em>1014 cm-3，计算电子和空穴的浓度</a></li>
+    <li><a href="#求导带中e--ec-kt2时被电子占据的概率并计算t--300-k时硅中的热平衡电子浓度设费米能级位于导带下方025-ev处t--300-k时硅中的n-28--1019-cm-3">求导带中E = Ec+ kT/2时被电子占据的概率，并计算T = 300 K时硅中的热平衡电子浓度。设费米能级位于导带下方0.25 eV处。T = 300 K时硅中的N= 2.8 × 1019 cm-3。</a></li>
+    <li><a href="#已知载流子迁移率求扩散系数设t300k时某载流子的迁移率为1000cm2vs">已知载流子迁移率，求扩散系数。设T=300K时某载流子的迁移率为1000cm2/V·s。</a></li>
+    <li><a href="#题目4">题目4</a></li>
+    <li><a href="#题目5">题目5</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#试述门阵列和标准单元设计方法的概念和它们之间的异同点">试述门阵列和标准单元设计方法的概念和它们之间的异同点。</a>
+      <ul>
+        <li><a href="#门阵列设计方法ga">门阵列设计方法（GA）</a></li>
+        <li><a href="#标准单元设计方法sc">标准单元设计方法（SC）</a></li>
+      </ul>
+    </li>
+    <li><a href="#异同点分析">异同点分析</a>
+      <ul>
+        <li><a href="#相同点">相同点</a></li>
+        <li><a href="#不同点">不同点</a></li>
+        <li><a href="#优缺点对比">优缺点对比</a></li>
+        <li><a href="#应用场景">应用场景</a></li>
+      </ul>
+    </li>
+    <li><a href="#标准单元库中的单元的主要描述形式有哪些分别在ic设计的什么阶段应用">标准单元库中的单元的主要描述形式有哪些？分别在IC设计的什么阶段应用？</a>
+      <ul>
+        <li><a href="#标准单元库中单元的主要描述形式">标准单元库中单元的主要描述形式</a>
+          <ul>
+            <li><a href="#1-逻辑符号l">1. 逻辑符号（L）</a></li>
+            <li><a href="#2-功能描述">2. 功能描述</a></li>
+            <li><a href="#3-电路结构和电学指标">3. 电路结构和电学指标</a></li>
+            <li><a href="#4-版图信息">4. 版图信息</a></li>
+          </ul>
+        </li>
+        <li><a href="#在ic设计各阶段的应用">在IC设计各阶段的应用</a>
+          <ul>
+            <li><a href="#功能设计阶段">功能设计阶段</a></li>
+            <li><a href="#逻辑和电路设计阶段">逻辑和电路设计阶段</a></li>
+            <li><a href="#版图设计阶段">版图设计阶段</a></li>
+            <li><a href="#标准单元库的层次化应用">标准单元库的层次化应用</a></li>
+            <li><a href="#设计流程中的迭代应用">设计流程中的迭代应用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#集成电路的可测性设计是指什么">集成电路的可测性设计是指什么？</a>
+      <ul>
+        <li><a href="#集成电路可测性设计的定义">集成电路可测性设计的定义</a></li>
+        <li><a href="#可测性设计的核心要素">可测性设计的核心要素</a>
+          <ul>
+            <li><a href="#1-可控制性controllability">1. 可控制性（Controllability）</a></li>
+            <li><a href="#2-可观察性observability">2. 可观察性（Observability）</a></li>
+          </ul>
+        </li>
+        <li><a href="#集成电路测试的特殊性和背景">集成电路测试的特殊性和背景</a>
+          <ul>
+            <li><a href="#测试的目的">测试的目的</a></li>
+            <li><a href="#测试面临的挑战">测试面临的挑战</a></li>
+          </ul>
+        </li>
+        <li><a href="#主要的可测性设计技术">主要的可测性设计技术</a>
+          <ul>
+            <li><a href="#1-扫描路径测试技术">1. 扫描路径测试技术</a></li>
+            <li><a href="#2-特征量分析测试技术">2. 特征量分析测试技术</a></li>
+          </ul>
+        </li>
+        <li><a href="#可测性设计的设计原则">可测性设计的设计原则</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是直接带隙间接带隙半导体为什么直接带隙半导体的光吸收系数比间接带隙半导体大">什么是直接带隙/间接带隙半导体？为什么直接带隙半导体的光吸收系数比间接带隙半导体大？</a>
+      <ul>
+        <li><a href="#直接带隙与间接带隙半导体">直接带隙与间接带隙半导体</a></li>
+        <li><a href="#光吸收系数的差异原因">光吸收系数的差异原因</a>
+          <ul>
+            <li><a href="#直接带隙半导体">直接带隙半导体</a></li>
+            <li><a href="#间接带隙半导体">间接带隙半导体</a></li>
+          </ul>
+        </li>
+        <li><a href="#实际例子">实际例子</a></li>
+      </ul>
+    </li>
+    <li><a href="#太阳能电池的电流表达式">太阳能电池的电流表达式</a></li>
+    <li><a href="#开路电压表达式">开路电压表达式</a></li>
+    <li><a href="#短路电流表达式">短路电流表达式</a></li>
+    <li><a href="#物理意义">物理意义</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h1 class="relative group">第二章 
+    <div id="第二章" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e4%ba%8c%e7%ab%a0" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="第二章作业1" src="image-6.png">
+
+  
+</figure>
+
+
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="第二章作业2" src="image-7.png">
+
+  
+</figure>
+
+
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="第二章作业3" src="image-8.png">
+
+  
+</figure>
+</p>
+
+<h2 class="relative group">计算在T = 300 K时，比费米能级高3kT的能级被电子占据的概率。 
+    <div id="计算在t--300-k时比费米能级高3kt的能级被电子占据的概率" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%ae%a1%e7%ae%97%e5%9c%a8t--300-k%e6%97%b6%e6%af%94%e8%b4%b9%e7%b1%b3%e8%83%bd%e7%ba%a7%e9%ab%983kt%e7%9a%84%e8%83%bd%e7%ba%a7%e8%a2%ab%e7%94%b5%e5%ad%90%e5%8d%a0%e6%8d%ae%e7%9a%84%e6%a6%82%e7%8e%87" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>根据费米-狄拉克分布函数，我来计算在T = 300 K时比费米能级高3kT的能级被电子占据的概率。
+$D = \frac{\phi \cdot \lambda}{4\pi}$
+当信号光场 $f_s(t) = A_s\cos(\omega_s t + \phi_s)$ 和本振光场 $f_L(t) = A_L\cos(\omega_L t + \phi_L)$ 在检测器上混频时：</p>
+<p>费米-狄拉克分布函数为：</p>
+$$f(E) = \frac{1}{1 + \exp\left(\frac{E - E_F}{kT}\right)}$$<p>其中：</p>
+<ul>
+<li>E 是能级</li>
+<li>E_F 是费米能级</li>
+<li>k 是玻尔兹曼常数</li>
+<li>T 是温度</li>
+</ul>
+<p><strong>给定条件：</strong></p>
+<ul>
+<li>T = 300 K</li>
+<li>能级比费米能级高3kT，即 E - E_F = 3kT</li>
+</ul>
+<p><strong>计算过程：</strong></p>
+<p>将条件代入费米分布函数：</p>
+$$f(E) = \frac{1}{1 + \exp\left(\frac{3kT}{kT}\right)}$$$$f(E) = \frac{1}{1 + \exp(3)}$$$$f(E) = \frac{1}{1 + e^3}$$<p>计算 $e^3 \approx 20.09$</p>
+<p>因此：
+</p>
+$$f(E) = \frac{1}{1 + 20.09} = \frac{1}{21.09} \approx 0.0474$$<p><strong>答案：</strong>
+比费米能级高3kT的能级被电子占据的概率约为 <strong>4.74%</strong> 或 <strong>0.0474</strong>。</p>
+<p>这个结果说明，当能级远高于费米能级时（高出3kT），该能级被电子占据的概率很小，符合费米分布在高能级处迅速下降的特征。</p>
+
+<h2 class="relative group">硅在300K时施主杂质浓度为ND=9<em>1015 cm-3, 受主杂质浓度为含有NA=1.1</em>1014 cm-3，计算电子和空穴的浓度 
+    <div id="硅在300k时施主杂质浓度为nd91015-cm-3-受主杂质浓度为含有na111014-cm-3计算电子和空穴的浓度" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%a1%85%e5%9c%a8300k%e6%97%b6%e6%96%bd%e4%b8%bb%e6%9d%82%e8%b4%a8%e6%b5%93%e5%ba%a6%e4%b8%band91015-cm-3-%e5%8f%97%e4%b8%bb%e6%9d%82%e8%b4%a8%e6%b5%93%e5%ba%a6%e4%b8%ba%e5%90%ab%e6%9c%89na111014-cm-3%e8%ae%a1%e7%ae%97%e7%94%b5%e5%ad%90%e5%92%8c%e7%a9%ba%e7%a9%b4%e7%9a%84%e6%b5%93%e5%ba%a6" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p><strong>给定条件：</strong></p>
+<ul>
+<li>T = 300 K</li>
+<li>施主杂质浓度：ND = 9×10¹⁵ cm⁻³</li>
+<li>受主杂质浓度：NA = 1.1×10¹⁴ cm⁻³</li>
+<li>硅在300K时的本征载流子浓度：ni = 1.08×10¹⁰ cm⁻³（课件中给出）</li>
+</ul>
+<p><strong>分析步骤：</strong></p>
+<p><strong>步骤1：判断半导体类型</strong>
+由于 ND &gt; NA，这是一个n型半导体。</p>
+<p><strong>步骤2：应用电中性条件</strong>
+根据课件中的电中性条件：</p>
+<pre tabindex="0"><code>p + ND = n + NA
+</code></pre><p>即：</p>
+<pre tabindex="0"><code>n = p + ND - NA
+</code></pre><p><strong>步骤3：计算净掺杂浓度</strong>
+净施主浓度 = ND - NA = 9×10¹⁵ - 1.1×10¹⁴ = 8.89×10¹⁵ cm⁻³</p>
+<p><strong>步骤4：计算载流子浓度</strong></p>
+<p>对于n型半导体，当掺杂浓度远大于本征载流子浓度时：</p>
+<p><strong>电子浓度（多子）：</strong></p>
+<pre tabindex="0"><code>n ≈ ND - NA = 8.89×10¹⁵ cm⁻³
+</code></pre><p><strong>空穴浓度（少子）：</strong>
+利用质量作用定律 np = ni²：</p>
+<pre tabindex="0"><code>p = ni²/n = (1.08×10¹⁰)²/(8.89×10¹⁵)
+p = 1.166×10²⁰/(8.89×10¹⁵)
+p ≈ 1.31×10⁴ cm⁻³
+</code></pre><p><strong>最终答案：</strong></p>
+<ul>
+<li><strong>电子浓度：n ≈ 8.89×10¹⁵ cm⁻³</strong></li>
+<li><strong>空穴浓度：p ≈ 1.31×10⁴ cm⁻³</strong></li>
+</ul>
+<p><strong>验证：</strong></p>
+<ul>
+<li>n &raquo; p，符合n型半导体特征</li>
+<li>np = 8.89×10¹⁵ × 1.31×10⁴ ≈ 1.16×10²⁰ ≈ ni²，满足质量作用定律</li>
+</ul>
+
+<h2 class="relative group">求导带中E = Ec+ kT/2时被电子占据的概率，并计算T = 300 K时硅中的热平衡电子浓度。设费米能级位于导带下方0.25 eV处。T = 300 K时硅中的N= 2.8 × 1019 cm-3。 
+    <div id="求导带中e--ec-kt2时被电子占据的概率并计算t--300-k时硅中的热平衡电子浓度设费米能级位于导带下方025-ev处t--300-k时硅中的n-28--1019-cm-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%b1%82%e5%af%bc%e5%b8%a6%e4%b8%ade--ec-kt2%e6%97%b6%e8%a2%ab%e7%94%b5%e5%ad%90%e5%8d%a0%e6%8d%ae%e7%9a%84%e6%a6%82%e7%8e%87%e5%b9%b6%e8%ae%a1%e7%ae%97t--300-k%e6%97%b6%e7%a1%85%e4%b8%ad%e7%9a%84%e7%83%ad%e5%b9%b3%e8%a1%a1%e7%94%b5%e5%ad%90%e6%b5%93%e5%ba%a6%e8%ae%be%e8%b4%b9%e7%b1%b3%e8%83%bd%e7%ba%a7%e4%bd%8d%e4%ba%8e%e5%af%bc%e5%b8%a6%e4%b8%8b%e6%96%b9025-ev%e5%a4%84t--300-k%e6%97%b6%e7%a1%85%e4%b8%ad%e7%9a%84n-28--1019-cm-3" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p><strong>给定条件：</strong></p>
+<ul>
+<li>T = 300 K</li>
+<li>费米能级位于导带下方0.25 eV处，即 EF = Ec - 0.25 eV</li>
+<li>Nc = 2.8 × 10¹⁹ cm⁻³</li>
+</ul>
+<p><strong>第一部分：求导带中E = Ec + kT/2时被电子占据的概率</strong></p>
+<p><strong>步骤1：计算kT值</strong></p>
+<pre tabindex="0"><code>k = 8.617 × 10⁻⁵ eV/K
+kT = 8.617 × 10⁻⁵ × 300 = 0.0259 eV ≈ 0.026 eV
+</code></pre><p><strong>步骤2：计算能级差</strong></p>
+<pre tabindex="0"><code>E - EF = (Ec + kT/2) - (Ec - 0.25)
+E - EF = kT/2 + 0.25 = 0.013 + 0.25 = 0.263 eV
+</code></pre><p><strong>步骤3：应用费米-狄拉克分布函数</strong>
+根据课件中的费米分布函数：</p>
+<pre tabindex="0"><code>f(E) = 1/[1 + exp((E - EF)/kT)]
+</code></pre><pre tabindex="0"><code>(E - EF)/kT = 0.263/0.026 ≈ 10.12
+</code></pre><pre tabindex="0"><code>f(E) = 1/[1 + exp(10.12)] = 1/[1 + 24766] ≈ 4.04 × 10⁻⁵
+</code></pre><p><strong>第二部分：计算T = 300K时硅中的热平衡电子浓度</strong></p>
+<p>根据课件中导带电子浓度公式：</p>
+<pre tabindex="0"><code>n = Nc × exp((EF - Ec)/kT)
+</code></pre><p><strong>步骤1：计算指数项</strong></p>
+<pre tabindex="0"><code>(EF - Ec)/kT = (-0.25)/0.026 = -9.62
+</code></pre><p><strong>步骤2：计算电子浓度</strong></p>
+<pre tabindex="0"><code>n = 2.8 × 10¹⁹ × exp(-9.62)
+n = 2.8 × 10¹⁹ × 6.69 × 10⁻⁵
+n ≈ 1.87 × 10¹⁵ cm⁻³
+</code></pre><p><strong>最终答案：</strong></p>
+<ol>
+<li><strong>E = Ec + kT/2时被电子占据的概率：≈ 4.04 × 10⁻⁵</strong></li>
+<li><strong>热平衡电子浓度：n ≈ 1.87 × 10¹⁵ cm⁻³</strong></li>
+</ol>
+<p>这个结果表明费米能级距离导带较远时，导带中的电子浓度相对较低，符合半导体的特征。</p>
+
+<h2 class="relative group">已知载流子迁移率，求扩散系数。设T=300K时某载流子的迁移率为1000cm2/V·s。 
+    <div id="已知载流子迁移率求扩散系数设t300k时某载流子的迁移率为1000cm2vs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%b7%b2%e7%9f%a5%e8%bd%bd%e6%b5%81%e5%ad%90%e8%bf%81%e7%a7%bb%e7%8e%87%e6%b1%82%e6%89%a9%e6%95%a3%e7%b3%bb%e6%95%b0%e8%ae%bet300k%e6%97%b6%e6%9f%90%e8%bd%bd%e6%b5%81%e5%ad%90%e7%9a%84%e8%bf%81%e7%a7%bb%e7%8e%87%e4%b8%ba1000cm2vs" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p><strong>给定条件：</strong></p>
+<ul>
+<li>T = 300 K</li>
+<li>载流子迁移率 μ = 1000 cm²/V·s</li>
+</ul>
+<p><strong>理论基础：</strong>
+根据课件中的<strong>爱因斯坦关系</strong>：</p>
+<pre tabindex="0"><code>D = (kT/q)μ
+</code></pre><p>其中：</p>
+<ul>
+<li>D：扩散系数 (cm²/s)</li>
+<li>k：玻尔兹曼常数 = 1.38 × 10⁻²³ J/K</li>
+<li>T：温度 (K)</li>
+<li>q：电子电荷量 = 1.6 × 10⁻¹⁹ C</li>
+<li>μ：迁移率 (cm²/V·s)</li>
+</ul>
+<p><strong>计算步骤：</strong></p>
+<p><strong>步骤1：计算kT/q</strong></p>
+<pre tabindex="0"><code>kT/q = (1.38 × 10⁻²³ × 300)/(1.6 × 10⁻¹⁹)
+kT/q = 4.14 × 10⁻²¹/1.6 × 10⁻¹⁹
+kT/q = 0.0259 V = 25.9 mV
+</code></pre><p><strong>步骤2：计算扩散系数</strong></p>
+<pre tabindex="0"><code>D = (kT/q) × μ
+D = 0.0259 × 1000
+D = 25.9 cm²/s
+</code></pre><p><strong>最终答案：</strong>
+<strong>扩散系数 D = 25.9 cm²/s</strong></p>
+<p><strong>物理意义：</strong></p>
+<ul>
+<li>爱因斯坦关系揭示了载流子的漂移运动和扩散运动之间的内在联系</li>
+<li>在室温下，kT/q ≈ 26 mV，这是半导体器件分析中的一个重要参数</li>
+<li>迁移率越高，扩散系数也越大，说明载流子的输运能力越强。</li>
+</ul>
+
+<h2 class="relative group">题目4 
+    <div id="题目4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%a2%98%e7%9b%ae4" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="题目4" src="image-9.png">
+
+  
+</figure>
+
+<strong>给定条件：</strong></p>
+<ul>
+<li>T = 300 K</li>
+<li>砷化镓(GaAs)的掺杂浓度：Na = 0，Nd = 10¹⁶ cm⁻³</li>
+<li>设杂质全部电离</li>
+<li>电子迁移率：μn = 8500 cm²/Vs</li>
+<li>空穴迁移率：μp = 400 cm²/Vs</li>
+<li>外加电场强度：E = 10 V/cm</li>
+</ul>
+<p><strong>分析步骤：</strong></p>
+<p><strong>步骤1：确定半导体类型和载流子浓度</strong>
+由于 Na = 0，Nd = 10¹⁶ cm⁻³，这是一个n型半导体。</p>
+<p>对于强掺杂的n型半导体：</p>
+<ul>
+<li>电子浓度（多子）：n ≈ Nd = 10¹⁶ cm⁻³</li>
+<li>空穴浓度（少子）：p &laquo; n（可忽略）</li>
+</ul>
+<p><strong>步骤2：应用漂移电流密度公式</strong>
+根据课件中的公式：</p>
+<pre tabindex="0"><code>Jdrift = q(nμn + pμp)E
+</code></pre><p>由于 p &laquo; n，主要考虑电子的贡献：</p>
+<pre tabindex="0"><code>Jdrift ≈ qnμnE
+</code></pre><p><strong>步骤3：代入数值计算</strong></p>
+<pre tabindex="0"><code>q = 1.6 × 10⁻¹⁹ C
+n = 10¹⁶ cm⁻³
+μn = 8500 cm²/Vs
+E = 10 V/cm
+</code></pre><pre tabindex="0"><code>Jdrift = 1.6 × 10⁻¹⁹ × 10¹⁶ × 8500 × 10
+Jdrift = 1.6 × 10⁻³ × 8500 × 10
+Jdrift = 1.6 × 85000 × 10⁻³
+Jdrift = 136 A/cm²
+</code></pre><p><strong>最终答案：</strong>
+<strong>漂移电流密度 Jdrift = 136 A/cm²</strong></p>
+<p><strong>说明：</strong></p>
+<ul>
+<li>由于这是强掺杂的n型半导体，电子是主要的载流子</li>
+<li>空穴浓度相对很小，对总电流的贡献可以忽略</li>
+<li>GaAs具有很高的电子迁移率，因此在相同电场下产生较大的漂移电流</li>
+</ul>
+
+<h2 class="relative group">题目5 
+    <div id="题目5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%a2%98%e7%9b%ae5" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="题目5" src="image-10.png">
+
+  
+</figure>
+
+<strong>给定条件：</strong></p>
+<ul>
+<li>n型GaAs半导体</li>
+<li>T = 300 K</li>
+<li>电子浓度在0.10 cm距离内从1×10¹⁸ cm⁻³ 到7×10¹⁷ cm⁻³ 线性变化</li>
+<li>电子扩散系数：Dn = 225 cm²/s</li>
+</ul>
+<p><strong>理论基础：</strong>
+根据课件中的扩散电流密度公式：</p>
+<pre tabindex="0"><code>Jn,diff = qDn(dn/dx)
+</code></pre><p>其中：</p>
+<ul>
+<li>q = 1.6 × 10⁻¹⁹ C（电子电荷量）</li>
+<li>Dn = 225 cm²/s（电子扩散系数）</li>
+<li>dn/dx：电子浓度梯度</li>
+</ul>
+<p><strong>计算步骤：</strong></p>
+<p><strong>步骤1：计算浓度梯度 dn/dx</strong></p>
+<pre tabindex="0"><code>初始浓度：n₁ = 1×10¹⁸ cm⁻³
+终末浓度：n₂ = 7×10¹⁷ cm⁻³
+距离：Δx = 0.10 cm
+</code></pre><pre tabindex="0"><code>Δn = n₂ - n₁ = 7×10¹⁷ - 1×10¹⁸ = -3×10¹⁷ cm⁻³
+</code></pre><pre tabindex="0"><code>dn/dx = Δn/Δx = (-3×10¹⁷)/0.10 = -3×10¹⁸ cm⁻⁴
+</code></pre><p><strong>步骤2：计算扩散电流密度</strong></p>
+<pre tabindex="0"><code>Jn,diff = qDn(dn/dx)
+Jn,diff = 1.6×10⁻¹⁹ × 225 × (-3×10¹⁸)
+Jn,diff = -108 A/cm²
+</code></pre><p><strong>最终答案：</strong>
+<strong>扩散电流密度 Jn,diff = -108 A/cm²</strong></p>
+<p><strong>物理意义：</strong></p>
+<ul>
+<li>负号表示电流方向与浓度梯度方向相反</li>
+<li>电子从高浓度区域扩散到低浓度区域</li>
+<li>由于电子带负电，所以电流方向与电子运动方向相反</li>
+<li>扩散电流密度的大小为 <strong>108 A/cm²</strong></li>
+</ul>
+<p>这个结果符合课件中提到的扩散机制：载流子从浓度高的区域移动到低浓度的区域。</p>
+
+<h1 class="relative group">第六章 
+    <div id="第六章" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e5%85%ad%e7%ab%a0" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+
+<h2 class="relative group">试述门阵列和标准单元设计方法的概念和它们之间的异同点。 
+    <div id="试述门阵列和标准单元设计方法的概念和它们之间的异同点" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%af%95%e8%bf%b0%e9%97%a8%e9%98%b5%e5%88%97%e5%92%8c%e6%a0%87%e5%87%86%e5%8d%95%e5%85%83%e8%ae%be%e8%ae%a1%e6%96%b9%e6%b3%95%e7%9a%84%e6%a6%82%e5%bf%b5%e5%92%8c%e5%ae%83%e4%bb%ac%e4%b9%8b%e9%97%b4%e7%9a%84%e5%bc%82%e5%90%8c%e7%82%b9" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">门阵列设计方法（GA） 
+    <div id="门阵列设计方法ga" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%a8%e9%98%b5%e5%88%97%e8%ae%be%e8%ae%a1%e6%96%b9%e6%b3%95ga" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>门阵列是一种半定制设计方法，其特点是：</p>
+<ul>
+<li>形状和尺寸完全相同的基本单元排列成阵列，内部含有若干器件</li>
+<li>单元之间留有布线通道，通道宽度和位置固定</li>
+<li>预先完成接触孔和连线以外的芯片加工步骤，形成母片</li>
+<li>根据不同应用，设计出不同的接触孔版和金属连线版，实现所需电路功能</li>
+<li>基本单元只是晶体管的集合，不具有电学属性</li>
+</ul>
+
+<h3 class="relative group">标准单元设计方法（SC） 
+    <div id="标准单元设计方法sc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%87%e5%87%86%e5%8d%95%e5%85%83%e8%ae%be%e8%ae%a1%e6%96%b9%e6%b3%95sc" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>标准单元方法是一种库单元设计方法，其特点是：</p>
+<ul>
+<li>从标准单元库中调用经过设计的逻辑单元，并排列成行</li>
+<li>行间留有可调整的布线通道</li>
+<li>按功能要求将内部单元以及输入/输出单元连接起来</li>
+<li>限制高度，不限制宽度</li>
+<li>标准单元库中的单元是人工优化设计，力求达到最小面积和最好性能</li>
+</ul>
+
+<h2 class="relative group">异同点分析 
+    <div id="异同点分析" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%bc%82%e5%90%8c%e7%82%b9%e5%88%86%e6%9e%90" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">相同点 
+    <div id="相同点" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9b%b8%e5%90%8c%e7%82%b9" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<ol>
+<li><strong>定制性质</strong>：两者都属于ASIC（专用集成电路）设计方法</li>
+<li><strong>目标导向</strong>：都是为了降低设计成本，缩短设计周期</li>
+<li><strong>基于单元</strong>：都采用预设计的单元进行电路构建</li>
+<li><strong>需要全套掩膜版</strong>：都属于定制设计方法，需要完整的掩膜版制作</li>
+</ol>
+
+<h3 class="relative group">不同点 
+    <div id="不同点" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%8d%e5%90%8c%e7%82%b9" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>比较项目</th>
+          <th>门阵列设计方法</th>
+          <th>标准单元设计方法</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>定制情况</strong></td>
+          <td>半定制</td>
+          <td>定制</td>
+      </tr>
+      <tr>
+          <td><strong>基片状况</strong></td>
+          <td>有母片</td>
+          <td>无基片</td>
+      </tr>
+      <tr>
+          <td><strong>单元几何形状</strong></td>
+          <td>完全相同的矩形</td>
+          <td>等高不等宽的矩形</td>
+      </tr>
+      <tr>
+          <td><strong>单元电路属性</strong></td>
+          <td>无电路属性</td>
+          <td>有单元电路功能</td>
+      </tr>
+      <tr>
+          <td><strong>布线状况</strong></td>
+          <td>等宽的布线通道</td>
+          <td>宽度可变的布线通道</td>
+      </tr>
+      <tr>
+          <td><strong>设计灵活性</strong></td>
+          <td>较低</td>
+          <td>较高</td>
+      </tr>
+      <tr>
+          <td><strong>芯片利用率</strong></td>
+          <td>门利用率低，芯片面积浪费</td>
+          <td>较高的芯片利用率和连线布通率</td>
+      </tr>
+      <tr>
+          <td><strong>设计周期</strong></td>
+          <td>短</td>
+          <td>相对较长</td>
+      </tr>
+      <tr>
+          <td><strong>设计成本</strong></td>
+          <td>低</td>
+          <td>相对较高</td>
+      </tr>
+      <tr>
+          <td><strong>性能优化</strong></td>
+          <td>有限</td>
+          <td>可在版图和性能上得到较好优化</td>
+      </tr>
+      <tr>
+          <td><strong>适用批量</strong></td>
+          <td>10³块</td>
+          <td>10⁴块</td>
+      </tr>
+      <tr>
+          <td><strong>掩膜版数目</strong></td>
+          <td>1-2层</td>
+          <td>全套</td>
+      </tr>
+  </tbody>
+</table>
+
+<h3 class="relative group">优缺点对比 
+    <div id="优缺点对比" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bc%98%e7%bc%ba%e7%82%b9%e5%af%b9%e6%af%94" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p><strong>门阵列方法：</strong></p>
+<ul>
+<li>优点：设计周期短，设计成本低，适合中等性能、要求设计时间短、数量相对较少的电路</li>
+<li>缺点：设计灵活性较低，门利用率低，芯片面积浪费</li>
+</ul>
+<p><strong>标准单元方法：</strong></p>
+<ul>
+<li>优点：较高的芯片利用率和连线布通率，可变的单元数、压焊块数、通道间距，布局布线自由度大</li>
+<li>缺点：依赖于标准单元库，库建立需较长周期和较高成本，特别是工艺更新时</li>
+</ul>
+
+<h3 class="relative group">应用场景 
+    <div id="应用场景" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li><strong>门阵列</strong>：适用于设计适当规模、中等性能、要求设计时间短、数量相对较少的电路</li>
+<li><strong>标准单元</strong>：适用于中批量或小批量但性能要求较高的芯片设计</li>
+</ul>
+<p>总的来说，门阵列方法侧重于快速、低成本的设计实现，而标准单元方法更注重性能优化和设计灵活性，两者在集成电路设计中各有其适用的场景和优势。</p>
+
+<h2 class="relative group">标准单元库中的单元的主要描述形式有哪些？分别在IC设计的什么阶段应用？ 
+    <div id="标准单元库中的单元的主要描述形式有哪些分别在ic设计的什么阶段应用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%87%e5%87%86%e5%8d%95%e5%85%83%e5%ba%93%e4%b8%ad%e7%9a%84%e5%8d%95%e5%85%83%e7%9a%84%e4%b8%bb%e8%a6%81%e6%8f%8f%e8%bf%b0%e5%bd%a2%e5%bc%8f%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e5%9c%a8ic%e8%ae%be%e8%ae%a1%e7%9a%84%e4%bb%80%e4%b9%88%e9%98%b6%e6%ae%b5%e5%ba%94%e7%94%a8" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">标准单元库中单元的主要描述形式 
+    <div id="标准单元库中单元的主要描述形式" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%87%e5%87%86%e5%8d%95%e5%85%83%e5%ba%93%e4%b8%ad%e5%8d%95%e5%85%83%e7%9a%84%e4%b8%bb%e8%a6%81%e6%8f%8f%e8%bf%b0%e5%bd%a2%e5%bc%8f" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">1. 逻辑符号（L） 
+    <div id="1-逻辑符号l" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e9%80%bb%e8%be%91%e7%ac%a6%e5%8f%b7l" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>内容包括：</strong></p>
+<ul>
+<li>单元名称与符号</li>
+<li>I/O端口信息</li>
+</ul>
+<p><strong>特点：</strong></p>
+<ul>
+<li>用于逻辑图表示</li>
+<li>提供单元的逻辑功能标识</li>
+</ul>
+
+<h4 class="relative group">2. 功能描述 
+    <div id="2-功能描述" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%8a%9f%e8%83%bd%e6%8f%8f%e8%bf%b0" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>内容包括：</strong></p>
+<ul>
+<li>单元的逻辑功能定义</li>
+<li>行为特性描述</li>
+</ul>
+
+<h4 class="relative group">3. 电路结构和电学指标 
+    <div id="3-电路结构和电学指标" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#3-%e7%94%b5%e8%b7%af%e7%bb%93%e6%9e%84%e5%92%8c%e7%94%b5%e5%ad%a6%e6%8c%87%e6%a0%87" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>内容包括：</strong></p>
+<ul>
+<li>电路的具体实现结构</li>
+<li>电学性能参数</li>
+<li>时序特性等</li>
+</ul>
+
+<h4 class="relative group">4. 版图信息 
+    <div id="4-版图信息" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#4-%e7%89%88%e5%9b%be%e4%bf%a1%e6%81%af" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>分为两个层次：</strong></p>
+<ul>
+<li><strong>拓扑版图（O）</strong>：拓扑单元名、单元宽度高度、I/O位置及名称</li>
+<li><strong>掩膜版图（A）</strong>：具体的几何版图信息</li>
+</ul>
+
+<h3 class="relative group">在IC设计各阶段的应用 
+    <div id="在ic设计各阶段的应用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%9c%a8ic%e8%ae%be%e8%ae%a1%e5%90%84%e9%98%b6%e6%ae%b5%e7%9a%84%e5%ba%94%e7%94%a8" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">功能设计阶段 
+    <div id="功能设计阶段" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8a%9f%e8%83%bd%e8%ae%be%e8%ae%a1%e9%98%b6%e6%ae%b5" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>应用的描述形式：</strong></p>
+<ul>
+<li><strong>逻辑符号（L）</strong>：用于逻辑图绘制</li>
+<li><strong>功能描述</strong>：用于RTL级描述和行为仿真</li>
+</ul>
+<p><strong>具体应用：</strong></p>
+<ul>
+<li>功能块划分时选择合适的标准单元</li>
+<li>RTL级VHDL、Verilog描述中调用单元功能</li>
+<li>行为仿真验证总体功能和时序正确性</li>
+</ul>
+
+<h4 class="relative group">逻辑和电路设计阶段 
+    <div id="逻辑和电路设计阶段" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%80%bb%e8%be%91%e5%92%8c%e7%94%b5%e8%b7%af%e8%ae%be%e8%ae%a1%e9%98%b6%e6%ae%b5" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>应用的描述形式：</strong></p>
+<ul>
+<li><strong>电路结构和电学指标</strong>：用于电路实现和性能分析</li>
+<li><strong>功能描述</strong>：用于逻辑综合</li>
+</ul>
+<p><strong>具体应用：</strong></p>
+<ul>
+<li>逻辑综合过程中将RTL级描述转化为门级网表</li>
+<li>调用单元库完成电路实现</li>
+<li>电路模拟与分析，验证电路的直流、交流、瞬态特性</li>
+<li>时序分析和优化</li>
+</ul>
+
+<h4 class="relative group">版图设计阶段 
+    <div id="版图设计阶段" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%89%88%e5%9b%be%e8%ae%be%e8%ae%a1%e9%98%b6%e6%ae%b5" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>应用的描述形式：</strong></p>
+<ul>
+<li><strong>拓扑版图（O）</strong>：用于布局规划</li>
+<li><strong>掩膜版图（A）</strong>：用于最终版图生成</li>
+</ul>
+<p><strong>具体应用：</strong></p>
+<ul>
+<li>布图规划：确定单元区位置、功能块的面积形状和相对位置</li>
+<li>布局：根据拓扑信息确定各单元的物理位置</li>
+<li>布线：利用单元的I/O位置信息完成连线</li>
+<li>版图验证：DRC、ERC、LVS检查</li>
+</ul>
+
+<h4 class="relative group">标准单元库的层次化应用 
+    <div id="标准单元库的层次化应用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%a0%87%e5%87%86%e5%8d%95%e5%85%83%e5%ba%93%e7%9a%84%e5%b1%82%e6%ac%a1%e5%8c%96%e5%ba%94%e7%94%a8" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>课件提到标准单元库支持&quot;层次描述&quot;，从小到大包括：</p>
+<ul>
+<li><strong>元件</strong>：基本器件级别</li>
+<li><strong>门</strong>：基本逻辑门级别</li>
+<li><strong>元胞</strong>：小规模功能单元</li>
+<li><strong>宏单元（功能块）</strong>：较大规模功能模块</li>
+</ul>
+<p>不同层次的单元在设计的不同阶段发挥作用，体现了分层分级设计思想。</p>
+
+<h4 class="relative group">设计流程中的迭代应用 
+    <div id="设计流程中的迭代应用" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e8%ae%be%e8%ae%a1%e6%b5%81%e7%a8%8b%e4%b8%ad%e7%9a%84%e8%bf%ad%e4%bb%a3%e5%ba%94%e7%94%a8" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>在实际设计中，这些描述形式不是孤立使用的，而是在设计流程中相互配合：</p>
+<ol>
+<li><strong>自顶向下设计</strong>：从功能描述开始，逐步细化到版图</li>
+<li><strong>验证反馈</strong>：各阶段仿真结果可能要求返回修改上层描述</li>
+<li><strong>优化迭代</strong>：根据性能要求在不同描述层次间进行优化</li>
+</ol>
+
+<h2 class="relative group">集成电路的可测性设计是指什么？ 
+    <div id="集成电路的可测性设计是指什么" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9b%86%e6%88%90%e7%94%b5%e8%b7%af%e7%9a%84%e5%8f%af%e6%b5%8b%e6%80%a7%e8%ae%be%e8%ae%a1%e6%98%af%e6%8c%87%e4%bb%80%e4%b9%88" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>基于课件内容，我来详细回答集成电路的可测性设计相关问题。</p>
+
+<h3 class="relative group">集成电路可测性设计的定义 
+    <div id="集成电路可测性设计的定义" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9b%86%e6%88%90%e7%94%b5%e8%b7%af%e5%8f%af%e6%b5%8b%e6%80%a7%e8%ae%be%e8%ae%a1%e7%9a%84%e5%ae%9a%e4%b9%89" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>根据课件内容，<strong>集成电路的可测性设计是指</strong>：</p>
+<blockquote>
+<p>在尽可能少地增加附加引线脚和附加电路，并使芯片性能损失最小的情况下，满足电路可控制性和可观察性的要求。</p></blockquote>
+
+<h3 class="relative group">可测性设计的核心要素 
+    <div id="可测性设计的核心要素" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8f%af%e6%b5%8b%e6%80%a7%e8%ae%be%e8%ae%a1%e7%9a%84%e6%a0%b8%e5%bf%83%e8%a6%81%e7%b4%a0" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">1. 可控制性（Controllability） 
+    <div id="1-可控制性controllability" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e5%8f%af%e6%8e%a7%e5%88%b6%e6%80%a7controllability" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>定义：</strong> 从输入端将芯片内部逻辑电路置于指定状态的能力</p>
+<p><strong>意义：</strong> 能够通过外部输入控制内部电路的状态，使测试向量能够有效地激励被测电路</p>
+
+<h4 class="relative group">2. 可观察性（Observability） 
+    <div id="2-可观察性observability" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e5%8f%af%e8%a7%82%e5%af%9f%e6%80%a7observability" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>定义：</strong> 直接或间接地从外部观察内部电路状态的能力</p>
+<p><strong>意义：</strong> 能够从外部引脚观察到内部电路的响应，以便判断电路是否正常工作</p>
+
+<h3 class="relative group">集成电路测试的特殊性和背景 
+    <div id="集成电路测试的特殊性和背景" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%9b%86%e6%88%90%e7%94%b5%e8%b7%af%e6%b5%8b%e8%af%95%e7%9a%84%e7%89%b9%e6%ae%8a%e6%80%a7%e5%92%8c%e8%83%8c%e6%99%af" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">测试的目的 
+    <div id="测试的目的" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%b5%8b%e8%af%95%e7%9a%84%e7%9b%ae%e7%9a%84" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p>课件指出，集成电路测试是：</p>
+<blockquote>
+<p>对制造出的电路进行功能和性能检测，检测并定位出电路的故障，用尽可能短的时间挑选出合格芯片。</p></blockquote>
+
+<h4 class="relative group">测试面临的挑战 
+    <div id="测试面临的挑战" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%b5%8b%e8%af%95%e9%9d%a2%e4%b8%b4%e7%9a%84%e6%8c%91%e6%88%98" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>内部节点不可直接访问</strong>：集成电路内部大量节点无法直接从外部观测</li>
+<li><strong>时序电路测试复杂</strong>：时序逻辑的状态依赖使测试变得困难</li>
+<li><strong>测试时间和成本压力</strong>：需要在短时间内完成大量芯片的筛选</li>
+</ul>
+
+<h3 class="relative group">主要的可测性设计技术 
+    <div id="主要的可测性设计技术" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%b8%bb%e8%a6%81%e7%9a%84%e5%8f%af%e6%b5%8b%e6%80%a7%e8%ae%be%e8%ae%a1%e6%8a%80%e6%9c%af" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>课件介绍了两种主要的可测性设计技术：</p>
+
+<h4 class="relative group">1. 扫描路径测试技术 
+    <div id="1-扫描路径测试技术" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#1-%e6%89%ab%e6%8f%8f%e8%b7%af%e5%be%84%e6%b5%8b%e8%af%95%e6%8a%80%e6%9c%af" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>基本原理：</strong></p>
+<ul>
+<li>将时序元件和组合电路隔离开，解决时序电路测试困难的问题</li>
+<li>在正常工作模式和测试模式之间切换</li>
+</ul>
+<p><strong>实现方式：</strong></p>
+<ul>
+<li>将时序元件（如触发器）串联成移位寄存器链（扫描路径）</li>
+<li>通过模式选择信号控制工作模式</li>
+</ul>
+<p><strong>测试流程：</strong></p>
+<ol>
+<li><strong>测试模式验证</strong>：检测扫描路径是否正确</li>
+<li><strong>组合逻辑测试</strong>：
+<ul>
+<li>将测试序列移入移位寄存器</li>
+<li>稳定后与反馈输入一起通过组合逻辑</li>
+<li>观察组合逻辑输出，与期望值比较</li>
+</ul>
+</li>
+<li><strong>正常工作模式</strong>：组合电路反馈输出送入时序元件</li>
+<li><strong>结果观察</strong>：将时序元件内容移出，与期望值比较</li>
+</ol>
+<p><strong>优点：</strong></p>
+<ul>
+<li>有效解决时序电路测试难题</li>
+<li>测试序列可用确定性算法自动生成</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>需要增加控制电路数量和外部引脚</li>
+<li>需要将分散的时序元件连接，导致芯片面积增加和速度降低</li>
+<li>串行输出结果，测试时间较长</li>
+</ul>
+
+<h4 class="relative group">2. 特征量分析测试技术 
+    <div id="2-特征量分析测试技术" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#2-%e7%89%b9%e5%be%81%e9%87%8f%e5%88%86%e6%9e%90%e6%b5%8b%e8%af%95%e6%8a%80%e6%9c%af" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<p><strong>基本概念：</strong></p>
+<blockquote>
+<p>把对应输入信号的各节点响应序列压缩，提取出相应的特征量，保存在寄存器中，只需比较实测响应序列和正常序列的特征量。</p></blockquote>
+<p><strong>技术特点：</strong></p>
+<ul>
+<li><strong>内建测试技术</strong>：在芯片内部设计&quot;测试设备&quot;来检测芯片功能</li>
+<li><strong>数据压缩</strong>：避免数据需要串行传输到外部设备的问题</li>
+<li><strong>减少存储需求</strong>：可以减少计算机内存，提高测试速度</li>
+</ul>
+<p><strong>优缺点：</strong></p>
+<ul>
+<li><strong>优点</strong>：增加的芯片面积不多，测试速度快</li>
+<li><strong>缺点</strong>：故障检测和诊断的有效率不高</li>
+</ul>
+
+<h3 class="relative group">可测性设计的设计原则 
+    <div id="可测性设计的设计原则" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%8f%af%e6%b5%8b%e6%80%a7%e8%ae%be%e8%ae%a1%e7%9a%84%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>从课件内容可以看出，可测性设计需要在以下方面取得平衡：</p>
+<ol>
+<li><strong>附加硬件最小化</strong>：尽可能少地增加附加引线脚和附加电路</li>
+<li><strong>性能影响最小化</strong>：使芯片性能损失最小</li>
+<li><strong>测试效果最大化</strong>：满足电路可控制性和可观察性要求</li>
+<li><strong>测试时间优化</strong>：用尽可能短的时间完成测试</li>
+</ol>
+
+<h3 class="relative group">总结 
+    <div id="总结" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e6%80%bb%e7%bb%93" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>集成电路的可测性设计是在电路设计阶段就考虑测试需求，通过增加必要的测试辅助电路和控制机制，使得复杂的集成电路能够被有效测试。这是现代集成电路设计中不可缺少的重要环节，直接影响到芯片的制造成品率和质量保证。</p>
+
+<h1 class="relative group">第九章 太阳能电池 
+    <div id="第九章-太阳能电池" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%ac%ac%e4%b9%9d%e7%ab%a0-%e5%a4%aa%e9%98%b3%e8%83%bd%e7%94%b5%e6%b1%a0" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+
+<h2 class="relative group">什么是直接带隙/间接带隙半导体？为什么直接带隙半导体的光吸收系数比间接带隙半导体大？ 
+    <div id="什么是直接带隙间接带隙半导体为什么直接带隙半导体的光吸收系数比间接带隙半导体大" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e4%bb%80%e4%b9%88%e6%98%af%e7%9b%b4%e6%8e%a5%e5%b8%a6%e9%9a%99%e9%97%b4%e6%8e%a5%e5%b8%a6%e9%9a%99%e5%8d%8a%e5%af%bc%e4%bd%93%e4%b8%ba%e4%bb%80%e4%b9%88%e7%9b%b4%e6%8e%a5%e5%b8%a6%e9%9a%99%e5%8d%8a%e5%af%bc%e4%bd%93%e7%9a%84%e5%85%89%e5%90%b8%e6%94%b6%e7%b3%bb%e6%95%b0%e6%af%94%e9%97%b4%e6%8e%a5%e5%b8%a6%e9%9a%99%e5%8d%8a%e5%af%bc%e4%bd%93%e5%a4%a7" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+<h3 class="relative group">直接带隙与间接带隙半导体 
+    <div id="直接带隙与间接带隙半导体" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9b%b4%e6%8e%a5%e5%b8%a6%e9%9a%99%e4%b8%8e%e9%97%b4%e6%8e%a5%e5%b8%a6%e9%9a%99%e5%8d%8a%e5%af%bc%e4%bd%93" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p><strong>直接带隙半导体</strong>：导带底部和价带顶部在k空间（动量空间）的同一点，通常在布里渊区的中心点（Γ点）。电子可以直接从价带跃迁到导带，不需要改变动量。</p>
+<p><strong>间接带隙半导体</strong>：导带底部和价带顶部在k空间的不同位置。电子从价带跃迁到导带时需要同时改变能量和动量。</p>
+
+<h3 class="relative group">光吸收系数的差异原因 
+    <div id="光吸收系数的差异原因" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%85%89%e5%90%b8%e6%94%b6%e7%b3%bb%e6%95%b0%e7%9a%84%e5%b7%ae%e5%bc%82%e5%8e%9f%e5%9b%a0" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>直接带隙半导体的光吸收系数比间接带隙半导体大的主要原因在于跃迁机制的不同：</p>
+
+<h4 class="relative group">直接带隙半导体 
+    <div id="直接带隙半导体" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9b%b4%e6%8e%a5%e5%b8%a6%e9%9a%99%e5%8d%8a%e5%af%bc%e4%bd%93" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>允许跃迁</strong>：电子可以直接吸收光子从价带跃迁到导带</li>
+<li><strong>只需要光子参与</strong>：满足能量守恒即可（hν ≥ Eg）</li>
+<li><strong>跃迁概率高</strong>：因为不需要额外的动量守恒条件</li>
+<li><strong>吸收系数大</strong>：通常在10⁴-10⁶ cm⁻¹数量级</li>
+</ul>
+
+<h4 class="relative group">间接带隙半导体 
+    <div id="间接带隙半导体" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e9%97%b4%e6%8e%a5%e5%b8%a6%e9%9a%99%e5%8d%8a%e5%af%bc%e4%bd%93" aria-label="锚点">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>禁戒跃迁</strong>：需要同时满足能量和动量守恒</li>
+<li><strong>需要声子参与</strong>：必须有声子参与来提供或带走多余的动量</li>
+<li><strong>三体过程</strong>：涉及光子、电子和声子的三体相互作用</li>
+<li><strong>跃迁概率低</strong>：三体过程的概率远低于二体过程</li>
+<li><strong>吸收系数小</strong>：通常比直接带隙半导体小2-3个数量级</li>
+</ul>
+
+<h3 class="relative group">实际例子 
+    <div id="实际例子" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%ae%9e%e9%99%85%e4%be%8b%e5%ad%90" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>从文档中可以看到：</p>
+<ul>
+<li><strong>硅（Si）</strong>：间接带隙半导体，需要较厚的吸收层</li>
+<li><strong>砷化镓（GaAs）</strong>：直接带隙半导体，吸收系数大</li>
+<li><strong>CIGS</strong>：对1.5 eV以上光子具有极高吸收系数（&gt; 10⁵ cm⁻¹）</li>
+<li><strong>非晶硅</strong>：虽然基于硅，但由于结构无序性，&ldquo;不再是间接带隙半导体&rdquo;，光吸收增强</li>
+</ul>
+<p>这就是为什么在太阳能电池应用中，直接带隙材料（如GaAs、CIGS、CdTe）可以做得很薄就能有效吸收光，而硅太阳能电池需要相对较厚的吸收层的原因。
+
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="第九章-P14" src="image-2.png">
+
+  
+</figure>
+
+
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="alt text" src="image-1.png">
+
+  
+</figure>
+
+根据文档第15页的内容，我来详细解答这个关于PN结太阳能电池的问题。</p>
+
+<h2 class="relative group">太阳能电池的电流表达式 
+    <div id="太阳能电池的电流表达式" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%a4%aa%e9%98%b3%e8%83%bd%e7%94%b5%e6%b1%a0%e7%9a%84%e7%94%b5%e6%b5%81%e8%a1%a8%e8%be%be%e5%bc%8f" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p>当光线照射在PN结太阳能电池上时，总电流为光电流与正向电流的差值：</p>
+$$I = I_L - I_F = I_L - I_S \left[\exp\left(\frac{eV}{kT}\right) - 1\right]$$<p>其中：</p>
+<ul>
+<li>$I_L$：光电流（光照产生的电流）</li>
+<li>$I_F$：正向电流（二极管正向电流）</li>
+<li>$I_S$：PN结反向饱和电流密度</li>
+<li>$V$：外加电压</li>
+<li>$e$：电子电荷</li>
+<li>$k$：玻尔兹曼常数</li>
+<li>$T$：绝对温度</li>
+</ul>
+
+<h2 class="relative group">开路电压表达式 
+    <div id="开路电压表达式" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e5%bc%80%e8%b7%af%e7%94%b5%e5%8e%8b%e8%a1%a8%e8%be%be%e5%bc%8f" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p><strong>开路条件</strong>下，外电路断开，总电流 $I = 0$：</p>
+$$0 = I_L - I_S \left[\exp\left(\frac{eV_{OC}}{kT}\right) - 1\right]$$<p>解得开路电压：</p>
+$$V_{OC} = \frac{kT}{e} \ln\left(\frac{I_L}{I_S} + 1\right)$$<p>由于通常 $I_L &raquo; I_S$，可简化为：</p>
+$$V_{OC} = \frac{kT}{e} \ln\left(\frac{I_L}{I_S}\right)$$
+<h2 class="relative group">短路电流表达式 
+    <div id="短路电流表达式" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%9f%ad%e8%b7%af%e7%94%b5%e6%b5%81%e8%a1%a8%e8%be%be%e5%bc%8f" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<p><strong>短路条件</strong>下，外电路短接，电压 $V = 0$：</p>
+$$I_{SC} = I(V=0) = I_L - I_S \left[\exp\left(\frac{e \cdot 0}{kT}\right) - 1\right]$$$$I_{SC} = I_L - I_S[1 - 1] = I_L$$<p>因此：
+</p>
+$$I_{SC} = I_L$$
+<h2 class="relative group">物理意义 
+    <div id="物理意义" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#%e7%89%a9%e7%90%86%e6%84%8f%e4%b9%89" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+<ul>
+<li><strong>开路电压</strong>：反映了PN结在光照下建立的内建电场强度，与光电流和反向饱和电流的比值对数成正比</li>
+<li><strong>短路电流</strong>：等于光电流，直接反映了太阳能电池在给定光照条件下产生载流子的能力</li>
+</ul>
+<p>这些参数是评价太阳能电池性能的重要指标，与填充因子FF一起决定了电池的光电转换效率。</p>
+<p>
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="第九章光电探测器-P13" src="image-3.png">
+
+  
+</figure>
+
+
+
+
+
+
+
+
+<figure>
+    <img class="my-0 rounded-md" loading="lazy" alt="第九章光电探测器-P14" src="image-4.png">
+
+  
+</figure>
+</p>
+
+          
+          
+          
+            <strong class="block mt-8">
+              <a
+                target="_blank"
+                class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+                href="mailto:axon_sin@foxmail.com?subject=Reply%20to%20%e7%94%b5%e5%ad%90%e5%92%8c%e7%a9%ba%e7%a9%b4%e6%b5%93%e5%ba%a6%e8%ae%a1%e7%ae%97">
+                Reply by Email
+              </a>
+            </strong>
+          
+        </div>
+
+        
+
+        
+
+        
+
+        
+  
+  
+    <h2 class="mt-8 text-2xl font-extrabold mb-10">相关文章</h2>
+    <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      
+        
+
+  <a href="/posts/2025/01/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/2025/01/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/">色彩空间</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-23T00:00:00&#43;00:00">23 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>14341 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">29 分钟</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/houdini/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Houdini
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%AE%97%E6%B3%95/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    算法
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%89%A9%E7%90%86/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    物理
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E8%89%B2%E5%BD%A9/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    色彩
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%8A%80%E5%B7%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    技巧
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E9%85%8D%E7%BD%AE/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    配置
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          算法原理解析
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+        
+
+  <a href="/posts/2025/01/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/2025/01/%E6%97%A0%E5%8E%9A%E5%BA%A6_%E4%BD%8E%E5%8E%9A%E5%BA%A6%E7%9A%84zfighting%E9%97%AE%E9%A2%98/">无厚度_低厚度的zfighting问题</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-01-06T00:00:00&#43;00:00">6 January 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3192 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">7 分钟</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/%E6%9D%82%E8%B0%88/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    杂谈
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/blender/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Blender
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/shader/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Shader
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%B8%B2%E6%9F%93/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    渲染
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%9D%90%E8%B4%A8/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    材质
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E5%85%89%E7%85%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    光照
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E7%89%A9%E7%90%86/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    物理
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E8%89%B2%E5%BD%A9/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    色彩
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    故障排除
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%95%99%E7%A8%8B/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    教程
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/%E6%8A%80%E5%B7%A7/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    技巧
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          Blender导入Unity指南
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+        
+
+  <a href="/posts/2025/02/unity%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BBretargeting/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/posts/2025/02/unity%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BBretargeting/featured_hu_37cd26febc753fc5.jpg);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/2025/02/unity%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BBretargeting/">Unity骨骼动画Retargeting</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2025-02-16T00:00:00&#43;00:00">16 February 2025</time><span class="px-2 text-primary-500">&middot;</span><span>3877 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">8 分钟</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/animation/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Animation
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/categories/retargeting/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Retargeting
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+        
+      
+        
+          
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/unity/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Unity
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/animation/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Animation
+  </span>
+</span>
+
+              </span>
+            
+              <span
+                class="mr-2 margin-top-[0.5rem]"
+                onclick="window.open(&#34;/tags/retargeting/&#34;,'_self');return false;">
+                <span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Retargeting
+  </span>
+</span>
+
+              </span>
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+        </div>
+
+        
+        <div class="py-1 prose dark:prose-invert">
+          骨骼动画指北
+        </div>
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+      
+    </section>
+  
+
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.407e5b2727c1f241c95d53db24c776bea71bfc18e09511b815d669ad8caca6e9e18a53864ad364b1ccccfa2f2956768d33cfe193bfb64d3406f3b5ece354ba57.js"
+          integrity="sha512-QH5bJyfB8kHJXVPbJMd2vqcb/BjglRG4FdZprYyspunhilOGStNksczM&#43;i8pVnaNM8/hk7&#43;2TTQG87Xs41S6Vw=="
+          data-oid="views_posts\whatdoyouwant\index.md"
+          data-oid-likes="likes_posts\whatdoyouwant\index.md"></script>
+      
+
+    </section>
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/2025/02/vex%E5%A6%82%E4%BD%95%E6%B2%BF%E7%94%A8%E4%B8%8A%E7%BB%84%E5%8F%98%E9%87%8F/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >VEX：如何沿用上组变量</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-02-15T00:00:00&#43;00:00">15 February 2025</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/2025/02/unity%E9%AA%A8%E9%AA%BC%E5%8A%A8%E7%94%BBretargeting/">
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Unity骨骼动画Retargeting</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2025-02-16T00:00:00&#43;00:00">16 February 2025</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="返回顶部"
+    title="返回顶部">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+        <ul class="flex flex-col list-none sm:flex-row">
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/tags/"
+                title="Tags">
+                
+                标签
+              </a>
+            </li>
+          
+            <li
+              class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href="/categories/"
+                title="Categories">
+                
+                分类
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          AxonSin
+      </p>
+    
+
+    
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script> 
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500"
+  data-url="http://localhost:3430/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          
+
+  <span class="relative block icon">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+
+  </span>
+
+
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="搜索"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="关闭 (Esc)">
+        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>
