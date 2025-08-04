@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>建模 on Axon的逼仄之梦</title>
+    <link>http://localhost:1313/categories/%E5%BB%BA%E6%A8%A1/</link>
+    <description>Recent content in 建模 on Axon的逼仄之梦</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
+    <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Tue, 08 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%BB%BA%E6%A8%A1/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Houdini中的基本点线面</title>
+      <link>http://localhost:1313/posts/houdini%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%82%B9%E7%BA%BF%E9%9D%A2/</link>
+      <pubDate>Tue, 08 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/houdini%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%82%B9%E7%BA%BF%E9%9D%A2/</guid>
+      <description>Houdini几何体基础知识详解</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>电子 on Axon的逼仄之梦</title>
-    <link>http://localhost:3430/tags/%E7%94%B5%E5%AD%90/</link>
+    <link>http://localhost:1313/tags/%E7%94%B5%E5%AD%90/</link>
     <description>Recent content in 电子 on Axon的逼仄之梦</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
     <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
-    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:3430/tags/%E7%94%B5%E5%AD%90/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%94%B5%E5%AD%90/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>电子和空穴浓度计算</title>
-      <link>http://localhost:3430/posts/whatdoyouwant/</link>
+      <link>http://localhost:1313/posts/whatdoyouwant/</link>
       <pubDate>Sun, 16 Feb 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:3430/posts/whatdoyouwant/</guid>
+      <guid>http://localhost:1313/posts/whatdoyouwant/</guid>
       <description>&lt;h1 class=&#34;relative group&#34;&gt;第二章 
     &lt;div id=&#34;第二章&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -65,7 +65,7 @@
   
 &lt;/figure&gt;
 &lt;/p&gt;</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:3430/posts/whatdoyouwant/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/whatdoyouwant/featured.png" />
     </item>
     
   </channel>
