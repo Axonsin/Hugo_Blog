@@ -9,7 +9,27 @@
     <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
     <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
-    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/animation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/animation/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>《碧蓝航线》：互动宿舍逆向</title>
+      <link>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</link>
+      <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>EXR vs. PNG</title>
+      <link>http://localhost:1313/posts/exr-vs-png/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/exr-vs-png/</guid>
+      <description>算法原理解析</description>
+      
+    </item>
     
     <item>
       <title>重生之我在OBS写Shader——OBS ShaderFilter插件</title>

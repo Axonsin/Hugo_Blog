@@ -9,7 +9,87 @@
     <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
     <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
-    <lastBuildDate>Thu, 03 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Houdini导出hda时，纹理调用使用相对路径</title>
+      <link>http://localhost:1313/posts/houdini-export-hda-relative-texture-path/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/houdini-export-hda-relative-texture-path/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>Unity VFX Graph</title>
+      <link>http://localhost:1313/posts/unity-vfx-graph/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/unity-vfx-graph/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+    <item>
+      <title>Unity渲染队列和渲染层级的区别</title>
+      <link>http://localhost:1313/posts/unity-render-queue-vs-render-layer/</link>
+      <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/unity-render-queue-vs-render-layer/</guid>
+      <description>渲染技术解析</description>
+      
+    </item>
+    
+    <item>
+      <title>WFC瓦片生成标准解读</title>
+      <link>http://localhost:1313/posts/wfc-tile-generation-standard/</link>
+      <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/wfc-tile-generation-standard/</guid>
+      <description>Blender导入Unity指南</description>
+      
+    </item>
+    
+    <item>
+      <title>Houdini&amp;Unity同步刷新工程文件结构</title>
+      <link>http://localhost:1313/posts/houdini-unity-sync-project-structure/</link>
+      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/houdini-unity-sync-project-structure/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+    <item>
+      <title>《碧蓝航线》：互动宿舍逆向</title>
+      <link>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</link>
+      <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>Unity命名规范检查器</title>
+      <link>http://localhost:1313/posts/unity-naming-convention-checker/</link>
+      <pubDate>Tue, 08 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/unity-naming-convention-checker/</guid>
+      <description>问题解决方案</description>
+      
+    </item>
+    
+    <item>
+      <title>EXR vs. PNG</title>
+      <link>http://localhost:1313/posts/exr-vs-png/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/exr-vs-png/</guid>
+      <description>算法原理解析</description>
+      
+    </item>
     
     <item>
       <title>HDRP的曝光流程和实现</title>
@@ -183,10 +263,10 @@
     
     <item>
       <title>反射算法</title>
-      <link>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</link>
+      <link>http://localhost:1313/posts/reflection-algorithm/</link>
       <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://localhost:1313/posts/reflection-algorithm/</guid>
       <description>Blender导入Unity指南</description>
       
     </item>

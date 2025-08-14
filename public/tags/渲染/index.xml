@@ -9,7 +9,47 @@
     <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
     <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
-    <lastBuildDate>Sat, 05 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%B8%B2%E6%9F%93/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%B8%B2%E6%9F%93/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Unity渲染队列和渲染层级的区别</title>
+      <link>http://localhost:1313/posts/unity-render-queue-vs-render-layer/</link>
+      <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/unity-render-queue-vs-render-layer/</guid>
+      <description>渲染技术解析</description>
+      
+    </item>
+    
+    <item>
+      <title>场景打光理论</title>
+      <link>http://localhost:1313/posts/scene-lighting-theory/</link>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/scene-lighting-theory/</guid>
+      <description>渲染技术解析</description>
+      
+    </item>
+    
+    <item>
+      <title>《碧蓝航线》：互动宿舍逆向</title>
+      <link>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</link>
+      <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>用Global Hook抓取Steam游戏</title>
+      <link>http://localhost:1313/posts/capture-steam-games-with-global-hook/</link>
+      <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/capture-steam-games-with-global-hook/</guid>
+      <description>渲染技术解析</description>
+      
+    </item>
     
     <item>
       <title>TBDR vs. IMR</title>
@@ -203,10 +243,10 @@
     
     <item>
       <title>反射算法</title>
-      <link>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</link>
+      <link>http://localhost:1313/posts/reflection-algorithm/</link>
       <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://localhost:1313/posts/reflection-algorithm/</guid>
       <description>Blender导入Unity指南</description>
       
     </item>

@@ -9,7 +9,197 @@
     <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
     <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
-    <lastBuildDate>Mon, 30 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%9D%82%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker安装Gitea</title>
+      <link>http://localhost:1313/posts/docker-install-gitea/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/docker-install-gitea/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>Houdini导出hda时，纹理调用使用相对路径</title>
+      <link>http://localhost:1313/posts/houdini-export-hda-relative-texture-path/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/houdini-export-hda-relative-texture-path/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>Unity VFX Graph</title>
+      <link>http://localhost:1313/posts/unity-vfx-graph/</link>
+      <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/unity-vfx-graph/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+    <item>
+      <title>Unity渲染队列和渲染层级的区别</title>
+      <link>http://localhost:1313/posts/unity-render-queue-vs-render-layer/</link>
+      <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/unity-render-queue-vs-render-layer/</guid>
+      <description>渲染技术解析</description>
+      
+    </item>
+    
+    <item>
+      <title>WFC瓦片生成标准解读</title>
+      <link>http://localhost:1313/posts/wfc-tile-generation-standard/</link>
+      <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/wfc-tile-generation-standard/</guid>
+      <description>Blender导入Unity指南</description>
+      
+    </item>
+    
+    <item>
+      <title>人物角色设定1</title>
+      <link>http://localhost:1313/posts/character-design-1/</link>
+      <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/character-design-1/</guid>
+      <description>算法原理解析</description>
+      
+    </item>
+    
+    <item>
+      <title>C#：订阅与发布</title>
+      <link>http://localhost:1313/posts/csharp-subscribe-publish/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/csharp-subscribe-publish/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+    <item>
+      <title>Windows RDP&#43;ddns&#43;Shell&#43;CloudFlare 实现远程桌面</title>
+      <link>http://localhost:1313/posts/windows-rdp-ddns-shell-cloudflare-remote-desktop/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/windows-rdp-ddns-shell-cloudflare-remote-desktop/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>利用安卓代理为Tortoise SVN配置代理服务器</title>
+      <link>http://localhost:1313/posts/configure-proxy-for-tortoise-svn-via-android-proxy/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/configure-proxy-for-tortoise-svn-via-android-proxy/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+    <item>
+      <title>场景打光理论</title>
+      <link>http://localhost:1313/posts/scene-lighting-theory/</link>
+      <pubDate>Tue, 22 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/scene-lighting-theory/</guid>
+      <description>渲染技术解析</description>
+      
+    </item>
+    
+    <item>
+      <title>Houdini&amp;Unity同步刷新工程文件结构</title>
+      <link>http://localhost:1313/posts/houdini-unity-sync-project-structure/</link>
+      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/houdini-unity-sync-project-structure/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+    <item>
+      <title>《碧蓝航线》：互动宿舍逆向</title>
+      <link>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</link>
+      <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>用Global Hook抓取Steam游戏</title>
+      <link>http://localhost:1313/posts/capture-steam-games-with-global-hook/</link>
+      <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/capture-steam-games-with-global-hook/</guid>
+      <description>渲染技术解析</description>
+      
+    </item>
+    
+    <item>
+      <title>C#：委托和异步回调</title>
+      <link>http://localhost:1313/posts/csharp-delegate-async-callback/</link>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/csharp-delegate-async-callback/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+    <item>
+      <title>Unity命名规范检查器</title>
+      <link>http://localhost:1313/posts/unity-naming-convention-checker/</link>
+      <pubDate>Tue, 08 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/unity-naming-convention-checker/</guid>
+      <description>问题解决方案</description>
+      
+    </item>
+    
+    <item>
+      <title>EXR vs. PNG</title>
+      <link>http://localhost:1313/posts/exr-vs-png/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/exr-vs-png/</guid>
+      <description>算法原理解析</description>
+      
+    </item>
+    
+    <item>
+      <title>Rider中Git的使用</title>
+      <link>http://localhost:1313/posts/git-usage-in-rider/</link>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/git-usage-in-rider/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>Huggingface镜像站</title>
+      <link>http://localhost:1313/posts/huggingface-mirror-site/</link>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/huggingface-mirror-site/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+    <item>
+      <title>Hugo博客提交Sitemap至Google Search Console</title>
+      <link>http://localhost:1313/posts/hugo-submit-sitemap-to-google-search-console/</link>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/hugo-submit-sitemap-to-google-search-console/</guid>
+      <description>技术分享</description>
+      
+    </item>
     
     <item>
       <title>重生之我在OBS写Shader——OBS ShaderFilter插件</title>
@@ -283,10 +473,10 @@
     
     <item>
       <title>反射算法</title>
-      <link>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</link>
+      <link>http://localhost:1313/posts/reflection-algorithm/</link>
       <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://localhost:1313/posts/reflection-algorithm/</guid>
       <description>Blender导入Unity指南</description>
       
     </item>

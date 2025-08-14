@@ -9,7 +9,17 @@
     <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
     <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
-    <lastBuildDate>Fri, 11 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/blender/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/blender/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>WFC瓦片生成标准解读</title>
+      <link>http://localhost:1313/posts/wfc-tile-generation-standard/</link>
+      <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/wfc-tile-generation-standard/</guid>
+      <description>Blender导入Unity指南</description>
+      
+    </item>
     
     <item>
       <title>如何使用TRAE调用Blender-MCP</title>
@@ -83,10 +93,10 @@
     
     <item>
       <title>反射算法</title>
-      <link>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</link>
+      <link>http://localhost:1313/posts/reflection-algorithm/</link>
       <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E5%8F%8D%E5%B0%84%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://localhost:1313/posts/reflection-algorithm/</guid>
       <description>Blender导入Unity指南</description>
       
     </item>

@@ -9,7 +9,27 @@
     <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
     <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
     <copyright>© 2025 AxonSin</copyright>
-    <lastBuildDate>Fri, 03 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Windows RDP&#43;ddns&#43;Shell&#43;CloudFlare 实现远程桌面</title>
+      <link>http://localhost:1313/posts/windows-rdp-ddns-shell-cloudflare-remote-desktop/</link>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/windows-rdp-ddns-shell-cloudflare-remote-desktop/</guid>
+      <description>Git配置指南</description>
+      
+    </item>
+    
+    <item>
+      <title>Hugo博客提交Sitemap至Google Search Console</title>
+      <link>http://localhost:1313/posts/hugo-submit-sitemap-to-google-search-console/</link>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/hugo-submit-sitemap-to-google-search-console/</guid>
+      <description>技术分享</description>
+      
+    </item>
     
     <item>
       <title>Name.com配合CloudFlare实现极空间的ddns托管域名</title>

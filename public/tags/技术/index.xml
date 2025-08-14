@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on Axon的逼仄之梦</title>
+    <link>http://localhost:1313/tags/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on Axon的逼仄之梦</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>axon_sin@foxmail.com (AxonSin)</managingEditor>
+    <webMaster>axon_sin@foxmail.com (AxonSin)</webMaster>
+    <copyright>© 2025 AxonSin</copyright>
+    <lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>C#：委托和异步回调</title>
+      <link>http://localhost:1313/posts/csharp-delegate-async-callback/</link>
+      <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/csharp-delegate-async-callback/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+    <item>
+      <title>Huggingface镜像站</title>
+      <link>http://localhost:1313/posts/huggingface-mirror-site/</link>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 +0000</pubDate>
+      <author>axon_sin@foxmail.com (AxonSin)</author>
+      <guid>http://localhost:1313/posts/huggingface-mirror-site/</guid>
+      <description>技术分享</description>
+      
+    </item>
+    
+  </channel>
+</rss>

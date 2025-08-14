@@ -2,11 +2,12 @@ import os
 import re
 import random
 from datetime import datetime, timedelta
+import urllib.parse
 
 def generate_random_date():
-    """生成 2024-12-01 到 2025-07-02 之间的随机日期"""
-    start_date = datetime(2024, 12, 1)
-    end_date = datetime(2025, 7, 2)
+    """生成 2025-07-01 到 2025-08-12 之间的随机日期"""
+    start_date = datetime(2025, 7, 1)
+    end_date = datetime(2025, 8, 12)
     
     # 计算日期范围内的天数
     days_between = (end_date - start_date).days
@@ -18,6 +19,42 @@ def generate_random_date():
     random_date = start_date + timedelta(days=random_days)
     
     return random_date.strftime('%Y-%m-%d')
+
+# 常见标题的英文映射表
+ENGLISH_TITLES = {
+    'C#：委托和异步回调': 'csharp-delegate-async-callback',
+    'C#：订阅与发布': 'csharp-subscribe-publish',
+    'Docker安装Gitea': 'docker-install-gitea',
+    'EXR vs. PNG': 'exr-vs-png',
+    'Houdini&Unity同步刷新工程文件结构': 'houdini-unity-sync-project-structure',
+    'Houdini导出hda时，纹理调用使用相对路径': 'houdini-export-hda-relative-texture-path',
+    'Huggingface镜像站': 'huggingface-mirror-site',
+    'Hugo博客提交Sitemap至Google Search Console': 'hugo-submit-sitemap-to-google-search-console',
+    'Rider中Git的使用': 'git-usage-in-rider',
+    'Unity VFX Graph': 'unity-vfx-graph',
+    'Unity命名规范检查器': 'unity-naming-convention-checker',
+    'Unity渲染队列和渲染层级的区别': 'unity-render-queue-vs-render-layer',
+    'WFC瓦片生成标准解读': 'wfc-tile-generation-standard',
+    'Windows RDP+ddns+Shell+CloudFlare 实现远程桌面': 'windows-rdp-ddns-shell-cloudflare-remote-desktop',
+    '《碧蓝航线》：互动宿舍逆向': 'azur-lane-live2d-dorm-reverse-engineering',
+    '人物角色设定1': 'character-design-1',
+    '利用安卓代理为Tortoise SVN配置代理服务器': 'configure-proxy-for-tortoise-svn-via-android-proxy',
+    '场景打光理论': 'scene-lighting-theory',
+    '用Global Hook抓取Steam游戏': 'capture-steam-games-with-global-hook'
+}
+
+def generate_slug(title):
+    """根据标题生成英文slug"""
+    # 如果在映射表中，直接返回对应的英文slug
+    if title in ENGLISH_TITLES:
+        return ENGLISH_TITLES[title]
+    
+    # 否则自动生成英文slug
+    # 移除特殊字符，替换空格为连字符
+    slug = re.sub(r'[^\w\s-]', '', title)
+    slug = re.sub(r'[-\s]+', '-', slug)
+    slug = slug.lower().strip('-')
+    return slug
 
 def extract_title_from_filename(filename):
     """从文件名提取标题"""
@@ -122,7 +159,7 @@ def generate_tags_and_description(filename, content):
     
     return tags, description, summary
 
-def add_frontmatter_to_file(filepath):
+def add_frontmatter_to_file(filepath, slug):
     """为单个文件添加Front Matter"""
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -132,10 +169,11 @@ def add_frontmatter_to_file(filepath):
         print(f"文件 {os.path.basename(filepath)} 已有Front Matter，跳过")
         return
     
-    filename = os.path.basename(filepath)
-    title = extract_title_from_filename(filename)
+    # 从目录名提取标题
+    dir_name = os.path.basename(os.path.dirname(filepath))
+    title = dir_name
     date = generate_random_date()
-    tags, description, summary = generate_tags_and_description(filename, content)
+    tags, description, summary = generate_tags_and_description(title, content)
     
     # 生成Front Matter
     frontmatter = f"""---
@@ -145,6 +183,7 @@ tags: {tags}
 description: "{description}"
 summary: {summary}
 categories: [杂谈]
+slug: {slug}
 ---
 
 """
@@ -155,7 +194,7 @@ categories: [杂谈]
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(new_content)
     
-    print(f"已为 {filename} 添加Front Matter")
+    print(f"已为 {title} 添加Front Matter，slug: {slug}")
 
 def main():
     """主函数"""
@@ -165,14 +204,23 @@ def main():
         print(f"目录不存在: {yuque_import_dir}")
         return
     
-    # 获取所有markdown文件
-    md_files = [f for f in os.listdir(yuque_import_dir) if f.endswith('.md')]
+    # 遍历所有子目录
+    subdirs = [d for d in os.listdir(yuque_import_dir) 
+               if os.path.isdir(os.path.join(yuque_import_dir, d))]
     
-    print(f"找到 {len(md_files)} 个markdown文件")
+    print(f"找到 {len(subdirs)} 个子目录")
     
-    for md_file in md_files:
-        filepath = os.path.join(yuque_import_dir, md_file)
-        add_frontmatter_to_file(filepath)
+    for subdir in subdirs:
+        subdir_path = os.path.join(yuque_import_dir, subdir)
+        index_file = os.path.join(subdir_path, 'index.md')
+        
+        # 检查是否存在 index.md 文件
+        if os.path.exists(index_file):
+            # 生成英文slug
+            slug = generate_slug(subdir)
+            add_frontmatter_to_file(index_file, slug)
+        else:
+            print(f"目录 {subdir} 中未找到 index.md 文件")
     
     print("所有文件处理完成！")
 
