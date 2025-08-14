@@ -129,7 +129,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/hdrp%E7%9A%84%E6%9B%9D%E5%85%89%E6%B5%81%E7%A8%8B%E5%92%8C%E5%AE%9E%E7%8E%B0/</loc>
+    <loc>http://localhost:1313/posts/hdrp-exposure/</loc>
     <lastmod>2025-07-03T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -195,7 +195,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</loc>
+    <loc>http://localhost:1313/posts/the-role-of-w-in-xyzw-homogeneous-coordinates/</loc>
     <lastmod>2025-05-23T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -225,7 +225,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/unity%E7%9A%84post-processing%E6%A0%87%E5%87%86v1v2v3/</loc>
+    <loc>http://localhost:1313/posts/unity-post-processing/</loc>
     <lastmod>2025-03-06T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -351,7 +351,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</loc>
+    <loc>http://localhost:1313/posts/custom-effect-renderfeature/</loc>
     <lastmod>2024-12-14T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

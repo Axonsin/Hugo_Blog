@@ -17,7 +17,7 @@
       <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/docker-install-gitea/</guid>
-      <description>Git配置指南</description>
+      <description>Docker安装Gitea指北</description>
       
     </item>
     
@@ -57,7 +57,7 @@
       <pubDate>Sat, 02 Aug 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/wfc-tile-generation-standard/</guid>
-      <description>Blender导入Unity指南</description>
+      <description>Houdini的WFC瓦片生成标准解读</description>
       
     </item>
     
@@ -127,7 +127,7 @@
       <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</guid>
-      <description>Git配置指南</description>
+      <description>逆向解析</description>
       
     </item>
     
@@ -183,10 +183,10 @@
     
     <item>
       <title>TBDR vs. IMR</title>
-      <link>http://localhost:1313/posts/tbdr-vs.-imr/</link>
+      <link>http://localhost:1313/posts/tbdr-vs-imr/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/tbdr-vs.-imr/</guid>
+      <guid>http://localhost:1313/posts/tbdr-vs-imr/</guid>
       <description>移动端与桌面端GPU架构差异分析</description>
       
     </item>
@@ -203,10 +203,10 @@
     
     <item>
       <title>HDRP的曝光流程和实现</title>
-      <link>http://localhost:1313/posts/hdrp%E7%9A%84%E6%9B%9D%E5%85%89%E6%B5%81%E7%A8%8B%E5%92%8C%E5%AE%9E%E7%8E%B0/</link>
+      <link>http://localhost:1313/posts/hdrp-exposure/</link>
       <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/hdrp%E7%9A%84%E6%9B%9D%E5%85%89%E6%B5%81%E7%A8%8B%E5%92%8C%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>http://localhost:1313/posts/hdrp-exposure/</guid>
       <description>Unity HDRP物理相机曝光系统详解</description>
       
     </item>
@@ -273,10 +273,10 @@
     
     <item>
       <title>Unity Bones Retargeting系统</title>
-      <link>http://localhost:1313/posts/unity-bones-retargeting%E7%B3%BB%E7%BB%9F-1/</link>
+      <link>http://localhost:1313/posts/unity-bones-retargeting/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/unity-bones-retargeting%E7%B3%BB%E7%BB%9F-1/</guid>
+      <guid>http://localhost:1313/posts/unity-bones-retargeting/</guid>
       <description>骨骼动画指北</description>
       
     </item>
@@ -313,10 +313,10 @@
     
     <item>
       <title>xyzw中的w：齐次坐标系的作用</title>
-      <link>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
+      <link>http://localhost:1313/posts/the-role-of-w-in-xyzw-homogeneous-coordinates/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
+      <guid>http://localhost:1313/posts/the-role-of-w-in-xyzw-homogeneous-coordinates/</guid>
       <description>渲染技术解析</description>
       
     </item>
@@ -363,10 +363,10 @@
     
     <item>
       <title>Unity的Post-Processing标准（V1、V2、V3）</title>
-      <link>http://localhost:1313/posts/unity%E7%9A%84post-processing%E6%A0%87%E5%87%86v1v2v3/</link>
+      <link>http://localhost:1313/posts/unitypostprocessing/</link>
       <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/unity%E7%9A%84post-processing%E6%A0%87%E5%87%86v1v2v3/</guid>
+      <guid>http://localhost:1313/posts/unitypostprocessing/</guid>
       <description>Git配置指南</description>
       
     </item>
@@ -490,10 +490,10 @@
     
     <item>
       <title>Unity阴影实现</title>
-      <link>http://localhost:1313/posts/unity%E9%98%B4%E5%BD%B1%E5%AE%9E%E7%8E%B0/</link>
+      <link>http://localhost:1313/posts/unity-shadow-implementation/</link>
       <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/unity%E9%98%B4%E5%BD%B1%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>http://localhost:1313/posts/unity-shadow-implementation/</guid>
       <description>问题解决方案</description>
       
     </item>
@@ -530,10 +530,10 @@
     
     <item>
       <title>基本渲染管线</title>
-      <link>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</link>
+      <link>http://localhost:1313/posts/basic-rendering-pipeline/</link>
       <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E5%9F%BA%E6%9C%AC%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/</guid>
+      <guid>http://localhost:1313/posts/basic-rendering-pipeline/</guid>
       <description>渲染技术解析</description>
       
     </item>
@@ -570,10 +570,10 @@
     
     <item>
       <title>色彩空间</title>
-      <link>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</link>
+      <link>http://localhost:1313/posts/color-space/</link>
       <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4/</guid>
+      <guid>http://localhost:1313/posts/color-space/</guid>
       <description>算法原理解析</description>
       
     </item>
@@ -600,11 +600,11 @@
     
     <item>
       <title>Name.com配合CloudFlare实现极空间的ddns托管域名</title>
-      <link>http://localhost:1313/posts/name.com%E9%85%8D%E5%90%88cloudflare%E5%AE%9E%E7%8E%B0%E6%9E%81%E7%A9%BA%E9%97%B4%E7%9A%84ddns%E6%89%98%E7%AE%A1%E5%9F%9F%E5%90%8D/</link>
+      <link>http://localhost:1313/posts/name-com-cloudflare-ddns/</link>
       <pubDate>Fri, 03 Jan 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/name.com%E9%85%8D%E5%90%88cloudflare%E5%AE%9E%E7%8E%B0%E6%9E%81%E7%A9%BA%E9%97%B4%E7%9A%84ddns%E6%89%98%E7%AE%A1%E5%9F%9F%E5%90%8D/</guid>
-      <description>Git配置指南</description>
+      <guid>http://localhost:1313/posts/name-com-cloudflare-ddns/</guid>
+      <description>通过Name.com和CloudFlare实现极空间的DDNS域名托管</description>
       
     </item>
     
@@ -620,10 +620,10 @@
     
     <item>
       <title>自定义效果的大杀器——RenderFeature</title>
-      <link>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</link>
+      <link>http://localhost:1313/posts/custom-effect-renderfeature/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</guid>
+      <guid>http://localhost:1313/posts/custom-effect-renderfeature/</guid>
       <description>问题解决方案</description>
       
     </item>

@@ -13,10 +13,10 @@
     
     <item>
       <title>HDRP的曝光流程和实现</title>
-      <link>http://localhost:1313/posts/hdrp%E7%9A%84%E6%9B%9D%E5%85%89%E6%B5%81%E7%A8%8B%E5%92%8C%E5%AE%9E%E7%8E%B0/</link>
+      <link>http://localhost:1313/posts/hdrp-exposure/</link>
       <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/hdrp%E7%9A%84%E6%9B%9D%E5%85%89%E6%B5%81%E7%A8%8B%E5%92%8C%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>http://localhost:1313/posts/hdrp-exposure/</guid>
       <description>Unity HDRP物理相机曝光系统详解</description>
       
     </item>

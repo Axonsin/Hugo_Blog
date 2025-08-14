@@ -5,6 +5,7 @@ tags: ['Unity', 'Shader', 'Animation', '渲染', '光照', '色彩']
 description: "基本渲染管线的技术原理和应用"
 summary: 渲染技术解析
 categories: [杂谈]
+slug: basic-rendering-pipeline
 ---
 
 ![渲染的基本结构](46b632a3.png)

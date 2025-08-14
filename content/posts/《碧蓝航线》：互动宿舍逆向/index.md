@@ -3,7 +3,7 @@ title: 《碧蓝航线》：互动宿舍逆向
 date: 2025-07-14
 tags: ['Unity', 'Shader', 'Animation', 'Git', '渲染', '材质', '光照', '物理', '色彩', '故障排除', '配置']
 description: "Git项目中.gitignore文件的配置方法"
-summary: Git配置指南
+summary: 逆向解析
 categories: [杂谈]
 slug: azur-lane-live2d-dorm-reverse-engineering
 ---

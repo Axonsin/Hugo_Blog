@@ -47,7 +47,7 @@
       <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</guid>
-      <description>Git配置指南</description>
+      <description>逆向解析</description>
       
     </item>
     
@@ -163,10 +163,10 @@
     
     <item>
       <title>自定义效果的大杀器——RenderFeature</title>
-      <link>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</link>
+      <link>http://localhost:1313/posts/custom-effect-renderfeature/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</guid>
+      <guid>http://localhost:1313/posts/custom-effect-renderfeature/</guid>
       <description>问题解决方案</description>
       
     </item>

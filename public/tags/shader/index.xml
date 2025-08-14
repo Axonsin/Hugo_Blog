@@ -27,7 +27,7 @@
       <pubDate>Mon, 14 Jul 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
       <guid>http://localhost:1313/posts/azur-lane-live2d-dorm-reverse-engineering/</guid>
-      <description>Git配置指南</description>
+      <description>逆向解析</description>
       
     </item>
     
@@ -53,10 +53,10 @@
     
     <item>
       <title>xyzw中的w：齐次坐标系的作用</title>
-      <link>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</link>
+      <link>http://localhost:1313/posts/the-role-of-w-in-xyzw-homogeneous-coordinates/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/xyzw%E4%B8%AD%E7%9A%84w%E9%BD%90%E6%AC%A1%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%BD%9C%E7%94%A8/</guid>
+      <guid>http://localhost:1313/posts/the-role-of-w-in-xyzw-homogeneous-coordinates/</guid>
       <description>渲染技术解析</description>
       
     </item>
@@ -73,10 +73,10 @@
     
     <item>
       <title>Unity的Post-Processing标准（V1、V2、V3）</title>
-      <link>http://localhost:1313/posts/unity%E7%9A%84post-processing%E6%A0%87%E5%87%86v1v2v3/</link>
+      <link>http://localhost:1313/posts/unity-post-processing/</link>
       <pubDate>Thu, 06 Mar 2025 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/unity%E7%9A%84post-processing%E6%A0%87%E5%87%86v1v2v3/</guid>
+      <guid>http://localhost:1313/posts/unity-post-processing/</guid>
       <description>Git配置指南</description>
       
     </item>
@@ -193,10 +193,10 @@
     
     <item>
       <title>自定义效果的大杀器——RenderFeature</title>
-      <link>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</link>
+      <link>http://localhost:1313/posts/custom-effect-renderfeature/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
       <author>axon_sin@foxmail.com (AxonSin)</author>
-      <guid>http://localhost:1313/posts/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E7%9A%84%E5%A4%A7%E6%9D%80%E5%99%A8renderfeature/</guid>
+      <guid>http://localhost:1313/posts/custom-effect-renderfeature/</guid>
       <description>问题解决方案</description>
       
     </item>

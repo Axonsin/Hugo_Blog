@@ -2,9 +2,10 @@
 title: Name.com配合CloudFlare实现极空间的ddns托管域名
 date: 2025-01-03
 tags: ['Unity', 'Git', '教程', '配置', '网络配置']
-description: "Git项目中.gitignore文件的配置方法"
-summary: Git配置指南
+description: "通过Name.com配合CloudFlare实现极空间的ddns托管域名"
+summary: 通过Name.com和CloudFlare实现极空间的DDNS域名托管
 categories: [杂谈]
+slug: name-com-cloudflare-ddns
 ---
 
 # 关于注册域名

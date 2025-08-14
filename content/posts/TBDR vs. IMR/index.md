@@ -5,6 +5,7 @@ tags: ['GPU架构', '渲染', '移动端', 'TBDR', 'IMR']
 description: "深入分析TBDR和IMR两种GPU渲染架构的特点与选择"
 summary: 移动端与桌面端GPU架构差异分析
 categories: [图形学]
+slug: tbdr-vs-imr
 ---
 
 ### 写在前面

@@ -2,8 +2,8 @@
 title: Docker安装Gitea
 date: 2025-08-11
 tags: ['Git']
-description: "Git项目中.gitignore文件的配置方法"
-summary: Git配置指南
+description: "Docker安装Gitea指北"
+summary: Docker安装Gitea指北
 categories: [杂谈]
 slug: docker-install-gitea
 ---

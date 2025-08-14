@@ -5,6 +5,7 @@ tags: ['Unity', 'Blender', 'Animation', '渲染', '配置', 'MMD', 'Retargeting'
 description: "Unity骨骼动画Retargeting的配置方法和注意事项"
 summary: 骨骼动画指北
 categories: [杂谈]
+slug: unity-bones-retargeting
 ---
 
 > 前置可选条件：package manager中加入了Animation Rigging（骨骼可视化Bone Renderer）和MMD4Macanim（用于把pmx转换为fbx）

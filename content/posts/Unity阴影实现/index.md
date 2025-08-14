@@ -5,6 +5,7 @@ tags: ['Unity', 'Shader', '渲染', '光照', '色彩', '故障排除', '教程'
 description: "Unity阴影实现的解决方案和处理方法"
 summary: 问题解决方案
 categories: [杂谈]
+slug: unity-shadow-implementation
 ---
 
 > _<font style="color:rgb(34, 34, 34);background-color:rgb(250, 250, 250);">Investigate how Unity renders shadows.  

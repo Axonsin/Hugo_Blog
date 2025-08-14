@@ -114,7 +114,7 @@
     "keywords": ["色彩"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "828"
+    "wordCount": "878"
   }]
   </script>
 
@@ -622,7 +622,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="2025-07-26T00:00:00&#43;00:00">26 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>828 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
+      <time datetime="2025-07-26T00:00:00&#43;00:00">26 July 2025</time><span class="px-2 text-primary-500">&middot;</span><span>878 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span>
     
 
     
@@ -867,30 +867,29 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p><strong><font style="color:rgb(0, 0, 0);">发布者</font></strong><font style="color:rgb(0, 0, 0);">定义一系列事件，并提供一个注册方法；</font></p>
-<p><strong><font style="color:rgb(0, 0, 0);">订阅者</font></strong><font style="color:rgb(0, 0, 0);">向</font><strong><font style="color:rgb(0, 0, 0);">发布者</font></strong><font style="color:rgb(0, 0, 0);">注册自己的事件处理逻辑，供一个</font><strong><font style="color:rgb(0, 0, 0);">可被回调的方法</font></strong><font style="color:rgb(0, 0, 0);">，也就是</font><strong><font style="color:rgb(0, 0, 0);">事件处理程序</font></strong><font style="color:rgb(0, 0, 0);">；当</font><strong><font style="color:rgb(0, 0, 0);">发布者</font></strong><font style="color:rgb(0, 0, 0);">的事件被</font><strong><font style="color:rgb(0, 0, 0);">触发</font></strong><font style="color:rgb(0, 0, 0);">的时候，订阅者将通过回调函数得到发布者通知，而订阅者所注册的回调函数，也就是事件处理逻辑的所有方法都会被执行</font></p>
+          <p><strong>发布者</strong>定义一系列事件，并提供一个注册方法；</p>
+<p><strong>订阅者</strong>向<strong>发布者</strong>注册自己的事件处理逻辑，供一个<strong>可被回调的方法</strong>，也就是<strong>事件处理程序</strong>；当<strong>发布者</strong>的事件被<strong>触发</strong>的时候，订阅者将通过回调函数得到发布者通知，而订阅者所注册的回调函数，也就是事件处理逻辑的所有方法都会被执行</p>
 <ul>
-<li><font style="color:rgb(0, 0, 0);">发布者是指拥有某事件的类或者结构</font></li>
-<li><font style="color:rgb(0, 0, 0);">订阅者是指向发布者注册的类或者结构</font></li>
-<li><font style="color:rgb(0, 0, 0);">事件处理程序是指由订阅者注册到事件的方法，在发布者触发事件时执行</font></li>
+<li>发布者是指拥有某事件的类或者结构</li>
+<li>订阅者是指向发布者注册的类或者结构</li>
+<li>事件处理程序是指由订阅者注册到事件的方法，在发布者触发事件时执行</li>
 </ul>
-<p><font style="color:rgb(0, 0, 0);">参考：</font><a
+<p>参考：<a
   href="https://blog.csdn.net/weixin_38486884/article/details/82853508"
     target="_blank"
-  ><font style="color:rgb(29, 88, 209);">https://blog.csdn.net/weixin_38486884/article/details/82853508</font></a>
+  >https://blog.csdn.net/weixin_38486884/article/details/82853508</a>
 </p>
-<p><font style="color:rgb(0, 0, 0);"></font><a
+<p><a
   href="https://www.cnblogs.com/mq0036/p/11660978.html"
     target="_blank"
   >https://www.cnblogs.com/mq0036/p/11660978.html</a>
 </p>
-<p><font style="color:rgb(0, 0, 0);">从一个简单的例子，来说明一下这种事件消息传递的机制！ </font></p>
-<p><strong><font style="color:rgb(0, 0, 0);">有一家三口，妈妈负责做饭，爸爸和孩子负责吃。。。将这三个人，想象成三个类。</font></strong></p>
-<p><strong><font style="color:rgb(0, 0, 0);">妈妈有一个方法，叫做“做饭”。有一个事件，叫做“开饭”。做完饭后，调用开饭事件，发布开饭消息。</font></strong></p>
-<p><strong><font style="color:rgb(0, 0, 0);">爸爸和孩子分别有一个方法，叫做“吃饭”。</font></strong></p>
-<p><strong><font style="color:rgb(0, 0, 0);">将爸爸和孩子的“吃饭”方法，注册到妈妈的“开饭”事件。也就是，订阅妈妈的开饭消息。让妈妈做完饭开饭时，发布吃饭消息时，告诉爸爸和孩子一声。</font></strong></p>
-<p><font style="color:rgb(0, 0, 0);"></font></p>
-<p><font style="color:rgb(0, 0, 0);">这种机制就是C#中的，订阅发布。下面用代码实现：</font></p>
+<p>从一个简单的例子，来说明一下这种事件消息传递的机制！</p>
+<p><strong>有一家三口，妈妈负责做饭，爸爸和孩子负责吃。。。将这三个人，想象成三个类。</strong></p>
+<p><strong>妈妈有一个方法，叫做&quot;做饭&quot;。有一个事件，叫做&quot;开饭&quot;。做完饭后，调用开饭事件，发布开饭消息。</strong></p>
+<p><strong>爸爸和孩子分别有一个方法，叫做&quot;吃饭&quot;。</strong></p>
+<p><strong>将爸爸和孩子的&quot;吃饭&quot;方法，注册到妈妈的&quot;开饭&quot;事件。也就是，订阅妈妈的开饭消息。让妈妈做完饭开饭时，发布吃饭消息时，告诉爸爸和孩子一声。</strong></p>
+<p>这种机制就是C#中的，订阅发布。下面用代码实现：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">class Program
 </span></span><span class="line"><span class="cl">    {
 </span></span><span class="line"><span class="cl">        public static void Main(string[] args)
@@ -943,7 +942,7 @@
 </span></span><span class="line"><span class="cl">            Console.WriteLine(&#34;孩子 : 打完这局再吃。&#34;);
 </span></span><span class="line"><span class="cl">        }
 </span></span><span class="line"><span class="cl">    }
-</span></span></code></pre></div><p><font style="color:rgb(0, 0, 0);">运行结果：</font></p>
+</span></span></code></pre></div><p>运行结果：</p>
 <p>
 
 
@@ -969,9 +968,7 @@
   
 </figure>
 </p>
-<p><font style="color:rgb(0, 0, 0);"></font></p>
-<p><font style="color:rgb(0, 0, 0);">当爷爷奶奶来做客了怎么办呢？和爸爸孩子一样，写个Eat方法，同样注册到妈妈的开饭事件就好了。</font></p>
-<p><font style="color:rgb(0, 0, 0);"></font></p>
+<p>当爷爷奶奶来做客了怎么办呢？和爸爸孩子一样，写个Eat方法，同样注册到妈妈的开饭事件就好了。</p>
 
           
           
@@ -1442,7 +1439,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          Git配置指南
+          逆向解析
         </div>
         
       </div>

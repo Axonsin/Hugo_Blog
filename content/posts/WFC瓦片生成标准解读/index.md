@@ -2,8 +2,8 @@
 title: WFC瓦片生成标准解读
 date: 2025-08-02
 tags: ['Unity', 'Blender', 'Shader', 'Houdini', '算法']
-description: "Blender模型导入Unity的完整工作流程"
-summary: Blender导入Unity指南
+description: "WFC瓦片生成标准解读，介绍了WFC算法的基本原理和应用场景，重点分析了瓦片的邻接规则和位掩码技术。"
+summary: Houdini的WFC瓦片生成标准解读
 categories: [杂谈]
 slug: wfc-tile-generation-standard
 ---
