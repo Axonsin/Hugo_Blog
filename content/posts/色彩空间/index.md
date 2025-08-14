@@ -5,6 +5,7 @@ tags: ['Shader', 'Houdini', '渲染', '算法', '物理', '色彩', '技巧', '�
 description: "色彩空间的原理解析和实现方法"
 summary: 算法原理解析
 categories: [杂谈]
+recommended: true
 ---
 
 # 引言
@@ -82,7 +83,7 @@ categories: [杂谈]
 
 **二进制数据：**
 
-```plain
+``plain
 01001110 10000001 11111111
 ```
 
@@ -103,7 +104,7 @@ categories: [杂谈]
 
 **二进制数据（打包方式，举例）：**
 
-```plain
+``plain
 000100010110 1100100000 1111111111
 ```
 
@@ -126,7 +127,7 @@ categories: [杂谈]
 
 内存中数据排列（交错存储）：
 
-```plain
+``plain
 R0 G0 B0 R1 G1 B1 R2 G2 B2 R3 G3 B3
 ```
 
@@ -218,7 +219,7 @@ gamma和degamma<font style="color:rgb(44, 44, 54);">是描述 </font>**<font sty
 + 显示器解读信号，发光显示。
 
 ## 3. **流程图简化**
-```plain
+``plain
 [应用输出(sRGB, gamma编码)]
           |
 degamma，先统一转换为线性空间计算

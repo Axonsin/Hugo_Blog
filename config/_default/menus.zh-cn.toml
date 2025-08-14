@@ -48,14 +48,14 @@
 #  weight = 20
 
 [[main]]
- name = "文章分类"
- pageRef = "categories"
+ name = "文章标签"
+ pageRef = "tags"
  weight = 20
 
-# [[main]]
-#  name = "Tags"
-#  pageRef = "tags"
-#  weight = 30
+[[main]]
+ name = "推荐阅读"
+ pageRef = "recommended"
+ weight = 30
 
 
 # -- Footer Menu --
