@@ -107,7 +107,7 @@ public class PixelizeRenderFeature : ScriptableRendererFeature
         public bool linkUVScales = false;
         public Vector2 circleOffset = new Vector2(0.5f, 0.5f);
         public Color circleColor = Color.white;
-        public Color backgroundColor = Color.black;
+        public Color backgroundColor;
         
         [Header("GrayScale Settings")]
         public bool enableGrayscale = false;
