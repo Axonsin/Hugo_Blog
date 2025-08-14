@@ -2,8 +2,8 @@
 title: Unity的Post-Processing标准（V1、V2、V3）
 date: 2025-03-06
 tags: ['Unity', 'Shader', 'Git', '渲染', '色彩', '配置', '插件']
-description: "Git项目中.gitignore文件的配置方法"
-summary: Git配置指南
+description: "Unity的Post-Processing标准（V1、V2、V3）"
+summary: Unity的Post-Processing标准
 categories: [杂谈]
 slug: unitypostprocessing
 ---
