@@ -2,8 +2,8 @@
 title: Houdini导出hda时，纹理调用使用相对路径
 date: 2025-08-11
 tags: ['Unity', 'Houdini', 'Git']
-description: "Git项目中.gitignore文件的配置方法"
-summary: Git配置指南
+description: "Houdini中使用相对路径的最佳实践"
+summary: Houdini相对路径语法
 categories: [杂谈]
 slug: houdini-export-hda-relative-texture-path
 ---
